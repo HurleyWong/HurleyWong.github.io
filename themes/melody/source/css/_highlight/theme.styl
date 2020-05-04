@@ -1,0 +1,145 @@
+$highlight_theme = hexo-config("highlight_theme")
+
+if $highlight_theme == "normal"
+  $highlight-background   = #f7f7f7
+  $highlight-current-line = #efefef
+  $highlight-selection    = #d6d6d6
+  $highlight-foreground   = #4d4d4c
+  $highlight-comment      = #8e908c
+  $highlight-red          = #c82829
+  $highlight-orange       = #f5871f
+  $highlight-yellow       = #eab700
+  $highlight-green        = #718c00
+  $highlight-aqua         = #3e999f
+  $highlight-blue         = #4271ae
+  $highlight-purple       = #8959a8
+  $highlight-gutter       = {
+    color: #869194,
+    bg-color: #eff2f3
+  }
+
+if $highlight_theme == "night"
+  $highlight-background   = #1d1f21
+  $highlight-current-line = #282a2e
+  $highlight-selection    = #373b41
+  $highlight-foreground   = #c5c8c6
+  $highlight-comment      = #969896
+  $highlight-red          = #cc6666
+  $highlight-orange       = #de935f
+  $highlight-yellow       = #f0c674
+  $highlight-green        = #b5bd68
+  $highlight-aqua         = #8abeb7
+  $highlight-blue         = #81a2be
+  $highlight-purple       = #b294bb
+  $highlight-gutter       = {
+    color: lighten($highlight-background, 50%),
+    bg-color: darken($highlight-background, 100%)
+  }
+
+if $highlight_theme == "default"
+  $highlight-background = #263238
+  $highlight-current-line = #efefef
+  $highlight-selection = #80CBC420
+  $highlight-foreground = #EEFFFF
+  $highlight-comment = #546E7A
+  $highlight-red = #FF5370
+  $highlight-orange = #F78C6C
+  $highlight-yellow = #FFCB6B
+  $highlight-green = #C3E88D
+  $highlight-aqua = #89DDFF
+  $highlight-blue = #82AAFF
+  $highlight-purple = #C792EA
+  $highlight-gutter = {
+    color: #37474F,
+    bg-color: $highlight-background
+  }
+
+if $highlight_theme == "darker"
+  $highlight-background = #212121
+  $highlight-current-line = #282a2e
+  $highlight-selection = #61616150
+  $highlight-foreground = #EEFFFF
+  $highlight-comment = #4A4A4A
+  $highlight-red = #FF5370
+  $highlight-orange = #F78C6C
+  $highlight-yellow = #FFCB6B
+  $highlight-green = #C3E88D
+  $highlight-aqua = #89DDFF
+  $highlight-blue = #82AAFF
+  $highlight-purple = #C792EA
+  $highlight-gutter = {
+    color: #424242,
+    bg-color: $highlight-background
+  }
+
+if $highlight_theme == "pale night"
+  $highlight-background = #292D3E
+  $highlight-current-line = #393939
+  $highlight-selection = #717CB450
+  $highlight-foreground = #A6ACCD
+  $highlight-comment = #676E95
+  $highlight-red = #FF5370
+  $highlight-orange = #F78C6C
+  $highlight-yellow = #FFCB6B
+  $highlight-green = #C3E88D
+  $highlight-aqua = #89DDFF
+  $highlight-blue = #82AAFF
+  $highlight-purple = #C792EA
+  $highlight-gutter = {
+    color: #3A3F58,
+    bg-color: $highlight-background
+  }
+
+if $highlight_theme == "ocean"
+  $highlight-background = #0F111A
+  $highlight-current-line = #000000
+  $highlight-selection = #717CB450
+  $highlight-foreground = #8F93A2
+  $highlight-comment = #464B5D
+  $highlight-red = #FF5370
+  $highlight-orange = #F78C6C
+  $highlight-yellow = #FFCB6B
+  $highlight-green = #C3E88D
+  $highlight-aqua = #89DDFF
+  $highlight-blue = #82AAFF
+  $highlight-purple = #C792EA
+  $highlight-gutter = {
+    color: #3B3F5180,
+    bg-color: $highlight-background
+  }
+
+if $highlight_theme == "light"
+  $highlight-background = #F6F8FA
+  $highlight-current-line = #00346e
+  $highlight-selection = #80CBC440
+  $highlight-foreground = #90A4AE
+  $highlight-comment = #90A4AE90
+  $highlight-red = #E53935
+  $highlight-orange = #F76D47
+  $highlight-yellow = #FFB62C
+  $highlight-green = #91B859
+  $highlight-aqua = #39ADB5
+  $highlight-blue = #6182B8
+  $highlight-purple = #7C4DFF
+  $highlight-gutter = {
+    color: #CFD8DC,
+    bg-color: $highlight-background
+  }
+
+if $highlight_theme == "monokai"
+  $highlight-background = #23241F
+  $highlight-current-line = #3E3D32
+  $highlight-selection = #49483E
+  $highlight-foreground = #F8F8F2
+  $highlight-comment = #75715E
+  $highlight-red = #F92672
+  $highlight-orange = #FD971F
+  $highlight-yellow = #E6DB74
+  $highlight-green = #A6E22E
+  $highlight-aqua = #A1EFE4
+  $highlight-blue = #66D9EF
+  $highlight-purple = #AE81FF
+  $highlight-gutter = {
+    color: #37474F,
+    bg-color: $highlight-background
+  }
