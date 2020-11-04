@@ -1,0 +1,308 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hurley</title><meta name="description"><meta name="author" content="Hurley"><meta name="copyright" content="Hurley"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/icon.png"><link rel="canonical" href="https://hurleyjames.github.io/page/2/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="website"><meta property="og:title" content="Hurley"><meta property="og:url" content="https://hurleyjames.github.io/page/2/"><meta property="og:site_name" content="Hurley"><meta property="og:description"><meta property="og:image" content="https://avatars1.githubusercontent.com/u/26319720?s=460&amp;v=4"><meta property="article:published_time" content="2020-11-04T15:19:07.462Z"><meta property="article:modified_time" content="2020-11-04T15:19:07.462Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'false'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: false,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: true,
+  fancybox: false,
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isanchor: false    
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isSidebar: false
+  }</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="https://avatars1.githubusercontent.com/u/26319720?s=460&amp;v=4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">59</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">23</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">13</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(https://s1.ax1x.com/2020/05/03/JxTsBR.jpg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">Hurley</a></span><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="site-info"><h1 id="site_title">Hurley</h1><div id="site_subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/HurleyJames" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="/hurleyhuang@hotmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll_down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout_page" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/06/06/Interview-Review(Algorithm)/" title="Interview-Review(Algorithm)">     <img class="post_bg" data-src="/../image/algorithm-interview.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Interview-Review(Algorithm)"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/06/06/Interview-Review(Algorithm)/" title="Interview-Review(Algorithm)">Interview-Review(Algorithm)</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-06-06 00:00:00"><i class="far fa-calendar-alt"></i>2020-06-06</time></div><div class="content">本篇主要是面试复习内容的算法部分。
+
+深度学习模型评估方法
+Accuracy作为指标有哪些局限性
+ 准确率的定义是：分类正确的样本占总样本个数的比例，$Accuracy = \frac{n_{correct}}{n_{total}}$。但是此指标存在以下缺陷：
+ 当正负样本非常不均衡时，占比大的类别就成为了影响准确率的主要因素，比如负样本占90%时，即使把所有样本都预测为负样本，也可以轻松获得90%的准确率，而这样的准确率是没有意义的，不足以说明分类器的好坏。
+
+ROC曲线和PR曲线各是什么
+
+编程实现AUC的计算，复杂度是多少
+
+AUC指标有什么特点？放缩结果对AUC是否有影响
+余弦距离与欧氏距离有什么特点
+
+基本方法
+如何划分训练集？如何选择验证集？
+ 有以下几种不同的方法划分训练集与验证集：
+
+留出法：
+
+把数据集划分成互不相交的两部分，一部分作为训练集，一部分作为测试集；
+保持数据的分布大致一致，类似分层抽样；
+训练集数据所占比例应该为2/3或4/5左右
+为了保证随机性，将数据集多次随机划分为训练集和测试集，然后再对多次划分的结果去平均
+
+
+k折交叉验证法：
+
+将数据集随机分为 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/06/06/Interview-Review(OS)/" title="Interview-Review(OS)">     <img class="post_bg" data-src="/../image/os-interview.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Interview-Review(OS)"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/06/06/Interview-Review(OS)/" title="Interview-Review(OS)">Interview-Review(OS)</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-06-06 00:00:00"><i class="far fa-calendar-alt"></i>2020-06-06</time></div><div class="content">本篇主要是面试复习内容的操作系统部分。
+
+
+操作系统的四个特性：
+
+并发：同一段时间内多个程序执行
+共享：系统中的资源可以被内存中多个并发执行的进线程共同使用
+虚拟：通过时分复用以及空分复用技术实现把一个物理实体虚拟为多个
+异步：系统中的进程以走走停停的方式执行，且以一种不可预知的速度推进
+
+
+进程和线程的区别
+
+进程是具有一定功能的程序关于某个数据集合上的一次运行活动，是系统进行资源调度和分配的一个独立单位；
+线程是进程的实体，是CPU调度和分派的基本单位，它是比进程更小的独立运行的基本单位（线程不拥有资源）；
+一个进程可以有多个线程，多个线程也可以并发执行；
+
+
+线程同步的方式有哪些
+
+互斥量（CMutex）：采用互斥对象机制，只有拥有互斥对象的线程才有访问公共资源的权利。因为互斥对象可以保证公共资源不会被多个线程同时访问「必须是拥有互斥对象的线程」；
+信号量（CSemphore）：它允许同一时刻多个线程访问同一资源，但是需要控制同一时刻访问此资源的最大线程数量；
+事件（信号）：通过通知操作的方式来保持多线程同步，还可以方便的实现多线程优先级的比较操作
+
+
+进程的通信方式有哪些
+  ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/06/06/Interview-Review(Database)/" title="Interview-Review(Database)">     <img class="post_bg" data-src="/../image/database-interview.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Interview-Review(Database)"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/06/06/Interview-Review(Database)/" title="Interview-Review(Database)">Interview-Review(Database)</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-06-06 00:00:00"><i class="far fa-calendar-alt"></i>2020-06-06</time></div><div class="content">本篇主要是面试复习内容的数据库部分。
+
+数据库类型非关系型数据库（NoSQL）
+mongoDB
+Hbase
+Neo4j
+redis
+CouchDB
+
+关系型数据库
+SQLite
+SQL Server
+MySQL
+ORACLE
+PostgreSQL
+Microsoft Access
+Teradata
+SAP
+
+存储过程存储过程就像编程语言中的函数一样，封装了代码（PLSQL、T-SQL）。
+优点：
+能够将代码封装起来
+保存在数据库之中
+让编程语言进行调用
+存储过程是一个预编译的代码块，执行效率比较高
+一个存储过程替代大量T_SQL语句，可以降低网络通信量，提高通信速率
+
+缺点：
+每个数据库的存储过程几乎都是不一样的，十分难以维护
+业务逻辑放在数据库上，比较难迭代
+
+触发器作用触发器是一种特殊的存储过程，主要是通过「事件」来触发而被执行的。它可以强化约束，来维护数据的完整性和一致性，可以跟踪数据库内的操作从而不允许未经许可的更新和变化。触发器不能由用户显示调用，而是只有当出发时间发生并且被捕捉到后，才会被触发。
+语句123456// 创建触发器create trigger trigger_ ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/06/06/Interview-Review(DataStructure)/" title="Interview-Review(DataStructure)">     <img class="post_bg" data-src="/../image/data-structure-interview.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Interview-Review(DataStructure)"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/06/06/Interview-Review(DataStructure)/" title="Interview-Review(DataStructure)">Interview-Review(DataStructure)</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-06-06 00:00:00"><i class="far fa-calendar-alt"></i>2020-06-06</time></div><div class="content">本篇主要是面试复习内容的数据结构部分。
+基本概念
+数据结构的定义
+
+数据的逻辑结构：反映数据元素之间的关系的数据元素集合的表示。逻辑结构包括：集合、线形结构、树形结构、图形结构四种。
+数据的存储结构：数据的逻辑结构在计算机存储空间中的存放形式称为数据的存储结构。常用的存储结构有顺序、链接、索引等存储结构。
+
+
+
+哈希表（散列表）哈希表（Hash Table，也叫散列表），是根据关键码值 (Key-Value) 而直接进行访问的数据结构。也就是说，它通过把关键码值映射到表中一个位置来访问记录，以加快查找的速度。哈希表的实现主要需要解决两个问题，哈希函数和哈希冲突。
+哈希函数哈希冲突HashMap
+简述一下Java中的HashMap的实现原理
+
+HashMap的底层就是数组加上链表的结构实现的。结构如下图：
+
+数组用来存放元素位置，链表用来解决哈希冲突。
+当需要往HashMap中添加对象时，需要先计算key的hashCode，然后hashCode计算出元素应该放在数组的哪个位置。找到该位置后，判断该位置上是否已经存在键值对，如果已存在就覆盖，如果不存在就直接放到该位置。链表的存在是为了解决 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/06/06/Interview-Review(Network)/" title="Interview-Review(Network)">     <img class="post_bg" data-src="/../image/network-interview.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Interview-Review(Network)"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/06/06/Interview-Review(Network)/" title="Interview-Review(Network)">Interview-Review(Network)</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-06-06 00:00:00"><i class="far fa-calendar-alt"></i>2020-06-06</time></div><div class="content">本篇主要是面试复习内容的计算机网络部分。
+
+
+HTTP和HTTPS的区别
+
+开销：HTTPS协议需要到CA申请证书或者自制证书
+安全性：HTTP的信息是明文传输，是简单无状态的；HTTPS则是具有安全性的SSL加密传输，HTTPS协议是由SSL+HTTP协议构建的，可进行加密传输、身份认证的网络协议，比HTTP协议安全
+资源消耗：HTTP是直接与TCP进行数据传输；HTTPS运行在SSL/TSL之上，SSL/TSL运行在TCP之上，需要消耗更多的CPU和内存资源；
+端口不同：HTTP用到的端口是80（需要国内备案），HTTPS用到的端口是443
+
+
+HTTP2与HTTP1.x相比的新特性
+
+HTTP2使用新的二进制格式传输，HTTP1.x使用文本（字符串）传输。二进制协议解析起来更高效
+
+HTTP2支持多路复用，即连接共享，即每一个request都是用作连接共享机制的。
+
+在HTTP1.x协议中，「浏览器客户端在同一时间，针对同一域名下的请求有一定的数量限制。超过限制数目的请求会被阻塞」。HTTP2的多路复用（Multiplexing）允许同时超过单一的HTTP2连接发起多重的请求-响 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/06/06/Interview-Review(Java)/" title="Interview-Review(Java)">     <img class="post_bg" data-src="/../image/java-interview.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Interview-Review(Java)"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/06/06/Interview-Review(Java)/" title="Interview-Review(Java)">Interview-Review(Java)</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-06-06 00:00:00"><i class="far fa-calendar-alt"></i>2020-06-06</time></div><div class="content">本篇主要是面试复习内容的Java部分。
+
+关键字final关键字final关键字主要用在三个地方：变量、方法、类。
+
+如果是基本数据类型的变量，其数值在初始化之后就不能更改；如果是引用类型的变量，则在对其初始化之后便不能再让其指向另一个对象。
+当用final修饰一个类时，表明这个类不能被继承。final类中的所有成员方法都会被隐式的指定为final方法。
+使用final的原因有两个。一个是把方法锁定，以防任何继承类来修改它的含义。所以类中所有的private方法都被隐式的指定为final；第二个原因是效率。
+
+static关键字static关键字的主要意义是在于创建独立于具体对象的域变量和方法。即使没有创建对象，也会使用属性和调用方法。static关键字可以用来形成静态代码块以优化程序性能。static块可以放置于类中的任何地方，类中可以有多个static块。当类被初次加载时，就会按照static块的顺序来执行每个static块，并且只会执行一次。
+static优化性能的原因是在于它只会在类加载的时候执行一次。所以有时候可以将一些只需要执行一次的初始化操作放在static代码块中执行。 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/03/25/Interview-Review(Android)/" title="Interview-Review(Android)">     <img class="post_bg" data-src="/../image/android-interview.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Interview-Review(Android)"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/03/25/Interview-Review(Android)/" title="Interview-Review(Android)">Interview-Review(Android)</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-03-25 00:00:00"><i class="far fa-calendar-alt"></i>2020-03-25</time></div><div class="content">本篇主要是面试复习内容的Android部分。
+Android主要分为以下几个部分：
+
+Activity
+Fragment
+Service
+Broadcast Receiver
+Content Provider
+数据存储
+Bitmap
+Handler
+AsyncTask
+View
+Animation
+Window
+布局
+事件
+设计模式
+
+
+ActivityActivity生命周期
+启动Activity：onCreate()⟶onStart()⟶onResume()，进入运行状态；
+Activity退居后台（Home或者启动了新的Activity）：onPause()⟶onStop()；
+Activity返回前台：onRestart()⟶onStart()⟶onResume();
+如果Acitivity后台期间内存不足，再次启动时就会重新执行启动流程；
+锁屏：onPause()⟶onStop()；
+解锁：onStart()⟶onResume()；
+
+具体方法介绍：
+
+onCreate()：在每个Activity中都会重写这个方法，它会在活动第一次被创建的时候调用；
+onStart()：这个 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/03/12/121.Best-Time-to-Buy-and-Sell-Stock/" title="121.Best Time to Buy and Sell Stock">     <img class="post_bg" data-src="/../image/best-time-to-buy-and-sell-stock.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="121.Best Time to Buy and Sell Stock"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/03/12/121.Best-Time-to-Buy-and-Sell-Stock/" title="121.Best Time to Buy and Sell Stock">121.Best Time to Buy and Sell Stock</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-03-12 00:00:00"><i class="far fa-calendar-alt"></i>2020-03-12</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/LeetCode/">LeetCode</a></span></div><div class="content">
+给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。
+如果你最多只允许完成一笔交易（即买入和卖出一支股票），设计一个算法来计算你所能获取的最大利润。
+注意你不能在买入股票前卖出股票。
+示例 1:
+输入: [7,1,5,3,6,4]输出: 5解释: 在第 2 天（股票价格 = 1）的时候买入，在第 5 天（股票价格 = 6）的时候卖出，最大利润 = 6-1 = 5 。     注意利润不能是 7-1 = 6, 因为卖出价格需要大于买入价格。
+示例 2:
+输入: [7,6,4,3,1]输出: 0解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。
+
+
+方法一：暴力法最容易想到的暴力法就是比较每个元素与后面的元素的差值。假设数组长度为n，则第一次要比较n-1次，第二个要比较n-2次，以此类推，第n个要比较n-(n-1)=1次。所以总次数也就是时间复杂度为$O(n^2)$。
+代码12345678910111213141516public int maxProfit(int[] prices) &#123;    int maxprofit = 0;    // 前一个元素 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/03/12/463.Island-Perimeter/" title="463.Island Perimeter">     <img class="post_bg" data-src="/../image/island-perimeter.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="463.Island Perimeter"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/03/12/463.Island-Perimeter/" title="463.Island Perimeter">463.Island Perimeter</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-03-12 00:00:00"><i class="far fa-calendar-alt"></i>2020-03-12</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/LeetCode/">LeetCode</a></span></div><div class="content">
+给定一个包含 0 和 1 的二维网格地图，其中 1 表示陆地 0 表示水域。
+网格中的格子水平和垂直方向相连（对角线方向不相连）。整个网格被水完全包围，但其中恰好有一个岛屿（或者说，一个或多个表示陆地的格子相连组成的岛屿）。
+岛屿中没有“湖”（“湖” 指水域在岛屿内部且不和岛屿周围的水相连）。格子是边长为 1 的正方形。网格为长方形，且宽度和高度均不超过 100 。计算这个岛屿的周长。
+示例 :
+输入:[[0,1,0,0], [1,1,1,0], [0,1,0,0], [1,1,0,0]]
+输出: 16
+解释: 它的周长是下面图片中的 16 个黄色的边：
+
+
+这道题的思路是总的正方形块树的数量乘以4条边，然后减去重合的边树乘以2，就是岛屿的周长。所以解题的关键就是在于有规律的找到有多少次的重叠，这样能够避免重复的计算。
+代码最开始想到的代码写法是这样的：
+1234567891011121314151617181920212223242526272829303132333435363738394041public int islandPerimeter(int[][] grid) &# ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/03/12/%E9%9D%A2%E8%AF%95%E9%A2%9802.03.Delete-Middle-Node/" title="面试题02.03.Delete Middle Node">     <img class="post_bg" data-src="/../image/delete-middle-node.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="面试题02.03.Delete Middle Node"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/03/12/%E9%9D%A2%E8%AF%95%E9%A2%9802.03.Delete-Middle-Node/" title="面试题02.03.Delete Middle Node">面试题02.03.Delete Middle Node</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-03-12 00:00:00"><i class="far fa-calendar-alt"></i>2020-03-12</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/LeetCode/">LeetCode</a></span></div><div class="content">
+实现一种算法，删除单向链表中间的某个节点（除了第一个和最后一个节点，不一定是中间节点），假定你只能访问该节点。
+示例：
+12输入：单向链表a-&gt;b-&gt;c-&gt;d-&gt;e-&gt;f中的节点c结果：不返回任何数据，但该链表变为a-&gt;b-&gt;d-&gt;e-&gt;f
+
+方法一：暴力法最简单直接的想法就是遍历一遍链表，得出链表的长度，然后一半即是链表一半的长度，也就是中间节点所在的位置。但是这样缺点也是很明显的，就是在时间复杂度上。假设链表的长度为n，则遍历一遍链表的长度需要$O(n)$的时间，然后又重新遍历一半链表的长度获得中间节点，这里又需要$O(\frac{n}{2})$的时间，总时间即为$O(\frac{3n}{2})$。
+
+方法二：快慢指针法在很多场景下都可以用到快慢指针法。在这里设置两个指针，一个指针A每次指向下一个节点，一个指针B指向下两个节点，这样当B走到链表的末尾时，A才走到链表的中间节点（因此B是A速度的两倍）。所以这样A指针走到的位置就是链表的中间节点。
+代码1234567891011121314151617public class D ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="https://avatars1.githubusercontent.com/u/26319720?s=460&amp;v=4" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Hurley</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives"><div class="headline">文章</div><div class="length_num">59</div></a></div><div class="card-info-data-item is-center">      <a href="/tags"><div class="headline">标签</div><div class="length_num">23</div></a></div><div class="card-info-data-item is-center">     <a href="/categories"><div class="headline">分类</div><div class="length_num">13</div></a></div></div><div class="card-info-bookmark is-center"><button class="button--animated" id="bookmark-it" title="加入书签"><i class="fas fa-bookmark"></i><span>加入书签</span></button></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/HurleyJames" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="/hurleyhuang@hotmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">Hey I'm Hurley Huang 👋</div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-recent-item"><div class="aside-recent-post"><a href="/2020/11/01/547.Find-Circle-Num/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="/../image/merge-two-binary-trees.png" onerror="this.onerror=null;this.src='/img/404.jpg'" title="547.Find Circle Num" alt="547.Find Circle Num"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/11/01/547.Find-Circle-Num/" title="547.Find Circle Num">547.Find Circle Num</div><time class="aside-post_meta post-meta__date" title="发表于 2020-11-01 00:00:00">2020-11-01</time></div></a></div><div class="aside-recent-post"><a href="/2020/10/29/Interview-Review(JVM)/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="/../image/git-interview.png" onerror="this.onerror=null;this.src='/img/404.jpg'" title="Interview-Review(JVM)" alt="Interview-Review(JVM)"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/10/29/Interview-Review(JVM)/" title="Interview-Review(JVM)">Interview-Review(JVM)</div><time class="aside-post_meta post-meta__date" title="发表于 2020-10-29 00:00:00">2020-10-29</time></div></a></div><div class="aside-recent-post"><a href="/2020/10/03/%E9%9D%9E%E4%BA%92%E8%81%94%E7%BD%91%E4%BC%81%E4%B8%9A%E6%89%8B%E6%92%95%E4%BB%A3%E7%A0%81%E9%A2%98/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="/../image/nationalized-enterprise.png" onerror="this.onerror=null;this.src='/img/404.jpg'" title="非互联网企业手撕代码题" alt="非互联网企业手撕代码题"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/10/03/%E9%9D%9E%E4%BA%92%E8%81%94%E7%BD%91%E4%BC%81%E4%B8%9A%E6%89%8B%E6%92%95%E4%BB%A3%E7%A0%81%E9%A2%98/" title="非互联网企业手撕代码题">非互联网企业手撕代码题</div><time class="aside-post_meta post-meta__date" title="发表于 2020-10-03 00:00:00">2020-10-03</time></div></a></div><div class="aside-recent-post"><a href="/2020/09/23/Interview-Review(Git)/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="/../image/git-interview.png" onerror="this.onerror=null;this.src='/img/404.jpg'" title="Interview-Review(Git)" alt="Interview-Review(Git)"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/09/23/Interview-Review(Git)/" title="Interview-Review(Git)">Interview-Review(Git)</div><time class="aside-post_meta post-meta__date" title="发表于 2020-09-23 00:00:00">2020-09-23</time></div></a></div><div class="aside-recent-post"><a href="/2020/09/22/Android%20Jetpack%E7%BB%84%E4%BB%B6/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="/../image/android-jetpack.png" onerror="this.onerror=null;this.src='/img/404.jpg'" title="Android Jetpack组件" alt="Android Jetpack组件"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/09/22/Android%20Jetpack%E7%BB%84%E4%BB%B6/" title="Android Jetpack组件">Android Jetpack组件</div><time class="aside-post_meta post-meta__date" title="发表于 2020-09-22 00:00:00">2020-09-22</time></div></a></div></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div><ul class="card-category-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Android/"><span class="card-category-list-name">Android</span><span class="card-category-list-count">7</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Java/"><span class="card-category-list-name">Java</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Kotlin/"><span class="card-category-list-name">Kotlin</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/LeetCode/"><span class="card-category-list-name">LeetCode</span><span class="card-category-list-count">17</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Python/"><span class="card-category-list-name">Python</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/"><span class="card-category-list-name">云计算</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/"><span class="card-category-list-name">分布式系统</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%9B%BE%E8%AE%BA/"><span class="card-category-list-name">图论</span><span class="card-category-list-count">2</span></a></li>
+            <li class="card-category-list-item more is-center"><a class="card-category-list-link-more" href="/categories">
+                <span>查看更多</span><i class="fas fa-angle-right"></i></a></li>           
+            </ul></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/CloudSim/" style="font-size: 17.2px; color: #999ca1">CloudSim</a> <a href="/tags/He-said/" style="font-size: 19.6px; color: #99a3b0">He said</a> <a href="/tags/I-said/" style="font-size: 17.2px; color: #999ca1">I said</a> <a href="/tags/Jetpack/" style="font-size: 16px; color: #999">Jetpack</a> <a href="/tags/Kotlin%E5%9F%BA%E7%A1%80/" style="font-size: 17.2px; color: #999ca1">Kotlin基础</a> <a href="/tags/NP%E9%97%AE%E9%A2%98/" style="font-size: 16px; color: #999">NP问题</a> <a href="/tags/Numpy/" style="font-size: 16px; color: #999">Numpy</a> <a href="/tags/PyTorch/" style="font-size: 16px; color: #999">PyTorch</a> <a href="/tags/keras/" style="font-size: 16px; color: #999">keras</a> <a href="/tags/%E4%BA%8C%E5%88%86%E5%9B%BE/" style="font-size: 16px; color: #999">二分图</a> <a href="/tags/%E5%8A%A8%E7%94%BB/" style="font-size: 16px; color: #999">动画</a> <a href="/tags/%E5%90%8C%E6%AD%A5/" style="font-size: 16px; color: #999">同步</a> <a href="/tags/%E5%9B%BE/" style="font-size: 16px; color: #999">图</a> <a href="/tags/%E5%A4%9A%E5%AA%92%E4%BD%93%E6%8A%80%E6%9C%AF/" style="font-size: 16px; color: #999">多媒体技术</a> <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 16px; color: #999">字符串</a> <a href="/tags/%E5%AE%8C%E7%BE%8E%E5%8C%B9%E9%85%8D/" style="font-size: 16px; color: #999">完美匹配</a> <a href="/tags/%E5%AE%B9%E9%94%99/" style="font-size: 16px; color: #999">容错</a> <a href="/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" style="font-size: 16px; color: #999">开发工具</a> <a href="/tags/%E6%95%B0%E7%BB%84/" style="font-size: 18.4px; color: #999fa8">数组</a> <a href="/tags/%E6%A0%91/" style="font-size: 20.8px; color: #99a6b7">树</a> <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 19.6px; color: #99a3b0">链表</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 22px; color: #99a9bf">面试</a> <a href="/tags/%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB/" style="font-size: 16px; color: #999">马尔可夫</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/11/"><span class="card-archive-list-date">十一月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/10/"><span class="card-archive-list-date">十月 2020</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/09/"><span class="card-archive-list-date">九月 2020</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/08/"><span class="card-archive-list-date">八月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/06/"><span class="card-archive-list-date">六月 2020</span><span class="card-archive-list-count">9</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/03/"><span class="card-archive-list-date">三月 2020</span><span class="card-archive-list-count">6</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/02/"><span class="card-archive-list-date">二月 2020</span><span class="card-archive-list-count">14</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/01/"><span class="card-archive-list-date">一月 2020</span><span class="card-archive-list-count">7</span></a></li><li class="card-archive-list-item more is-center"><a class="card-archive-list-link-more" href="/archives">
+              <span>查看更多</span><i class="fas fa-angle-right"  ></i></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="webinfo-article-name">文章数目 :</div><div class="webinfo-article-count">59</div></div><div class="webinfo-item"><div class="webinfo-site-wordcount-name">本站总字数 :</div><div class="webinfo-site-wordcount">146.5k</div></div><div class="webinfo-item">      <div class="webinfo-site-uv-name">本站访客数 :</div><div class="webinfo-site-uv-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="webinfo-site-name">本站总访问量 :</div><div class="webinfo-site-pv-count" id="busuanzi_value_site_pv"></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://s1.ax1x.com/2020/05/03/JxTsBR.jpg)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2017 - 2020 By Hurley</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div><div class="footer_custom_text">随时意气风发，独自声势浩大</div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><button id="darkmode" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script id="ribbon_piao" mobile="false" src="/js/third-party/piao.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script src="https://cdn.jsdelivr.net/npm/typed.js"></script><script>var subtitleEffect = true
+if (subtitleEffect) { 
+  var typed = new Typed("#subtitle", {
+    strings: "随时意气风发，独自声势浩大,High spirited and powerful at any time&#44; even alone".split(","),
+    startDelay: 300,
+    typeSpeed: 150,
+    loop: true,
+    backSpeed: 50
+  })
+} else {
+  document.getElementById("subtitle").innerHTML = '随时意气风发，独自声势浩大'
+}</script><script>var endLoading = function () {
+  document.body.style.overflow = 'auto';
+  document.getElementById('loading-box').classList.add("loaded")
+}
+window.addEventListener('load',endLoading)</script></body></html>

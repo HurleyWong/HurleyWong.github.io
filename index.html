@@ -1,0 +1,290 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hurley</title><meta name="description"><meta name="author" content="Hurley"><meta name="copyright" content="Hurley"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/icon.png"><link rel="canonical" href="https://hurleyjames.github.io/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="website"><meta property="og:title" content="Hurley"><meta property="og:url" content="https://hurleyjames.github.io/"><meta property="og:site_name" content="Hurley"><meta property="og:description"><meta property="og:image" content="https://avatars1.githubusercontent.com/u/26319720?s=460&amp;v=4"><meta property="article:published_time" content="2020-11-04T15:19:07.453Z"><meta property="article:modified_time" content="2020-11-04T15:19:07.453Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'false'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: false,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: true,
+  fancybox: false,
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isanchor: false    
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isSidebar: false
+  }</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="https://avatars1.githubusercontent.com/u/26319720?s=460&amp;v=4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">59</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">23</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">13</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(https://s1.ax1x.com/2020/05/03/JxTsBR.jpg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">Hurley</a></span><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="site-info"><h1 id="site_title">Hurley</h1><div id="site_subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/HurleyJames" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="/hurleyhuang@hotmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll_down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout_page" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/08/21/%E5%91%8A%E5%88%AB%E6%98%AF%E6%9C%80%E6%AE%8B%E5%BF%8D%E7%9A%84%E5%91%8A%E7%99%BD/" title="告别是最残忍的告白">     <img class="post_bg" data-src="/../image/goodbye-uk.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="告别是最残忍的告白"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/08/21/%E5%91%8A%E5%88%AB%E6%98%AF%E6%9C%80%E6%AE%8B%E5%BF%8D%E7%9A%84%E5%91%8A%E7%99%BD/" title="告别是最残忍的告白">告别是最残忍的告白</a><div class="article-meta-wrap"><span class="article-meta"><i class="fas fa-thumbtack article-meta__icon sticky"></i><span class="sticky">置顶</span><span class="article-meta__separator">|</span></span><time class="post-meta__date" title="发表于 2020-08-21 00:00:00"><i class="far fa-calendar-alt"></i>2020-08-21</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%B8%85%E6%96%B0/">清新</a></span></div><div class="content">穿过树丛田野
+风景向身后凛冽
+铁轨伸长了双臂
+向黎明驶去
+窗外的世界
+是从没见过的新奇
+淡蓝色的月亮
+城市在黎明处张望
+铁轨扑向更远更长
+车灯照着未知的彷徨
+汽笛遮掩的话语
+琐碎在肩上的行李
+霓虹向后飞越
+向昨晚的梦告别
+淡淡的晨光
+匍匐在身后的家乡
+忽明忽暗的远方
+在行驶的路上
+珍藏的记忆都装进背包
+挥手告别旧时光的美好
+拥抱迎面的翻山越岭
+好好告别就不会有遗憾吗
+
+那茶杯还留着酣畅的清香
+而回忆却是说忘就忘
+在黑色的夜晚摇月亮
+我该去哪里走一走逛一逛
+哪里的集市丰盛有眼光
+哪里的酒好喝到能一醉方休
+哪里的人不问来路与归途
+我该去哪里看一看 想一想
+哪里的前程值得被信仰
+哪里的水清的 仿佛能看到希望
+哪里的风拂晓坦荡愿与你戏攘
+自在的不觉得虚妄
+时间无谓无果无需隐藏
+一无所有所得所期所想
+尘嚣倾吐残余的伤
+黄昏后回归故乡
+愿你有故乡
+
+👋再见啦，🇬🇧UK
+</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/11/01/547.Find-Circle-Num/" title="547.Find Circle Num">     <img class="post_bg" data-src="/../image/merge-two-binary-trees.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="547.Find Circle Num"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/01/547.Find-Circle-Num/" title="547.Find Circle Num">547.Find Circle Num</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-11-01 00:00:00"><i class="far fa-calendar-alt"></i>2020-11-01</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/LeetCode/">LeetCode</a></span></div><div class="content">
+朋友圈班上有 N 名学生。其中有些人是朋友，有些则不是。他们的友谊具有是传递性。如果已知 A 是 B 的朋友，B 是 C 的朋友，那么我们可以认为 A 也是 C 的朋友。所谓的朋友圈，是指所有朋友的集合。
+给定一个 N * N 的矩阵 M，表示班级中学生之间的朋友关系。如果M[i][j] = 1，表示已知第 i 个和 j 个学生互为朋友关系，否则为不知道。你必须输出所有学生中的已知的朋友圈总数。
+示例 1：
+输入：[[1,1,0], [1,1,0], [0,0,1]]
+输出：2 
+解释：已知学生 0 和学生 1 互为朋友，他们在一个朋友圈。第2个学生自己在一个朋友圈。所以返回 2 。
+示例 2：
+输入：[[1,1,0], [1,1,1], [0,1,1]]
+输出：1
+解释：已知学生 0 和学生 1 互为朋友，学生 1 和学生 2 互为朋友，所以学生 0 和学生 2 也是朋友，所以他们三个在一个朋友圈，返回 1 。
+提示：
+1 &lt;= N &lt;= 200
+M[I][I] == 1
+M[I][j] == M[j][I]
+
+深度优先遍历可以用邻接矩阵的方式将其看成是一个图，所以其实 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/10/29/Interview-Review(JVM)/" title="Interview-Review(JVM)">     <img class="post_bg" data-src="/../image/git-interview.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Interview-Review(JVM)"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/10/29/Interview-Review(JVM)/" title="Interview-Review(JVM)">Interview-Review(JVM)</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-10-29 00:00:00"><i class="far fa-calendar-alt"></i>2020-10-29</time></div><div class="content">类加载机制类加载器
+启动类加载器（Bootstrap ClassLoader）：这个类加载器由C++实现，是虚拟机自身的一部分；启动类加载器无法被Java程序直接引用的。
+扩展类加载器（Extension ClassLoader）：这个加载器由sun.misc.Launcher$ExtClassLoader实现，开发者可以直接使用该扩展类加载器。
+应用程序类加载器（Application ClassLoader）：这个类加载器由sun.misc.Launcher$AppClassLoader实现。它一般被称为系统类加载器，负责加载用户类路径上所指定的类库。开发者可以直接使用这个类加载器，一般就是程序中默认的类加载器。
+
+双亲委派模型类加载器之间的层次关系，被称为是类加载器的双亲委派模型。其中，除了顶层加载器之外，其余的类加载器都会有自己的父类加载器。它们之间的父子关系不是继承，而是以组合的关系来复用父类加载器的代码。
+
+双亲委派模型的工作过程是：
+
+如果一个类加载器收到类加载的请求，它首先不会自己去尝试加载这个类，而是把这个请求都委派给父类加载器去完成，每一个层次的类加载器都是如此。所 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/10/03/%E9%9D%9E%E4%BA%92%E8%81%94%E7%BD%91%E4%BC%81%E4%B8%9A%E6%89%8B%E6%92%95%E4%BB%A3%E7%A0%81%E9%A2%98/" title="非互联网企业手撕代码题">     <img class="post_bg" data-src="/../image/nationalized-enterprise.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="非互联网企业手撕代码题"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/10/03/%E9%9D%9E%E4%BA%92%E8%81%94%E7%BD%91%E4%BC%81%E4%B8%9A%E6%89%8B%E6%92%95%E4%BB%A3%E7%A0%81%E9%A2%98/" title="非互联网企业手撕代码题">非互联网企业手撕代码题</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-10-03 00:00:00"><i class="far fa-calendar-alt"></i>2020-10-03</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></span></div><div class="content">总的来说，非互联网企业，包括银行、运营商等公司的笔试编程题相对还是简单的，很多都是大一接触到的，例如斐波那契数列等类型的题。然而，由于太久未看到这些基础的提醒，在一时间也有可能会反应不过来。毕竟，时间是有限的。因此，在这里做一个简单的汇总和说明。
+合并两个有序链表手写一个循环队列代码位于：https://github.com/HurleyJames/MyLeetCode/tree/master/src/basic/LoopQueue
+一个队列是实行先进先出的原则，需要加上front和rear两个变量分别代表在数组中的位置，初值为0。
+在非空队列中，front指向队首元素，rear指向队尾元素的下一个存储位置。
+循环队列中会有一个问题：无法区分队空和队满的状态，因为条件都是rear == front。
+所以这里少使用一个存储单元，即队空的条件为rear == front，队满的条件是front == (rear + 1) % maxSize。
+编写队列接口，主要要实现入队、出队、长度、是否为空等方法。
+123456789public interface IQueue &#123;     ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/09/23/Interview-Review(Git)/" title="Interview-Review(Git)">     <img class="post_bg" data-src="/../image/git-interview.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Interview-Review(Git)"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/09/23/Interview-Review(Git)/" title="Interview-Review(Git)">Interview-Review(Git)</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-09-23 00:00:00"><i class="far fa-calendar-alt"></i>2020-09-23</time></div><div class="content">本篇主要是面试复习内容的Git部分。
+Git回滚以前的某个版本
+查找历史版本
+ 使用git log命令查看所有的历史版本，获取该仓库git的某个历史版本的id。例如，假设id是fae6966548e3ae76cfa7f38a461c438cf75ba965。
+
+恢复到历史版本
+ $ git reset --hard fae6966548e3ae76cfa7f38a461c438cf75ba965
+
+把修改推送到远程的服务器
+ git push -f -u origin master
+
+
+git merge和git rebase的区别git merge和git rebase都是用于合并分支的，不同之处在于对于commit记录的处理上是不同的。
+例如，原始分支如下所示，一个是master(origin)分支，一个是dev(mywork)分支：
+
+当使用git merge的话，会新建一个新的commit对象，然后两个分支以前的commit记录都会指向这个新建的commit记录。这个方式可以保留之前的每一个分支中的commit的历史，如下图所示：
+
+当使用git rebase命令时，可以让两个 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/09/22/Android%20Jetpack%E7%BB%84%E4%BB%B6/" title="Android Jetpack组件">     <img class="post_bg" data-src="/../image/android-jetpack.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Android Jetpack组件"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/09/22/Android%20Jetpack%E7%BB%84%E4%BB%B6/" title="Android Jetpack组件">Android Jetpack组件</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-09-22 00:00:00"><i class="far fa-calendar-alt"></i>2020-09-22</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Android/">Android</a></span></div><div class="content">JetpackJetpack是Google推出的一个框架，主要是可以对代码的逻辑和UI界面实现深层的解耦，打造数据驱动型的UI界面。Android Architecture组件是Android Jetpack的一部分，包含以下组件等：
+
+Lifecycle：能够处理Activity和Fragment的生命周期，在AndroidX中，Fragment和Activity已经对Lifecycle提供了默认的支持。
+ViewModel：当做MVVM的ViewModel层，并具有生命周期意识的处理和UI相关的数据。
+LiveData：和RxJava的作用是一样的，对数据进行监听，优点是无需处理生命周期、无内存泄漏等。
+Paging：是一个易于使用的数据分页库，支持RecyclerView。
+Room：强大的ORM数据库框架。
+Navigation：一个用于管理Fragment切换的工具类，可视化、可绑定控件、支持动画等优点。
+WorkManager：灵活、简单、延迟和保证执行的后台任务处理库。
+DataBinding：加速MVVM的创建。
+
+使用Android Jetpack组件具有以下优势：
+ ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/09/22/Java%E4%B8%AD%E7%9A%84String%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AF%E4%B8%8D%E5%8F%AF%E5%8F%98%E7%9A%84/" title="Java中的String为什么是不可变的">     <img class="post_bg" data-src="/../image/java-string.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java中的String为什么是不可变的"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/09/22/Java%E4%B8%AD%E7%9A%84String%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AF%E4%B8%8D%E5%8F%AF%E5%8F%98%E7%9A%84/" title="Java中的String为什么是不可变的">Java中的String为什么是不可变的</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-09-22 00:00:00"><i class="far fa-calendar-alt"></i>2020-09-22</time></div><div class="content">在Java中，String类是不可变的，即String中的对象是不可变的。
+区别对象和对象的引用对于Java初学者， 对于String是不可变对象总是存有疑惑。例如如下代码：
+12345String s = "ABCabc";System.out.println("s = " + s);s = "123456";System.out.println("s = " + s);
+打印出的结果为：12s = ABCabcs = 123456
+首先创建一个String对象s，然后让s的值为“ABCabc”， 然后又让s的值为“123456”。从打印结果可以看出，s的值确实改变了，那么为什么说String对象是不可变的呢？其实这里存在一个误区：s只是一个String对象的引用，并不是对象本身。对象在内存中是一块内存区，成员变量越多，这块内存区占的空间越大。引用只是一个4字节的数据，里面存放了它所指向的对象的地址，通过这个地址可以访问对象。
+也就是说，s只是一个引用，它指向了一个具体的对象，当s=“123456”;这句代码执行过之后，又创建了一个新的对象“123456”， 而引用s重新指向了这个心 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/06/07/Interview-Review(BlockChain)/" title="Interview-Review(BlockChain)">     <img class="post_bg" data-src="/../image/blockchain-interview.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Interview-Review(BlockChain)"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/06/07/Interview-Review(BlockChain)/" title="Interview-Review(BlockChain)">Interview-Review(BlockChain)</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-06-07 00:00:00"><i class="far fa-calendar-alt"></i>2020-06-07</time></div><div class="content">本篇主要是面试复习内容的区块链部分。
+
+
+什么是区块链
+ 区块链是不间断的经济交易数字分类账本，可以进行编程，以记录不仅是金融交易，还可以记录几乎所有有价值的东西。它是一个不可变记录的分散式、分布式数据库，该数据库由计算机集群管理，但不属于任何单个实体。
+
+区块链是如何工作的
+ 区块链由不可变的数据记录（称为数据块）组成，这些数据使用密码学进行链接。密码学不过是在读取私人消息时对第三方进行加密和保护数据通信的过程。在区块链中，一旦记录了数据，就不会更改。区块链就像带有时间戳的数学公证人一样工作，以避免篡改信息。
+
+为什么区块链是一种值得信赖的方法
+
+它具有开源特性，与其它业务应用程序相互兼容
+透明度和安全性
+提高效率和速度
+无需依赖任何中央权威
+
+
+什么是区块链中的区块，如何识别
+ 区块链中的区块用于存储数据并永久锁定。添加在块上的数据是不可变的，即不能更改或删除数据。可以通过块的高度和块头哈希来识别块。块中的数据通过称为哈希函数的计算机算法进行检测。它不仅锁定了区块链参与者可以看到的数据，而且使数据不可变。每个块都有哈希函数。
+
+块的主要元素是什么
+ 以下是块的主要元素：
+
+指向上一 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/06/06/Interview-Review(CloudComputing)/" title="Interview-Review(CloudComputing)">     <img class="post_bg" data-src="/../image/cloud-computing-interview.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Interview-Review(CloudComputing)"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/06/06/Interview-Review(CloudComputing)/" title="Interview-Review(CloudComputing)">Interview-Review(CloudComputing)</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-06-06 00:00:00"><i class="far fa-calendar-alt"></i>2020-06-06</time></div><div class="content">本篇主要是面试复习内容的云计算部分。
+
+基本概念
+云计算中弹性与可拓展性的区别是什么可拓展性通过增加资源容量的比例来处理不断增加的工作量。通过使用可拓展性，如果流量引发需求，则体系结构提供随需应变的资源。
+弹性是一种特征，它提供动态调试和退役大量资源容量的概念。它通过资源的需求速度和资源的使用来衡量。
+
+使用云计算的优点
+数据备份和数据存储
+强大的服务器功能
+提高生产力
+非常划算且节省时间
+
+
+哪些平台可用于大规模云计算
+Apache Hadoop
+MapReduce
+
+
+云计算部署的不同模型
+私有云
+公共云
+混合云
+社区云
+
+
+云计算与移动计算有何区别移动计算和云计算在概念上略有相同。移动计算使用云计算的概念。云计算为用户提供他们在移动计算中所需的数据，在远程服务器上运行的应用程序以及为用户提供存储和管理的访问权限。
+用户如何得益于公益计算（Utility Computing）公用计算让用户可以只需要为使用的资源付费。它是由决定从云端部署哪种类型的服务的企业组织管理的一种插件。
+云在安全方面的措施有哪些
+身份管理：授权应用程序服务
+访问控制：将权限授予用户，用户就可以控制进入到云环境 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/06/06/Interview-Review(BigData)/" title="Interview-Review(BigData)">     <img class="post_bg" data-src="/../image/big-data-interview.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Interview-Review(BigData)"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/06/06/Interview-Review(BigData)/" title="Interview-Review(BigData)">Interview-Review(BigData)</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-06-06 00:00:00"><i class="far fa-calendar-alt"></i>2020-06-06</time></div><div class="content">本篇主要是面试复习内容的大数据部分。
+
+Hadoop
+什么是Hadoop
+
+Hadoop是一个开源软件框架，用于存储大量数据，并发处理/查询在具有多个商用硬件节点的集群上的那些数据。
+
+ HDFS（Hadoop Distributed File System，Hadoop分布式文件系统）：HDFS允许以一种分布式和冗余的方式存储大量数据。例如，1024MB可以拆分为16*128MB文件，并存储在Hadoop集群中的8个不同的节点上。每个分裂可以复制3次，以实现容错，以便如果1个节点故障的话，也有备份。
+ MapReduce：是一个计算框架（Google三剑客之一：GFS、BigTable、MapReduce）。它以分布式和并行的方式处理大量的数据。例如，当对所有年龄大于18的用户在上面的1024MB文件中查询时，会有8个Map函数并行运行，以在其128MB拆分文件中提取年龄大于18的用户，然后Reduce函数将运行以将所有单独的输出组合成单个最终结果。Map就是拆解，Reduce就是组装，本治就是分治法。
+
+正常工作的Hadoop集群中都需要启动哪些进程，作用分别是什么
+
+NameNo ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="https://avatars1.githubusercontent.com/u/26319720?s=460&amp;v=4" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Hurley</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives"><div class="headline">文章</div><div class="length_num">59</div></a></div><div class="card-info-data-item is-center">      <a href="/tags"><div class="headline">标签</div><div class="length_num">23</div></a></div><div class="card-info-data-item is-center">     <a href="/categories"><div class="headline">分类</div><div class="length_num">13</div></a></div></div><div class="card-info-bookmark is-center"><button class="button--animated" id="bookmark-it" title="加入书签"><i class="fas fa-bookmark"></i><span>加入书签</span></button></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/HurleyJames" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="/hurleyhuang@hotmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">Hey I'm Hurley Huang 👋</div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-recent-item"><div class="aside-recent-post"><a href="/2020/11/01/547.Find-Circle-Num/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="/../image/merge-two-binary-trees.png" onerror="this.onerror=null;this.src='/img/404.jpg'" title="547.Find Circle Num" alt="547.Find Circle Num"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/11/01/547.Find-Circle-Num/" title="547.Find Circle Num">547.Find Circle Num</div><time class="aside-post_meta post-meta__date" title="发表于 2020-11-01 00:00:00">2020-11-01</time></div></a></div><div class="aside-recent-post"><a href="/2020/10/29/Interview-Review(JVM)/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="/../image/git-interview.png" onerror="this.onerror=null;this.src='/img/404.jpg'" title="Interview-Review(JVM)" alt="Interview-Review(JVM)"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/10/29/Interview-Review(JVM)/" title="Interview-Review(JVM)">Interview-Review(JVM)</div><time class="aside-post_meta post-meta__date" title="发表于 2020-10-29 00:00:00">2020-10-29</time></div></a></div><div class="aside-recent-post"><a href="/2020/10/03/%E9%9D%9E%E4%BA%92%E8%81%94%E7%BD%91%E4%BC%81%E4%B8%9A%E6%89%8B%E6%92%95%E4%BB%A3%E7%A0%81%E9%A2%98/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="/../image/nationalized-enterprise.png" onerror="this.onerror=null;this.src='/img/404.jpg'" title="非互联网企业手撕代码题" alt="非互联网企业手撕代码题"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/10/03/%E9%9D%9E%E4%BA%92%E8%81%94%E7%BD%91%E4%BC%81%E4%B8%9A%E6%89%8B%E6%92%95%E4%BB%A3%E7%A0%81%E9%A2%98/" title="非互联网企业手撕代码题">非互联网企业手撕代码题</div><time class="aside-post_meta post-meta__date" title="发表于 2020-10-03 00:00:00">2020-10-03</time></div></a></div><div class="aside-recent-post"><a href="/2020/09/23/Interview-Review(Git)/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="/../image/git-interview.png" onerror="this.onerror=null;this.src='/img/404.jpg'" title="Interview-Review(Git)" alt="Interview-Review(Git)"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/09/23/Interview-Review(Git)/" title="Interview-Review(Git)">Interview-Review(Git)</div><time class="aside-post_meta post-meta__date" title="发表于 2020-09-23 00:00:00">2020-09-23</time></div></a></div><div class="aside-recent-post"><a href="/2020/09/22/Android%20Jetpack%E7%BB%84%E4%BB%B6/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="/../image/android-jetpack.png" onerror="this.onerror=null;this.src='/img/404.jpg'" title="Android Jetpack组件" alt="Android Jetpack组件"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/09/22/Android%20Jetpack%E7%BB%84%E4%BB%B6/" title="Android Jetpack组件">Android Jetpack组件</div><time class="aside-post_meta post-meta__date" title="发表于 2020-09-22 00:00:00">2020-09-22</time></div></a></div></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div><ul class="card-category-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Android/"><span class="card-category-list-name">Android</span><span class="card-category-list-count">7</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Java/"><span class="card-category-list-name">Java</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Kotlin/"><span class="card-category-list-name">Kotlin</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/LeetCode/"><span class="card-category-list-name">LeetCode</span><span class="card-category-list-count">17</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Python/"><span class="card-category-list-name">Python</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/"><span class="card-category-list-name">云计算</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/"><span class="card-category-list-name">分布式系统</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%9B%BE%E8%AE%BA/"><span class="card-category-list-name">图论</span><span class="card-category-list-count">2</span></a></li>
+            <li class="card-category-list-item more is-center"><a class="card-category-list-link-more" href="/categories">
+                <span>查看更多</span><i class="fas fa-angle-right"></i></a></li>           
+            </ul></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/CloudSim/" style="font-size: 17.2px; color: #999ca1">CloudSim</a> <a href="/tags/He-said/" style="font-size: 19.6px; color: #99a3b0">He said</a> <a href="/tags/I-said/" style="font-size: 17.2px; color: #999ca1">I said</a> <a href="/tags/Jetpack/" style="font-size: 16px; color: #999">Jetpack</a> <a href="/tags/Kotlin%E5%9F%BA%E7%A1%80/" style="font-size: 17.2px; color: #999ca1">Kotlin基础</a> <a href="/tags/NP%E9%97%AE%E9%A2%98/" style="font-size: 16px; color: #999">NP问题</a> <a href="/tags/Numpy/" style="font-size: 16px; color: #999">Numpy</a> <a href="/tags/PyTorch/" style="font-size: 16px; color: #999">PyTorch</a> <a href="/tags/keras/" style="font-size: 16px; color: #999">keras</a> <a href="/tags/%E4%BA%8C%E5%88%86%E5%9B%BE/" style="font-size: 16px; color: #999">二分图</a> <a href="/tags/%E5%8A%A8%E7%94%BB/" style="font-size: 16px; color: #999">动画</a> <a href="/tags/%E5%90%8C%E6%AD%A5/" style="font-size: 16px; color: #999">同步</a> <a href="/tags/%E5%9B%BE/" style="font-size: 16px; color: #999">图</a> <a href="/tags/%E5%A4%9A%E5%AA%92%E4%BD%93%E6%8A%80%E6%9C%AF/" style="font-size: 16px; color: #999">多媒体技术</a> <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 16px; color: #999">字符串</a> <a href="/tags/%E5%AE%8C%E7%BE%8E%E5%8C%B9%E9%85%8D/" style="font-size: 16px; color: #999">完美匹配</a> <a href="/tags/%E5%AE%B9%E9%94%99/" style="font-size: 16px; color: #999">容错</a> <a href="/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" style="font-size: 16px; color: #999">开发工具</a> <a href="/tags/%E6%95%B0%E7%BB%84/" style="font-size: 18.4px; color: #999fa8">数组</a> <a href="/tags/%E6%A0%91/" style="font-size: 20.8px; color: #99a6b7">树</a> <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 19.6px; color: #99a3b0">链表</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 22px; color: #99a9bf">面试</a> <a href="/tags/%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB/" style="font-size: 16px; color: #999">马尔可夫</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/11/"><span class="card-archive-list-date">十一月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/10/"><span class="card-archive-list-date">十月 2020</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/09/"><span class="card-archive-list-date">九月 2020</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/08/"><span class="card-archive-list-date">八月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/06/"><span class="card-archive-list-date">六月 2020</span><span class="card-archive-list-count">9</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/03/"><span class="card-archive-list-date">三月 2020</span><span class="card-archive-list-count">6</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/02/"><span class="card-archive-list-date">二月 2020</span><span class="card-archive-list-count">14</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/01/"><span class="card-archive-list-date">一月 2020</span><span class="card-archive-list-count">7</span></a></li><li class="card-archive-list-item more is-center"><a class="card-archive-list-link-more" href="/archives">
+              <span>查看更多</span><i class="fas fa-angle-right"  ></i></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="webinfo-article-name">文章数目 :</div><div class="webinfo-article-count">59</div></div><div class="webinfo-item"><div class="webinfo-site-wordcount-name">本站总字数 :</div><div class="webinfo-site-wordcount">146.5k</div></div><div class="webinfo-item">      <div class="webinfo-site-uv-name">本站访客数 :</div><div class="webinfo-site-uv-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="webinfo-site-name">本站总访问量 :</div><div class="webinfo-site-pv-count" id="busuanzi_value_site_pv"></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://s1.ax1x.com/2020/05/03/JxTsBR.jpg)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2017 - 2020 By Hurley</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div><div class="footer_custom_text">随时意气风发，独自声势浩大</div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><button id="darkmode" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script id="ribbon_piao" mobile="false" src="/js/third-party/piao.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script src="https://cdn.jsdelivr.net/npm/typed.js"></script><script>var subtitleEffect = true
+if (subtitleEffect) { 
+  var typed = new Typed("#subtitle", {
+    strings: "随时意气风发，独自声势浩大,High spirited and powerful at any time&#44; even alone".split(","),
+    startDelay: 300,
+    typeSpeed: 150,
+    loop: true,
+    backSpeed: 50
+  })
+} else {
+  document.getElementById("subtitle").innerHTML = '随时意气风发，独自声势浩大'
+}</script><script>var endLoading = function () {
+  document.body.style.overflow = 'auto';
+  document.getElementById('loading-box').classList.add("loaded")
+}
+window.addEventListener('load',endLoading)</script></body></html>

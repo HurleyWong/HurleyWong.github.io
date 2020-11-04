@@ -1,0 +1,788 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>面试经历 | Hurley</title><meta name="description" content="以下是秋招的面试经历。 中信银行信用卡中心 Github主页 数据库MySQL的底层引擎 安卓端Java与后端Java有啥区别 快速排序的原理 使用$O(n)$的时间复杂度，搭配快速排序的原理，找出第K大的元素 熟悉设计模式 机器学习相关的  交行软开 JVM有了解吗？内存泄漏与内存溢出的区别  内存溢出 out of memory，是指程序在申请内存时，没有足够的内存空间供其使用，出现out"><meta name="keywords" content="面试"><meta name="author" content="Hurley"><meta name="copyright" content="Hurley"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/icon.png"><link rel="canonical" href="https://hurleyjames.github.io/2020/03/03/%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="article"><meta property="og:title" content="面试经历"><meta property="og:url" content="https://hurleyjames.github.io/2020/03/03/%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86/"><meta property="og:site_name" content="Hurley"><meta property="og:description" content="以下是秋招的面试经历。 中信银行信用卡中心 Github主页 数据库MySQL的底层引擎 安卓端Java与后端Java有啥区别 快速排序的原理 使用$O(n)$的时间复杂度，搭配快速排序的原理，找出第K大的元素 熟悉设计模式 机器学习相关的  交行软开 JVM有了解吗？内存泄漏与内存溢出的区别  内存溢出 out of memory，是指程序在申请内存时，没有足够的内存空间供其使用，出现out"><meta property="og:image" content="https://hurleyjames.github.io/../image/job-interview.png"><meta property="article:published_time" content="2020-03-02T16:00:00.000Z"><meta property="article:modified_time" content="2020-11-04T08:50:42.932Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'false'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="prev" title="面经收集" href="https://hurleyjames.github.io/2020/03/03/%E9%9D%A2%E7%BB%8F%E6%94%B6%E9%9B%86/"><link rel="next" title="Introduction to PyTorch" href="https://hurleyjames.github.io/2020/02/20/Introduction-to-PyTorch/"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: false,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: true,
+  fancybox: false,
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isanchor: false    
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: true
+  }</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="https://avatars1.githubusercontent.com/u/26319720?s=460&amp;v=4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">59</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">23</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">13</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><i class="fas fa-arrow-right" id="toggle-sidebar"></i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#中信银行信用卡中心"><span class="toc-number">1.</span> <span class="toc-text">中信银行信用卡中心</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#交行软开"><span class="toc-number">2.</span> <span class="toc-text">交行软开</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#小米"><span class="toc-number">3.</span> <span class="toc-text">小米</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一面"><span class="toc-number">3.1.</span> <span class="toc-text">一面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二面"><span class="toc-number">3.2.</span> <span class="toc-text">二面</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#永辉"><span class="toc-number">4.</span> <span class="toc-text">永辉</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#浙商银行"><span class="toc-number">5.</span> <span class="toc-text">浙商银行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#万物心选"><span class="toc-number">6.</span> <span class="toc-text">万物心选</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#格力"><span class="toc-number">7.</span> <span class="toc-text">格力</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#金山WPS"><span class="toc-number">8.</span> <span class="toc-text">金山WPS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#卓盟科技"><span class="toc-number">9.</span> <span class="toc-text">卓盟科技</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#农业银行数据中心"><span class="toc-number">10.</span> <span class="toc-text">农业银行数据中心</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#58同城"><span class="toc-number">11.</span> <span class="toc-text">58同城</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一面-1"><span class="toc-number">11.1.</span> <span class="toc-text">一面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二面-1"><span class="toc-number">11.2.</span> <span class="toc-text">二面</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多益网络"><span class="toc-number">12.</span> <span class="toc-text">多益网络</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#墨迹天气"><span class="toc-number">13.</span> <span class="toc-text">墨迹天气</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#新浪微博"><span class="toc-number">14.</span> <span class="toc-text">新浪微博</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#华为海思"><span class="toc-number">15.</span> <span class="toc-text">华为海思</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字节跳动"><span class="toc-number">16.</span> <span class="toc-text">字节跳动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#微信读书"><span class="toc-number">17.</span> <span class="toc-text">微信读书</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#腾讯教育"><span class="toc-number">18.</span> <span class="toc-text">腾讯教育</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#阿里飞猪"><span class="toc-number">19.</span> <span class="toc-text">阿里飞猪</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三七互娱"><span class="toc-number">20.</span> <span class="toc-text">三七互娱</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#选择题"><span class="toc-number">20.1.</span> <span class="toc-text">选择题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算法题"><span class="toc-number">20.2.</span> <span class="toc-text">算法题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Taptap"><span class="toc-number">21.</span> <span class="toc-text">Taptap</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#堆糖"><span class="toc-number">22.</span> <span class="toc-text">堆糖</span></a></li></ol></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/../image/job-interview.png)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">Hurley</a></span><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">面试经历</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2020-03-03 00:00:00"><i class="far fa-calendar-alt fa-fw"></i> 发表于 2020-03-03</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-11-04 16:50:42"><i class="fas fa-history fa-fw"></i> 更新于 2020-11-04</span></time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fas fa-inbox fa-fw post-meta__icon"></i><a class="post-meta__categories" href="/categories/Android/">Android</a></span></div><div class="meta-secondline"> <span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta__icon"></i><span>字数总计:</span><span class="word-count">8.9k</span><span class="post-meta__separator">|</span><i class="far fa-clock fa-fw post-meta__icon"></i><span>阅读时长: 28 分钟</span></span></div><div class="meta-thirdline"><span class="post-meta-pv-cv"><span class="post-meta__separator">|</span><i class="far fa-eye fa-fw post-meta__icon"></i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><a id="more"></a>
+<p>以下是秋招的面试经历。</p>
+<h2 id="中信银行信用卡中心"><a href="#中信银行信用卡中心" class="headerlink" title="中信银行信用卡中心"></a>中信银行信用卡中心</h2><ol>
+<li>Github主页</li>
+<li>数据库MySQL的底层引擎</li>
+<li>安卓端Java与后端Java有啥区别</li>
+<li>快速排序的原理</li>
+<li>使用$O(n)$的时间复杂度，搭配快速排序的原理，找出第K大的元素</li>
+<li>熟悉设计模式</li>
+<li>机器学习相关的</li>
+</ol>
+<h2 id="交行软开"><a href="#交行软开" class="headerlink" title="交行软开"></a>交行软开</h2><ol>
+<li><p>JVM有了解吗？内存泄漏与内存溢出的区别</p>
+<ul>
+<li><p>内存溢出 out of memory，是指程序在申请内存时，没有足够的内存空间供其使用，出现out of memory；</p>
+</li>
+<li><p>内存泄露 memory leak，是指程序在申请内存后，无法释放已申请的内存空间，一次内存泄露危害可以忽略，但内存泄露堆积后果很严重，无论多少内存，迟早会被占光。</p>
+</li>
+</ul>
+<hr>
+<p> 内存泄漏的根本原因是长生命周期的对象持有短生命周期对象的引用，尽管短生命周期的对象已经不再需要，但由于长生命周期对象持有它的引用而导致不能被回收。</p>
+</li>
+<li><p>垃圾回收机制，算法</p>
+</li>
+<li>数据库的主键和索引的区别</li>
+<li><p>了解哪些设计模式？一个计算器，有加减乘除的功能，去计算最终的值，要用到哪中设计模式合适？</p>
+<ul>
+<li>单例模式</li>
+<li>观察/订阅模式</li>
+<li>建造者模式</li>
+<li><p>适配器模式</p>
+<p>我认为可以使用到简单工厂模式。</p>
+</li>
+</ul>
+<hr>
+<p> 经过查找网上类容，发现是使用<strong>解释器模式</strong>。不得不说这个问的模式相对较冷门。</p>
+</li>
+<li><p>熟悉哪些Linux命令</p>
+<ul>
+<li><code>ls</code>：列举出当前工作目录的内容</li>
+<li><code>mkdir</code>：创建一个新的目录</li>
+<li><code>pwd</code>：显示当前工作目录</li>
+<li><code>cd</code>：切换文件路径</li>
+<li><code>rm</code>：删除给定的文件</li>
+<li><code>cp</code>：复制文件</li>
+<li><code>mv</code>：移动文件</li>
+<li><code>cat</code>：在标准输出上查看文件内容</li>
+<li><code>find</code>：在给定位置搜寻与条件匹配的文件</li>
+<li><code>tar</code>：创建、查看和提取tar格式的压缩文件</li>
+<li><code>help</code>：在终端列出所有可用的命令</li>
+<li><code>exit</code>：结束当前的终端会话</li>
+<li><code>ping</code>：通过发送数据报ping远程主机（服务器）</li>
+<li><code>su</code>：切换不同的用户</li>
+<li><code>shutdown</code>：用于关闭计算机</li>
+</ul>
+</li>
+</ol>
+<h2 id="小米"><a href="#小米" class="headerlink" title="小米"></a>小米</h2><h3 id="一面"><a href="#一面" class="headerlink" title="一面"></a>一面</h3><ol>
+<li>ArrayBlockingQueue</li>
+</ol>
+<h3 id="二面"><a href="#二面" class="headerlink" title="二面"></a>二面</h3><ol>
+<li><p>合并两个有序数组的序列</p>
+<p> Leetcode 21.</p>
+</li>
+</ol>
+<h2 id="永辉"><a href="#永辉" class="headerlink" title="永辉"></a>永辉</h2><h2 id="浙商银行"><a href="#浙商银行" class="headerlink" title="浙商银行"></a>浙商银行</h2><ol>
+<li>安卓端与后端怎么交互的</li>
+<li><p>后端交互数据的时候，是怎么加密的？是明文传输吗？没有用到Https吗？</p>
+<ul>
+<li>通信请求使用https</li>
+<li>对请求参数进行签名，防止数据被踹改</li>
+<li>对请求参数以及响应进行加密解密处理</li>
+<li>APP中使用ssl pinning防止抓包操作</li>
+</ul>
+</li>
+</ol>
+<h2 id="万物心选"><a href="#万物心选" class="headerlink" title="万物心选"></a>万物心选</h2><ol>
+<li>了解红黑树吗</li>
+<li>了解动态规划吗</li>
+<li>OkHttp与Retrofit的原理</li>
+<li>HttpConcention的原理</li>
+<li>Handler的原理</li>
+<li>ThreadLocal了解吗</li>
+<li>RecyclerView与ListView的区别</li>
+</ol>
+<h2 id="格力"><a href="#格力" class="headerlink" title="格力"></a>格力</h2><ol>
+<li>MVP架构的理解</li>
+<li>设计数据库</li>
+</ol>
+<h2 id="金山WPS"><a href="#金山WPS" class="headerlink" title="金山WPS"></a>金山WPS</h2><ol>
+<li><p>怎么判断图的两个节点是否是连通的</p>
+<ul>
+<li>深度优先遍历：从根开始深度优先遍历，设置一个全局变量count去记录。如果最终count的值与顶点的数量是相同的，则是连通图，反之则不是。</li>
+<li>广度优先遍历</li>
+<li>并查集</li>
+</ul>
+</li>
+<li><p>介绍一下TCP三次握手</p>
+</li>
+<li><p>类加载的过程，了解双亲委派模型吗</p>
+<p> 类加载的全过程分为：「<strong>加载、验证、准备、解析和初始化</strong>」这5个阶段。</p>
+<p> <img src= "/img/loading.gif" data-src="https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/12" alt=""></p>
+<p> 类加载器的作用是将编译器编译生成的二进制.class文件加载到内存中，进而转化成虚拟机中的类。Java内置了三种类加载器：</p>
+<ul>
+<li>启动类加载器 Bootstrap Class Loader：负责Java核心类</li>
+<li>扩展类加载器 Extensions Class Loader：负责加载<code>\jre\lib\ext</code>目录下的JAR包</li>
+<li><p>系统类加载器 System Class Loader：负责加载所有应用程序级别的类到JVM</p>
+<p>除此之外，还可以自定义类加载器。</p>
+</li>
+</ul>
+<hr>
+<p> <strong>双亲委派模型</strong>的工作过程如下：</p>
+<p> 当类加载器收到类的加载请求时，首先不会自己去加载这个类，而是会把这个请求委派给父类加载器去完成。每个层次的类加载器都是这样的，所有的加载请求都会传送到顶层的启动类加载器，只有父类加载器无法完成时，才会交给子加载器去完成。</p>
+<p> <img src= "/img/loading.gif" data-src="https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/13" alt=""></p>
+<p> 双亲委派模型遵循三个原则：</p>
+<ul>
+<li>「委托性原则」：当子类加载器收到类的加载请求时，会将加载请求向上委托给父类加载器。</li>
+<li>「可见性原则」：允许子类加载器查看父类加载器加载的所有类，但是父类加载器不能查看子类加载器加载的类。</li>
+<li>「唯一性原则」：双亲委派的机制保证了Java类的唯一性。比如写了一个和JRE核心类同名的Object类，这时候双亲委派机制就会发挥作用了，避免自定义的类覆盖核心类。它会首先将加载类的请求，委托给Application ClassLoader去加载，再被其委托给Extension ClassLoader去加载，再被委托给BootStrap ClassLoader。因为启动类加载器发现已经加载了核心类Object类，就不会再去加载自定义的Object类。</li>
+</ul>
+</li>
+<li><p>能举例子说明一下多态吗</p>
+<p> Java的多态主要是指在运行时才知道调用哪个方法而不是编译时就能得知的一种机制。</p>
+<p> 方法的<strong>重载</strong>和<strong>重写</strong>就是典型的Java多态性的不同变现。重写是父类与子类的多态表现，重载是一个类的多态的表现。</p>
+</li>
+<li><p>泛型的类型擦除</p>
+<p> 如果一个方法接收<code>List&lt;Object&gt;</code>作为形参，而如果传递<code>List&lt;String&gt;</code>进去作为实参，是无法通过编译的，尽管String是Object的子类。</p>
+</li>
+</ol>
+<h2 id="卓盟科技"><a href="#卓盟科技" class="headerlink" title="卓盟科技"></a>卓盟科技</h2><h2 id="农业银行数据中心"><a href="#农业银行数据中心" class="headerlink" title="农业银行数据中心"></a>农业银行数据中心</h2><p>线下面</p>
+<h2 id="58同城"><a href="#58同城" class="headerlink" title="58同城"></a>58同城</h2><h3 id="一面-1"><a href="#一面-1" class="headerlink" title="一面"></a>一面</h3><h3 id="二面-1"><a href="#二面-1" class="headerlink" title="二面"></a>二面</h3><ol>
+<li>问项目</li>
+<li>手写一个数据结构</li>
+</ol>
+<h2 id="多益网络"><a href="#多益网络" class="headerlink" title="多益网络"></a>多益网络</h2><ol>
+<li>自我介绍</li>
+<li><p>介绍自己的项目，项目中用到了谷歌的ZXing库，如果自己实现这个扫描二维码的框架，因为外界条件不清晰，如何改进</p>
+<p> 面试官给提供的思路是，由于光线或者手机摄像头对准的位置等外界因素，所以会导致二维码模糊不清无法读取，那么改进方法就是精准地显示二维码的位置。常用的技术是界面上会出现一个正方形的框，然后当摄像头识别到二维码后，会放大到二维码那里，聚焦。</p>
+</li>
+<li><p>TCP和UDP的区别</p>
+</li>
+<li><p>现在视频是用TCP还是UDP？如果UDP发送数据丢包，怎么解决这个问题</p>
+<p> UDP丢包率高的原因有：</p>
+<ul>
+<li>接收端处理时间过长导致丢包</li>
+<li>发送的包巨大丢包</li>
+<li>发送的包较大，超过接受者缓存导致丢包</li>
+<li><p>发送的包频率太快</p>
+<p>解决方法有：</p>
+</li>
+<li><p>控制报文大小</p>
+</li>
+<li>增加系统发送或者接受缓冲区的大小</li>
+<li>增加应答机制，处理完一个包后，再继续发包</li>
+<li>在应用层实现丢包重发机制和超时机制，确保数据包不丢失。</li>
+</ul>
+</li>
+<li><p>http和https的区别</p>
+</li>
+<li><p>HashSet了解吗，介绍一下原理是如何实现的</p>
+<p> HashSet实现自set接口，set集合中元素无序且不能重复；</p>
+<p> HashSet底层是基于HashMap实现的，当你new一个HashSet时，实际上是new一个map，执行add方法时，实际上是调用map的put方法；将key-value放入HashMap中，根据key的hashCode返回值决定存储位置，如果hash相同，则存储位置相同。如果两个key的equals比较返回true，那么新添加的value就会覆盖原有的value，key不会覆盖。如果向HashSet中添加一个已经存在的元素，则不会覆盖原有的集合元素。</p>
+</li>
+<li><p>HashMap原理是如何实现的，是线程安全的吗？如果让你来写，怎么实现线程安全</p>
+</li>
+<li><p>RecyclerView怎么实现树形结构TreeView</p>
+<p> 需要构造节点类Node，含有的属性包括：</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> String id;  <span class="comment">// 节点的唯一标识</span></span><br><span class="line"><span class="keyword">private</span> String pid; <span class="comment">// 当前节点的父节点</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">int</span> level;  <span class="comment">// 所在层级</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">boolean</span> expand; <span class="comment">// 当前是否是展开的状态</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">int</span> choosed;    <span class="comment">// 选中的状态</span></span><br><span class="line"><span class="keyword">private</span> String showText;    <span class="comment">// 展示的文本</span></span><br><span class="line"><span class="keyword">private</span> List&lt;Node&gt; childs = <span class="keyword">new</span> ArrayList&lt;&gt;();  <span class="comment">// 子节点</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>RecyclerView的item复用怎么实现</p>
+</li>
+<li>AsyncTask的底层是如何实现的（原理）</li>
+<li>与Handler之间的区别，Handler消息传递机制</li>
+<li>常用的设计模式怎么写，单例模式怎么写，工厂模式，观察者模式</li>
+<li><p>Retrofit和OkHttp之间的区别</p>
+<p>Retrofit底层对网络的访问默认是基于OkHttp，不过Retrofit非常适合于Restful url风格的请求，更多使用注解的方式提供功能，下面这个网络请求流程图，可以更直观的理解OkHttp和Retrofit的关系。</p>
+<p><img src= "/img/loading.gif" data-src="https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/0d01a0eacefaf04f4012cb3dc0d05145.png" alt=""></p>
+<p>网络请求：App发起网络请求，Retrofit通过注解配置请求参数、Header、BaseUrl之后，通过OkHttp发送网络请求给服务器；</p>
+<p>服务器响应：服务器返回响应数据，OkHttp将数据传递给Retrofit，再把数据直接传递给应用，界面刷新反馈结果给用户；</p>
+<ul>
+<li>Retrofit主要负责应用层面的封装，主要方便使用，比如请求参数、响应数据的处理，错误处理等等；</li>
+<li>OkHttp主要负责socket部分的优化，比如多路复用、buffer缓存、数据压缩等；</li>
+</ul>
+<p>网上一般推荐RxJava + Retrofit + OkHttp框架，Retrofit负责请求的数据和请求的结果，使用接口的方式呈现，OkHttp负责请求的过程，RxJava负责异步，各种线程之间切换。</p>
+</li>
+<li><p>OkHttp的实现原理</p>
+</li>
+<li>Service的两种启动方式，两种方式之间的区别</li>
+<li>广播的类型和注册方式，静态注册和动态注册之间的区别</li>
+<li>Glide的原理，缓存机制</li>
+<li>Lru算法是如何实现的</li>
+<li>如何判断一个单向链表是否有环，并返回环的长度</li>
+</ol>
+<h2 id="墨迹天气"><a href="#墨迹天气" class="headerlink" title="墨迹天气"></a>墨迹天气</h2><ol>
+<li>自己说项目经历，说一下在项目中遇到的难点并且怎么解决的</li>
+<li>职业规划是什么，为什么选择做移动端</li>
+<li>自定义View的流程</li>
+<li><code>onMeasure()</code>、<code>onLayout()</code>、<code>onDraw()</code></li>
+<li><p>事件分发机制有了解吗</p>
+<p> Android事件分发总是遵循Activity =&gt; ViewGroup =&gt; View的传递顺序；</p>
+<p> 三个与事件分发机制有关的方法：</p>
+<ul>
+<li><code>dispatchTouchEvent()</code>：事件分发</li>
+<li><code>onTouchEvent()</code>：事件处理</li>
+<li><code>onInterceptTouchEvent()</code>：事件拦截</li>
+</ul>
+<hr>
+<p> <code>dispatchTouchEvent()</code>是负责事件分发的。当点击事件发生后，事件首先会传递给当前的Activity，然后会调用Activity的<code>dispatchTouchEvent()</code>方法。</p>
+<p> <code>onTouch()</code>执行总优先于<code>onClick()</code></p>
+</li>
+<li><p>点击一个Button，发起网络请求，将获取到的数据展示到页面上，怎么优化它的速度/流程？</p>
+<p> 从点击按钮出现点击时间，开启子线程发起网络请求，这是一个优化点。</p>
+<p> 请求到的数据如何显示在页面上，这是一个优化点，例如三级缓存机制。</p>
+</li>
+<li><p>Handler的消息传递机制</p>
+</li>
+<li><p>MessageQueue中是以什么样的策略去存储消息的</p>
+<p> MessageQueue实际上是以单链表的形式存储Handler发送过来的消息，有利于插入、删除的操作，主要有两个操作：</p>
+<ul>
+<li>通过<code>enqueueMessage(Message msg, long when)</code>向队列插入一个消息</li>
+<li>通过<code>next()</code>从无限循环队列中取出消息，并从消息队列中删除。</li>
+</ul>
+</li>
+<li><p>进程调度策略</p>
+</li>
+<li><p>内存泄露有了解吗？怎么样去处理内存泄漏</p>
+<blockquote>
+<p>内存泄漏：程序申请的内存空间，在使用完毕后未释放，一直占据内存单元。</p>
+</blockquote>
+<p>我们创建了一个对象，会在<strong>堆内存</strong>中给这个对象申请一块内存空间，假如调用了一次或者几次，之后就没有再调用，但仍然占据着内存。</p>
+<p>Java可以使用垃圾回收机制。</p>
+</li>
+<li><p>三级缓存机制</p>
+</li>
+<li>有了解Glide框架中的最少未使用机制Lru算法吗？</li>
+<li>怎么设计一个数据结构去实现Lru算法</li>
+<li><p>RxJava里的操作符，如果是进行多个网络请求，用哪个操作符</p>
+<p>RxJava操作符<code>zip()</code>：使用一个函数组合多个Observable发射的数据集合，然后再发射这个结果。</p>
+<blockquote>
+<p>通过<code>Observable.zip()</code>方法把多个Observable组合成新的Observable。</p>
+</blockquote>
+</li>
+<li><p>了解哪些设计模式</p>
+</li>
+<li>介绍一下快速排序算法，还了解哪些排序算法</li>
+</ol>
+<h2 id="新浪微博"><a href="#新浪微博" class="headerlink" title="新浪微博"></a>新浪微博</h2><ol>
+<li>ArrayList和LinkedList的区别，它们哪个插入元素是可重复的和不可重复的，哪个是线程安全的</li>
+<li>数据结构中有一个哈希表HashMap，它是不是线程安全的，怎么变成线程安全的</li>
+<li><p>List中存入数据，例如int类型的数据，是直接存入int类型吗？</p>
+<p> 不是，因为存在自动装箱与拆箱，所以是存入它们的引用类型。</p>
+</li>
+<li><p>最近看过什么技术书，说说MVC、MVP和MVVM</p>
+</li>
+<li>图片框架的缓存机制。</li>
+<li>Glide如果加载9张图片，那么是从上往下加载吗？</li>
+<li>除了Http连接和TCP连接之外，还有什么连接</li>
+<li><p>RxJava和Retrofit用到的一些基本的方法</p>
+<p> RxJava的三个概念：</p>
+<ul>
+<li>Observable：被观察者（主题Subject）</li>
+<li>Observer/Subscriber：观察者</li>
+<li><p>Subscribe：订阅</p>
+<blockquote>
+<p>Observable和Observer通过subscribe()方法实现订阅关系</p>
+</blockquote>
+<p>使用的一种简单方法：</p>
+</li>
+</ul>
+<ol>
+<li><p>创建被观察者Observable</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> Observable&lt;String&gt; <span class="title">getObservable</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> Observable.create(<span class="keyword">new</span> ObservableOnSubscribe&lt;String&gt;() &#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">subscribe</span><span class="params">(ObserableEmitter e)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">            <span class="comment">// 只需要三个方法onNext | onError | onCompleted</span></span><br><span class="line">            e.onNext(<span class="string">""</span>);</span><br><span class="line">            e.onNext(<span class="string">""</span>);</span><br><span class="line"></span><br><span class="line">            e.onComplete();</span><br><span class="line"></span><br><span class="line">            <span class="comment">// e.onError();</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建观察者Observer</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> Observer&lt;String&gt; <span class="title">getObserver</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Observer&lt;String&gt;() &#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onError</span><span class="params">(Throwable e)</span> </span>&#123;</span><br><span class="line">            <span class="comment">// 发生错误时调用</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onComplete</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="comment">// 数据接收完成时调用</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onSubscribe</span><span class="params">(Disposable d)</span> </span>&#123;</span><br><span class="line">            <span class="comment">// 移除订阅关系</span></span><br><span class="line">            <span class="comment">// d.dispose();</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">// 判断是否取消订阅关系</span></span><br><span class="line">            <span class="comment">// d.isDisposed();</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onNext</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">            <span class="comment">// 正常接收数据时调用</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>订阅</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Observable&lt;String&gt; observable = getObservable();</span><br><span class="line">Observer&lt;String&gt; observer = getObserver();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 关联观察者和被观察者 -&gt; 订阅</span></span><br><span class="line">observable.subscribe(observer);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<p> Retrofit的使用方法：</p>
+<ol>
+<li><p>创建接口，设置请求类型和参数，例如</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@GET</span>(<span class="string">"userInfo/login"</span>)</span><br><span class="line"><span class="function">Call <span class="title">login</span><span class="params">(@Query(<span class="string">"username"</span>)</span> String username, @<span class="title">Query</span><span class="params">(<span class="string">"password"</span>)</span> String password)</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建Retrofit对象，设置数据解析器等</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Retrofit retrofit = <span class="keyword">new</span> Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create()).build();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>生成接口对象，调用接口方法获取Call对象</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">My my = retrofit.create(My.class);</span><br><span class="line">Call call = my.login(<span class="string">""</span>, <span class="string">""</span>);</span><br><span class="line"></span><br><span class="line">call.enqueue(<span class="keyword">new</span> Callback() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onResponse</span><span class="params">(Call call, Response response)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onFailure</span><span class="params">(Call call, Throwable e)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>TCP的三次握手</p>
+</li>
+<li><p>了解什么Jetpack组件吗</p>
+<p>LifeCycle、ViewModel、LiveData、Paging、Room、Navigation、DataBinding等</p>
+</li>
+<li><p>了解Comparable接口吗</p>
+<p>Comparable &amp; Comparator 接口都是用来实现集合中元素的比较、排序的，只是 Comparable 是在集合内部定义的方法实现的排序，Comparator 是在集合外部实现的排序。</p>
+</li>
+<li><p><code>git merge</code>和<code>git rebase</code>的区别</p>
+</li>
+<li><p>使用了哪种Git图形界面客户端</p>
+<p>SourceTree</p>
+</li>
+</ol>
+<hr>
+<p>以下是春招的面试经历。</p>
+<h2 id="华为海思"><a href="#华为海思" class="headerlink" title="华为海思"></a>华为海思</h2><h2 id="字节跳动"><a href="#字节跳动" class="headerlink" title="字节跳动"></a>字节跳动</h2><ol>
+<li><p>算法题：</p>
+<p> 输入一维数组array和n，找出和值为 n 的任意两个元素。例如：</p>
+<p> array = [2, 3, 1, 10, 4, 30]</p>
+<p> n = 31</p>
+<p> 则结果应该输出1, 30 顺序不重要</p>
+<p> 如果有多个满足条件的，返回任意一对即可。要求空间复杂度为 O(1)。</p>
+</li>
+<li><p>自我介绍</p>
+</li>
+<li><p>公司负责了哪些工作？怎么重构的？</p>
+</li>
+<li><p>MVP和MVC的区别？Model层的作用呢？</p>
+</li>
+<li><p>UI界面有哪些布局？</p>
+</li>
+<li><p>约束布局与相对布局有什么不同？</p>
+</li>
+<li><p>线性布局：如果有两个控件，一个宽度固定，一个宽度不固定，怎么让它们横向充满整个父布局？</p>
+</li>
+<li><p>RecyclerView有100个item，怎么让它们显示出来还不会内存泄漏？怎么直接跳转到第53个item？</p>
+<p> 分页显示。</p>
+<p> 第一种：「<strong>能够实现指定位置处于屏幕顶部，但是不具有平滑滚动的视觉效果</strong>」。即使用<code>scrollToPosition()</code>的方法。</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (position != -<span class="number">1</span>) &#123;</span><br><span class="line">    mRecycleview.scrollToPosition(position);</span><br><span class="line">    LinearLayoutManager mLayoutManager = (LinearLayoutManager) mRecycleview.getLayoutManager();</span><br><span class="line">    mLayoutManager.scrollToPositionWithOffset(position, <span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> 第二种：「<strong>能够实现指定位置处于屏幕顶部，具有平滑滚动视觉的效果</strong>」。</p>
+<ol>
+<li>如果跳转位置在第一个可见位置之前，就用<code>smoothScrollToPosition()</code>方法就可以直接跳转；</li>
+<li>如果跳转位置在第一个可见项之后，最后一个可见项之前，就需要用<code>smoothScrollBy</code>来滑动到指定位置；</li>
+<li>如果要跳转的位置在最后可见项之后，则先调用<code>smoothScrollToPosition()</code>将跳转的位置滚动到可见位置，再<code>addOnScrollListener()</code>里通过<code>onScrollStateChanged()</code>控制，调用<code>smoothMoveToPosition()</code>再次执行判断。</li>
+</ol>
+</li>
+<li><p>Handler的消息传递机制</p>
+</li>
+<li><p>Activity的生命周期？启动方式？</p>
+</li>
+<li><p>从Activity A跳转到Activity B，两个Activity的生命周期？</p>
+</li>
+<li><p>Service的启动方式？</p>
+</li>
+<li><p>Broadcast的相关知识点？</p>
+</li>
+<li><p>Java有哪几种引用？</p>
+</li>
+<li><p>接触过哪些容器类？HashMap的原理有了解吗？如果Hash值计算相同，会发生哈希碰撞吗？怎么解决？</p>
+</li>
+<li><p>泛型的原理与使用</p>
+</li>
+<li><p>http与https的区别</p>
+</li>
+<li><p>https是怎么加密的</p>
+</li>
+<li><p>死锁是什么？死锁的条件</p>
+</li>
+<li><p>操作系统的进程调度策略有哪些？</p>
+<p>FCFS（先来先服务）、优先级、时间片轮转、多级反馈</p>
+</li>
+<li><p>数据库的索引，主键与事务</p>
+</li>
+<li><p>数据库的<code>join()</code>方法</p>
+<p>数据库中的<code>join()</code>方法是连接，主要作用是根据两个或者多个表中的列之间的关系，获取存在于不同表中的数据，有全连接、内连接、外连接等。</p>
+</li>
+</ol>
+<h2 id="微信读书"><a href="#微信读书" class="headerlink" title="微信读书"></a>微信读书</h2><h2 id="腾讯教育"><a href="#腾讯教育" class="headerlink" title="腾讯教育"></a>腾讯教育</h2><ol>
+<li><p>自我介绍</p>
+</li>
+<li><p>实习经历简介，负责了哪些？</p>
+</li>
+<li><p>MVP模式</p>
+<p> 模型层（Model）：主要是获取数据功能，业务逻辑和实体模型。</p>
+<p> 视图层（View）：对应于Activity或Fragment，负责视图的部分展示和业务逻辑用户交互。</p>
+<p> 控制层（Presenter）：负责完成View层与Model层之间的交互，通过Presenter获取Model的数据返回给View，使得View与Model之间没有耦合。</p>
+</li>
+<li><p>网络请求框架有了解过内部的原理吗？</p>
+</li>
+<li><p>主线程怎么把数据交给子线程？Handler和AsyncTask？</p>
+</li>
+<li><p>除了约束布局，还有什么线性布局还是相对布局？它们之间的区别是什么？</p>
+<p> LinearLayout是将多个View水平或者垂直排列；RelativeLayout可以通过确定两个或多个组件的相对位置来摆放组件。</p>
+</li>
+<li><p>有没有遇到过一个布局中嵌套的布局非常多？会出现什么情况？</p>
+<p> Android界面的布局太复杂，嵌套层次过深，会使得整个界面的测量、布局和绘制变得更复杂，对性能会造成影响。</p>
+</li>
+<li><p>有没有遇到过界面卡顿的情况吗？什么情况会造成界面卡顿？</p>
+</li>
+<li><p>View的绘制流程？执行的顺序？</p>
+</li>
+<li><p>有没有了解过一些事件传递机制？</p>
+</li>
+<li><p>Java虚拟机有哪几种内存？哪些内存是独立的，哪些是共享的？方法区分为哪些？</p>
+<p>方法区（线程共享）：各个线程共享的一个区域，用于存储虚拟机加载的类信息、常量、静态变量、即时编译器编译后的代码等数据。<strong>运行时常量池</strong>是方法区的一部分，用于存放编译器生成的各种字面量和符号引用。</p>
+</li>
+<li><p>HashMap的原理？<code>put</code>方法发生冲突会怎么样？</p>
+</li>
+<li><p>垃圾回收机制？怎么判断什么时候会被回收？</p>
+</li>
+<li><p>https和http的区别？</p>
+</li>
+<li><p>Socket有了解吗？</p>
+<p><strong>Socket相关面试题</strong>：</p>
+<p>Socket是对TCP/IP协议簇的一种封装，是应用层与TCP/IP协议簇通信的中间软件抽象层。</p>
+<p>TCP和UDP的区别：</p>
+<ol>
+<li>TCP提供面向连接的传输，通信前要先建立连接（三次握手机制）；UDP提供无连接的传输，通信前不需要建立连接；</li>
+<li>TCP提供可靠的传输（有序、无差错、不丢失、不重复）；UDP提供不可靠的传输；</li>
+<li>TCP是面向字节流的传输，所以能将信息分隔成组，并在接收端将其重组；UDP是面向数据报的传输，没有分组开销；</li>
+<li>TCP提供拥塞控制和流量控制机制；UDP不提供拥塞控制和流量控制机制</li>
+</ol>
+</li>
+<li><p>长连接和短连接的区别？HTTPS是长连接吗？</p>
+<p>在HTTP/1.0中，默认使用短连接。就是浏览器和服务器每进行一次HTTP操作，都会建立一次连接，任务结束后就会断开连接。</p>
+<p>在HTTP/1.1中。默认使用长连接。使用长连接的情况下，当某个网页打开完毕之后，客户端和服务器之间的TCP连接不会关闭，如果客户端再次访问该服务器上的网页，会使用上一次已经建立的连接。但是长连接不是永久的连接，它有一个保持时间</p>
+</li>
+<li><p>Activity生命周期？切换横竖屏的生命周期？</p>
+<p>切换横竖屏的生命周期：</p>
+<p><code>onPause</code>$\rightarrow$ <code>onSaveInstanceState</code>$\rightarrow$ <code>onStop</code>$\rightarrow$ <code>onDestory</code>$\rightarrow$ <code>onCreate</code>$\rightarrow$ <code>onStart</code>$\rightarrow$ <code>onRestoreInstanceState</code>$\rightarrow$ <code>onResume</code></p>
+</li>
+<li><p>进程和线程的区别是什么？</p>
+</li>
+<li><p>介绍下快排，时间复杂度？</p>
+</li>
+<li><p>如何快速找到一个单链表的中间节点？</p>
+<p>快慢指针法。当快指针遍历完整个链表后，慢指针才遍历到一半的链表，则正好是单链表中间节点的位置。</p>
+</li>
+</ol>
+<h2 id="阿里飞猪"><a href="#阿里飞猪" class="headerlink" title="阿里飞猪"></a>阿里飞猪</h2><ol>
+<li><p>自我介绍</p>
+</li>
+<li><p>问项目相关的。第一个项目，一个做还是团队？练手的还是可以商用的？你做了其中的哪几个部分？给我讲一下，然后看一下代码的风格；</p>
+</li>
+<li><p>第二项目，这个其中的文章是通过url打开webview实现的吗？介绍其中用到的框架？为什么要用这些网络框架，不用自带的网络请求方式？网络框架这么多，为什么选用这个框架？</p>
+<p> Retrofit是一个封装了Http请求的框架，底层的网络请求也是使用OkHttp实现的。使用它主要是能与RxJava配合使用。</p>
+<p> 它的原理大致是：</p>
+<blockquote>
+<ol>
+<li>通过建造者模式构建一个Retrofit实例，配置baseUrl，convertfactory（用来将请求的结果转化为特定的对象，例如GsonConverterFactory）等；</li>
+<li>通过Retrofit对象的create(Class<T> service)方法返回一个Service的动态代理对象，在调用service的方法时去调用动态代理的invoke方法；</li>
+<li>invoke方法会把method进行解析，解析我们在接口中配置的各种注解，最后构造成ServiceMethod对象，并将结果缓存起来，下次调用就不用再解析了。ServiceMethod对象可以生成Request对象，将对象注入到OkHttpCall中，然后通过callAdapter转化为用户希望得到的返回对象，默认直接返回Call对象。</li>
+<li>得到Call对象之后，再调用execute或者enqueue方法，前者是同步请求，后者异步请求，这个方法里面就封装了OkHttp的方法。</li>
+</ol>
+</blockquote>
+</li>
+<li><p>Glide框架你了解多少，大概是怎么实现的？缓存机制有几级缓存？</p>
+<p> Glide的缓存机制分为2种缓存，一种是内存缓存，一种是磁盘内存。</p>
+<p> 用内存缓存的原因是：防止应用重复将图片读入到内存中，造成内存资源浪费；</p>
+<p> 用内存缓存的原因是：防止应用重复的从网络或者其它地方下载和读取数据；</p>
+<p> <strong>缓存机制中有三级缓存原理</strong>：</p>
+<p> 读取一张图片的时候，获取顺序：Lru算法缓存$\rightarrow$ 弱引用缓存$\rightarrow$ 磁盘缓存（如果设置了）。</p>
+<blockquote>
+<p>当想要加载某些图片的时候，先去LruCache中寻找图片，如果LruCache中有图片，就直接取出来用，并将图片放入到WeakReference中，如果LruCache中没有，则去WeakReference中寻找，如果WeakReference中有，就从WeakReference中取出图片使用，如果WeakReference中没有图片，那么就从磁盘缓存/网络中加载图片。</p>
+</blockquote>
+</li>
+<li><p>如果有一张100M的图片，直接打开肯定会造成OOM，那么要怎么实现才能打开？</p>
+<p> 得将该图片进行压缩，可以使用<code>BitmapFactory</code>这个类。首先，获取远图片的大小（这里是100M），然后获取要显示这个图片的控件比如<code>ImageView</code>的大小，然后可以计算出图片和控件的比例，根据这一比例，将图片压缩为适合显示的大小。</p>
+</li>
+<li><p>第三个项目，介绍一个。其中的生成二维码是在端生成吗？</p>
+</li>
+<li><p>Activity的生命周期。假设一个场景，用户按Home键回到桌面后，在后台久了之后点击icon打开这个应用，这个Activity已经被杀掉，那么打开应用后怎么重新恢复到杀掉前的Activity？</p>
+<p> Android系统的回收机制提供了<code>onSaveInstanceState(Bundle outState)</code>和<code>onRestoreInstanceState(Bundle savedInstanceState)</code>方法用于保存和恢复数据。</p>
+<p> 这两个方法主要会在Activty被系统回收，又重新创建了一个新的Activity的时候调用，可能是以下几种情况：</p>
+<ol>
+<li>当用户按下HOME键时</li>
+<li>按下电源锁屏键</li>
+<li>从最近应用中运行其它程序</li>
+<li>从当前Activity启动一个新的Activity</li>
+<li><p>屏幕方向切换（竖屏切横屏或者横屏切竖屏）</p>
+<p>异常生命周期大概如下：</p>
+</li>
+<li><p>当Activity被系统自动回收时，<code>onPause()$$\rightarrow$$onSaveInstanceState()$$\rightarrow$$onStop()$$\rightarrow$$onDestory()$$\rightarrow$$onCreate()$$\rightarrow$$onStart()$$\rightarrow$$onRestoreInstanceState()$$\rightarrow$$onResume()</code></p>
+</li>
+<li>当Activity是用户主动销毁，比如按下back键或者调用<code>finish()</code>方法的话，就不会在<code>onPause()</code>和<code>onStop()</code>方法中调用<code>onSaveInstanceState()</code>方法，所以就是<code>onCreate()$$\rightarrow$$onStart()$$\rightarrow$$onRestoreInstanceState()</code>方法重新创建Activty，其中恢复数据是用<code>onRestoreInstanceState()</code>方法中的<code>Bundle</code>参数恢复。</li>
+</ol>
+</li>
+<li><p>关于RecyclerView，假设一个场景，如果item有不同的类别从而要显示不同的样式，怎么显示？</p>
+<p> <code>RecyclerViewAdapter</code>要继承<code>RecyclerView.Adapter&lt;ViewHolder&gt;</code>这个类，重写三个方法：<code>onCreateViewHolder(ViewGroup parent, int viewType)</code>、<code>onBindViewHolder(ViewHolder holder, int position)</code>和<code>getItemCount()</code>这三个方法，其中的<code>onCreateViewHolder</code>中可以根据<code>viewType</code>的类型去加载不同的布局。</p>
+</li>
+<li><p>有没有写过自定义View？</p>
+<p> 自定义View要实现三个方法，按照执行顺序依次是<code>onMeasure()$$\rightarrow$$onLayout()$$\rightarrow$$onDraw()</code>。其中，<code>onDraw()</code>方法必须要重写，因为这个方法是用来绘制View图像的。如果要改变View的大小，就重写<code>onMeasure()</code>方法；如果要改变View在父控件中的位置，就要重写<code>onLayout()</code>方法。</p>
+</li>
+<li><p><code>public</code>、<code>protected</code>和<code>private</code>的区别</p>
+<p><code>public</code>可以被其它任何类访问；<code>private</code>只能自己访问和自己内部的成员访问；<code>protected</code>就是自身、子类和同一个包中的类都可以访问；默认就是同一个包中的类都可以访问。</p>
+</li>
+<li><p>接口和抽象类的异同？让一个类不能被其它类继承怎么做？</p>
+<ul>
+<li>接口中的方法都是抽象的，抽象类中可以有抽象方法也可以有非抽象方法</li>
+<li>类可以实现多个接口，但只能继承一个抽象类</li>
+<li>Java接口声明的变量默认都是<code>final</code>的</li>
+<li>如果一个类不实现抽象类或者接口中的全部方法，那么它必须也是抽象的；反之，它必须实现所有方法</li>
+<li>接口和抽象类都不能实例化</li>
+</ul>
+</li>
+<li><p>有用过final修饰吗？final能修饰类吗？</p>
+<ul>
+<li><code>final</code>修饰类表示此类不能被继承，不能拥有自己的子类</li>
+<li><code>final</code>修饰方法表示此方法不能重写</li>
+<li><code>final</code>修饰变量表示一旦定义并在首次为其显示初始化之后，<code>final</code>修饰的变量值就不可被改变</li>
+</ul>
+</li>
+<li><p>介绍一下Java的引用</p>
+</li>
+</ol>
+<h2 id="三七互娱"><a href="#三七互娱" class="headerlink" title="三七互娱"></a>三七互娱</h2><p>其实我的毕业时间并不满足三七互娱的春招要求，但是还是收到了三七互娱的笔试机会。</p>
+<h3 id="选择题"><a href="#选择题" class="headerlink" title="选择题"></a>选择题</h3><ol>
+<li><p>一个n个节点的二叉树，每个节点要么没有子节点要么两个子节点，问树的最大高度？</p>
+<p> 这里容易混淆高度和深度的区别，不过不影响，因为<strong>树的高度和深度是相等的</strong>。高度是从下往上数，深度是从上往下数。例如：</p>
+<p> <img src= "/img/loading.gif" data-src="https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/20140416102722296.png" alt=""></p>
+<p> 这里G的高度为3，B的深度为2。所以这里答案应该是$(n+1)/2$。</p>
+</li>
+<li><p>android判断手机电池状态级别的广播action？</p>
+<p> <code>ACTION_BATTERY_CHANGED</code></p>
+</li>
+<li><p>以下是<font color="red">私有IP地址</font>的是？</p>
+<p> 私有IP地址的范围：</p>
+<ul>
+<li>A类私有IP地址：<strong>10.0.0.0~10.255.255.255</strong></li>
+<li>B类私有IP地址：<strong>172.16.0.0~172.31.255.255</strong></li>
+<li>C类私有IP地址：<strong>192.168.0.0~192.168.255.255</strong></li>
+</ul>
+</li>
+<li><p>软件测试的目的？</p>
+<p> 证明软件存在缺陷，使软件中的缺陷降低到一定程度</p>
+</li>
+<li><p><font color="red">Arraylist与linkedlist查找、添加删除区别</font>？</p>
+<p> ArrayList的实现是通过数组，LinkedList的实现是通过链表，ArrayList适用于查找，LinkedList适合增删改。</p>
+</li>
+<li><p><font color="red">HashMap与HashTable键值是否为空</font>？</p>
+<p> HashMap对象的key和value均可为<code>null</code>，HashTable对象的key和value均不可为<code>null</code>。HashTable是Java中的遗留类，目前不太实用。而HashMap的设计者认为<code>null</code>作为key和value是有实际意义的，所以允许其为<code>null</code>。</p>
+</li>
+<li><p>activity的分类是什么？</p>
+<p> <img src= "/img/loading.gif" data-src="https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/20171205094147274.jpeg" alt=""></p>
+</li>
+<li><p>数据库删除test表的语句？</p>
+<p> 这道选择的选项中有<code>drop</code>和<code>delete</code>和<code>truncate</code>。通过查询，发现：</p>
+<ul>
+<li><code>drop</code>：是删除表test，并释放空间，将test完全删除</li>
+<li><code>truncate</code>：删除表test中的内容，并释放空间，但是不删除表的定义，表结构还有，所以test表还在，只是内容为空</li>
+<li><code>delete</code>：可以删除指定数据，也可以删除整个表。如果删除表也是仅删除表test内的所有内容，保留表的定义，也不释放空间</li>
+</ul>
+</li>
+<li><font color="red">针对二叉查找树增加、删除、查找的最坏时间复杂度</font>
+</li>
+<li><p><font color="red">jvm垃圾回收器</font>有哪些？</p>
+<p>常见的垃圾回收器分为3类：</p>
+<ol>
+<li>新生代垃圾回收器：Serial、ParNew、Parallel Scavenge</li>
+<li>新生代和老年代垃圾回收器：Serial Old、Parallel Old、CMS</li>
+<li>老年代垃圾回收器：G1收集器</li>
+</ol>
+</li>
+<li><p>ContentProvider的作用是？</p>
+<p>跨进程通信，不同应用之间可以互相访问对应的数据库</p>
+</li>
+<li><p>袋子里有2个红球，3个绿球，2个蓝球，从中取两个，求一个蓝球都没有的概率？</p>
+</li>
+<li><p>xml布局文件放在哪个目录下</p>
+<p><code>res/layout</code></p>
+</li>
+<li><p>ABCDEF依次入栈，出栈序列为CBDFEA，问栈的最小容量</p>
+</li>
+<li><p>数组未初始化就输出的结果</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] a = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>];</span><br><span class="line">System.out.println(a[<span class="number">0</span>]);</span><br><span class="line">System.out.println(a[<span class="number">1</span>]);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>类未构造访问其成员变量的结果</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">T</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t;</span><br><span class="line">&#125;</span><br><span class="line">T t;</span><br><span class="line">System.out.println(t.n);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="算法题"><a href="#算法题" class="headerlink" title="算法题"></a>算法题</h3><p>2道算法题全部来自Leetcode。</p>
+<ol>
+<li>买卖股票问题求最大利润</li>
+<li>求岛屿的周长</li>
+</ol>
+<h2 id="Taptap"><a href="#Taptap" class="headerlink" title="Taptap"></a>Taptap</h2><ol>
+<li><p>自我介绍</p>
+</li>
+<li><p>为什么不做人工智能方向</p>
+</li>
+<li><p>介绍自己的实习经历，都负责了什么</p>
+</li>
+<li><p>接触Android多久了，Android最新的版本号是什么，<font color="red">Android10相对Android9改进</font>了什么？</p>
+<p> Android10，暗黑模式、更安全的位置权限获取等。</p>
+</li>
+<li><p>讲一讲实习中接触到的网络封装类的用法</p>
+</li>
+<li><font color="red">Activity的生命周期</font>
+
+<p> 这是面试必问问题，虽然不深究的话其实不难，但是我总感觉我的回答每次都差点意思。</p>
+<p> <img src= "/img/loading.gif" data-src="https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/347621596238419942633901667161718750.jpg" alt=""></p>
+</li>
+</ol>
+<pre><code>1. Activity启动：`onCreate()$$\rightarrow$$onStart()$$\rightarrow$$onResume()`
+
+2. `onCreate()`：表示Activity正在被创建，在这个方法里可以进行一些初始化操作，比如加载布局资源，初始化Activity所需数据等
+3. `onStart()`：意味着Activity已经启动了，Activity已经可见，但是还没有处于前台，还不能与用户进行交互
+4. `onResume()`：表示Activity可见并显示在了前台，可以与用户进行交互
+5. 当用户摁下返回键或者Home键：`onPause()$$\rightarrow$$onStop()`
+6. `onPause()`：让Activity仍然处于可见状态，但是不可与用户进行交互
+7. `onStop()`：Activity不可见，处于停止状态。当内存紧张时，Activity会被回收
+8. 当用户重新打开或者回到该Activity时：`onRestart()$$\rightarrow$$onStart()$$\rightarrow$$onResume()`
+9. `onResume()`：这里的`onResume()`表示Activitiy重新由不可见状态变为可见状态
+10. 退出当前Activity：`onPause()$$\rightarrow$$onStop()$$\rightarrow$$onDestory()`
+11. `onDestory()`：表示该Activity被销毁，可以在此方法中进行一些资源的释放或者回收
+
+**Activity的四种状态**：
+
+* running状态：Activity处于活跃状态，位于Activitiy返回栈的栈顶
+* paused状态：Activity仍然可见，但是不能与用户交互，比如表面覆盖了一层，此时这个Activity的状态信息和成员变量等都是保存的；但当内存紧张时，这个Activity会被回收
+* stopped状态：Activity完全不可见，比如被另外一个Activity覆盖了，但是它的状态信息和成员变量还是被保存的；当内存紧张时，这个Activity会被回收
+* killed状态：Activity被系统回收，它保存的信息和成员变量也被回收
+</code></pre><ol>
+<li><p><font color="red">http和https的区别，越详细越好，用到了什么加密算法</font>？</p>
+<p> 因为超文本传输协议HTTP协议以明文形式发送内容，不提供任何方式的数据加密，所以不适合传递一些敏感信息，例如银行卡号、密码等信息。所以采用安全套接字层超文本传输协议HTTPS。HTTPS在HTTP的基础之上，加入了SSL协议，SSL依靠证书来验证服务器的身份，并为浏览器和服务器之间的通信加密。</p>
+<ul>
+<li>https协议需要到ca申请证书，一般免费证书较少，所以是需要一定费用。</li>
+<li>http是超文本传输协议，信息是明文传输，https则是具有安全性的SSL加密传输协议。</li>
+<li>http和https使用的是完全不同的连接方式，用到的端口也不一样，前者是80，后者是443。</li>
+<li><p>http连接简单，无状态；https协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，比http协议安全。</p>
+<p>SSL协议是一种安全保密协议，在浏览器和服务器之间构造安全通道来进行数据传输，SSL运行在TCP/IP层之上，应用层之下，为应用程序提供加密数据通道。它采用了RC4、MD5和RSA的加密算法。</p>
+<p>HTTPS的工作原理：<a href="https://juejin.im/entry/58d7635e5c497d0057fae036" target="_blank" rel="noopener">详细解析HTTP与HTTPS的区别</a></p>
+</li>
+</ul>
+</li>
+<li><p><font color="red">自定义View要用到哪些方法</font>，有没有写过什么自定义控件</p>
+<p> 自定义View可以重写三个方法：<code>onDraw()</code>、<code>onMeasure()</code>、<code>onLayout()</code>。其中，<code>onDraw()</code>方法必须要重写，因为这个方法是用来绘制View图像的。如果要改变View的大小，就重写<code>onMeasure()</code>方法；如果要改变View在父控件中的位置，就要重写<code>onLayout()</code>方法。</p>
+</li>
+</ol>
+<h2 id="堆糖"><a href="#堆糖" class="headerlink" title="堆糖"></a>堆糖</h2><p>这是大四时找实习的面试。</p>
+<ol>
+<li><p>自我介绍</p>
+</li>
+<li><p>介绍一个自己实际动手做过的项目与项目中遇到的问题</p>
+</li>
+<li><p>Volley的原理</p>
+<p> 已在Notion中记录。</p>
+</li>
+<li><p>OOM内存溢出的解决办法</p>
+<p> 已在Notion中记录。</p>
+</li>
+<li><p>Activity的生命周期</p>
+</li>
+<li><font color="red">Activity的四种启动方式</font>
+</li>
+<li><p>Spring的机制特征，解释一下依赖注入、IOC容器和AOP面向切面编程</p>
+</li>
+<li><p>Spring的依赖注入与ButterKnife依赖注入是否相同或者不同的话有何区别</p>
+</li>
+<li><p>Android滑动遇到的冲突，比如NavigationView与ViewPager的冲突</p>
+</li>
+<li><p>是否写过BaseActivity</p>
+</li>
+<li><p>ANR错误的原因</p>
+<p>已在Notion中记录。</p>
+</li>
+<li><p>View的绘制机制，自定义View的方法</p>
+</li>
+</ol>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined" target="_blank" rel="noopener">Hurley</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://hurleyjames.github.io/2020/03/03/%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86/">https://hurleyjames.github.io/2020/03/03/面试经历/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://hurleyjames.github.io" target="_blank">Hurley</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E9%9D%A2%E8%AF%95/">面试</a></div><div class="post_share"><div class="social-share" data-image="/../image/merge-two-binary-trees.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><div class="post-reward"><button class="reward-button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="post-qr-code__img" src="/images/wechat.JPG" alt="wechat" onclick="window.open('/images/wechat.JPG')"/><div class="post-qr-code__desc">wechat</div></li><li class="reward-item"><img class="post-qr-code__img" src="/images/alipay.JPG" alt="alipay" onclick="window.open('/images/alipay.JPG')"/><div class="post-qr-code__desc">alipay</div></li></ul></div></button></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/03/03/%E9%9D%A2%E7%BB%8F%E6%94%B6%E9%9B%86/"><img class="prev-cover" data-src="/../image/interview-experience.png" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">面经收集</div></div></a></div><div class="next-post pull-right"><a href="/2020/02/20/Introduction-to-PyTorch/"><img class="next-cover" data-src="/../image/introduction-to-pytorch.png" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Introduction to PyTorch</div></div></a></div></nav></article></main><footer id="footer" style="background-image: url(/../image/job-interview.png)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2017 - 2020 By Hurley</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div><div class="footer_custom_text">随时意气风发，独自声势浩大</div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><button id="readmode" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font_plus" title="放大字体"><i class="fas fa-plus"></i></button><button id="font_minus" title="缩小字体"><i class="fas fa-minus"></i></button><button id="darkmode" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" title="设置"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  CommonHTML: {
+    linebreaks: { automatic: true, width: "90% container" }
+  },
+  "HTML-CSS": { 
+    linebreaks: { automatic: true, width: "90% container" }
+  },
+  "SVG": { 
+    linebreaks: { automatic: true, width: "90% container" }
+  }
+});
+</script><script type="text/x-mathjax-config">MathJax.Hub.Queue(function() {
+  var all = MathJax.Hub.getAllJax(), i;
+  for (i=0; i < all.length; i += 1) {
+    all[i].SourceElement().parentNode.className += ' has-jax';
+  }
+});
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script id="ribbon_piao" mobile="false" src="/js/third-party/piao.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script>var endLoading = function () {
+  document.body.style.overflow = 'auto';
+  document.getElementById('loading-box').classList.add("loaded")
+}
+window.addEventListener('load',endLoading)</script></body></html>

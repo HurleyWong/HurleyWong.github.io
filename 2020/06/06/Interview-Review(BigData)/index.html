@@ -1,0 +1,315 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Interview-Review(BigData) | Hurley</title><meta name="description" content="本篇主要是面试复习内容的大数据部分。  Hadoop 什么是Hadoop  Hadoop是一个开源软件框架，用于存储大量数据，并发处理&#x2F;查询在具有多个商用硬件节点的集群上的那些数据。   HDFS（Hadoop Distributed File System，Hadoop分布式文件系统）：HDFS允许以一种分布式和冗余的方式存储大量数据。例如，1024MB可以拆分为16*128MB文件，并存储在H"><meta name="keywords" content="面试"><meta name="author" content="Hurley"><meta name="copyright" content="Hurley"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/icon.png"><link rel="canonical" href="https://hurleyjames.github.io/2020/06/06/Interview-Review(BigData)/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="article"><meta property="og:title" content="Interview-Review(BigData)"><meta property="og:url" content="https://hurleyjames.github.io/2020/06/06/Interview-Review(BigData)/"><meta property="og:site_name" content="Hurley"><meta property="og:description" content="本篇主要是面试复习内容的大数据部分。  Hadoop 什么是Hadoop  Hadoop是一个开源软件框架，用于存储大量数据，并发处理&#x2F;查询在具有多个商用硬件节点的集群上的那些数据。   HDFS（Hadoop Distributed File System，Hadoop分布式文件系统）：HDFS允许以一种分布式和冗余的方式存储大量数据。例如，1024MB可以拆分为16*128MB文件，并存储在H"><meta property="og:image" content="https://hurleyjames.github.io/../image/big-data-interview.png"><meta property="article:published_time" content="2020-06-05T16:00:00.000Z"><meta property="article:modified_time" content="2020-08-01T13:23:38.759Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'false'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="prev" title="Interview-Review(CloudComputing)" href="https://hurleyjames.github.io/2020/06/06/Interview-Review(CloudComputing)/"><link rel="next" title="Interview-Review(Algorithm)" href="https://hurleyjames.github.io/2020/06/06/Interview-Review(Algorithm)/"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: false,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: true,
+  fancybox: false,
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isanchor: false    
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: true
+  }</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="https://avatars1.githubusercontent.com/u/26319720?s=460&amp;v=4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">59</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">23</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">13</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><i class="fas fa-arrow-right" id="toggle-sidebar"></i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Hadoop"><span class="toc-number">1.</span> <span class="toc-text">Hadoop</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spark"><span class="toc-number">2.</span> <span class="toc-text">Spark</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Storm"><span class="toc-number">3.</span> <span class="toc-text">Storm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Kafka"><span class="toc-number">4.</span> <span class="toc-text">Kafka</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ZooKeeper"><span class="toc-number">5.</span> <span class="toc-text">ZooKeeper</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Flink"><span class="toc-number">6.</span> <span class="toc-text">Flink</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Flume"><span class="toc-number">7.</span> <span class="toc-text">Flume</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hive"><span class="toc-number">8.</span> <span class="toc-text">Hive</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hbase"><span class="toc-number">9.</span> <span class="toc-text">Hbase</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pig"><span class="toc-number">10.</span> <span class="toc-text">Pig</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sqoop"><span class="toc-number">11.</span> <span class="toc-text">Sqoop</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Kylin"><span class="toc-number">12.</span> <span class="toc-text">Kylin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#布隆过滤器"><span class="toc-number">13.</span> <span class="toc-text">布隆过滤器</span></a></li></ol></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/../image/big-data-interview.png)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">Hurley</a></span><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">Interview-Review(BigData)</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2020-06-06 00:00:00"><i class="far fa-calendar-alt fa-fw"></i> 发表于 2020-06-06</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-08-01 21:23:38"><i class="fas fa-history fa-fw"></i> 更新于 2020-08-01</span></time></div><div class="meta-secondline"> <span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta__icon"></i><span>字数总计:</span><span class="word-count">2.6k</span><span class="post-meta__separator">|</span><i class="far fa-clock fa-fw post-meta__icon"></i><span>阅读时长: 8 分钟</span></span></div><div class="meta-thirdline"><span class="post-meta-pv-cv"><span class="post-meta__separator">|</span><i class="far fa-eye fa-fw post-meta__icon"></i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><p>本篇主要是面试复习内容的大数据部分。</p>
+<a id="more"></a>
+<h3 id="Hadoop"><a href="#Hadoop" class="headerlink" title="Hadoop"></a>Hadoop</h3><ol>
+<li><p>什么是Hadoop</p>
+<blockquote>
+<p>Hadoop是一个开源软件框架，用于存储大量数据，并发处理/查询在具有多个商用硬件节点的集群上的那些数据。</p>
+</blockquote>
+<p> HDFS（Hadoop Distributed File System，Hadoop分布式文件系统）：HDFS允许以一种分布式和冗余的方式存储大量数据。例如，1024MB可以拆分为16*128MB文件，并存储在Hadoop集群中的8个不同的节点上。每个分裂可以复制3次，以实现容错，以便如果1个节点故障的话，也有备份。</p>
+<p> MapReduce：是一个计算框架（Google三剑客之一：GFS、BigTable、MapReduce）。它以分布式和并行的方式处理大量的数据。例如，当对所有年龄大于18的用户在上面的1024MB文件中查询时，会有8个Map函数并行运行，以在其128MB拆分文件中提取年龄大于18的用户，然后Reduce函数将运行以将所有单独的输出组合成单个最终结果。Map就是拆解，Reduce就是组装，本治就是分治法。</p>
+</li>
+<li><p>正常工作的Hadoop集群中都需要启动哪些进程，作用分别是什么</p>
+<ul>
+<li>NameNode：是HDFS的守护进程，负责记录文件是如何分割成数据块，以及这些数据块分别被存储到哪些数据节点上，它的主要功能是对内存以及IO进行集中管理；</li>
+<li>Secondary NameNode：辅助后台程序，与NameNode进行通信，以便定期保存HDFS元数据的快照；</li>
+<li>DataNode：负责把HDFS数据块读写到本地的文件系统；</li>
+<li>JobTracker：负责分配task，并监控所有运行的task；</li>
+<li>TaskTracker：负责执行具体的task，并与JobTracker进行交互；</li>
+</ul>
+</li>
+<li><p>列举出流行的Hadoop调度器，并简要说明其工作方法</p>
+<p> Hadoop调度器的基本作用就是根据节点资源使用情况和作业的要求，将任务调度到各个节点上执行；</p>
+<p> <strong>调度器需要考虑的因素有三种</strong>：</p>
+<ul>
+<li>作业优先级：作业优先级越高，能够获取到的资源也越多。Hadoop提供了5种作业优先级，分别是<code>VERY_HIGH</code>、<code>HIGH</code>、<code>NORMAL</code>、<code>LOW</code>、<code>VERY_LOW</code>、<code>VERY_LOW</code>，通过<code>mapreduce.job.priority</code>属性来设置。</li>
+<li>作业提交时间：作业提交的时间越早，就越先执行；</li>
+<li><p>作业所在队列的资源限制：调度器可以分为多个队列，不同的产品线放到不同的队列里运行。<strong>不同的队列会设置一个边缘限制</strong>，这样不同的队列就会有自己独立的资源，不会出现抢占和滥用资源的情况。</p>
+<p><strong>自带调度器有三种</strong>：</p>
+</li>
+<li><p>先进先出调度器（FIFO）：</p>
+<p>  FIFO是Hadoop中默认的调度器，也是一种<strong>批处理调度器</strong>。它先按照作业的优先级高低，再按照到达时间的先后选择被执行的作业。</p>
+</li>
+<li><p>容量调度器（Capacity Scheduler）：</p>
+<p>  支持多个队列，每个队列可以配置一定的资源量，每个队列采用FIFO调度策略，<strong>为了防止同一个用户的作业独占队列中的资源，该调度器会对同一用户提交的作业所占资源量进行限定</strong>；</p>
+</li>
+<li><p>公平调度器（Fair Scheduler）：</p>
+<p>  支持多队列多用户，每个队列中的资源量可以配置，<strong>同一队列中的作业公平共享队列中的所有资源</strong>。</p>
+</li>
+</ul>
+</li>
+<li><p>简要说一下Hadoop的MapReduce编程模型</p>
+<p> 首先Map task会从本地文件系统读取数据，转换成key-value形式的键值对集合。使用的是Hadoop内置的数据类型，比如longwritable、text等。然后将键值对集合输入mapper进行业务处理过程，将其转换成需要的key-value再输出。</p>
+<p> 之后会进行一个partition的分区操作，默认使用的是hashpartitioner，可以通过重写hashpartitioner的getpartition方法来自定义分区的规则；</p>
+<p> 之后会对key进行sort排序，grouping分组操作将相同key的value合并分组输出；</p>
+<p> 之后进行combiner归约操作，即一个本地段的reduce预处理，以减小后面shuffle和reducer的工作量；</p>
+<p> reduce task通过网络将各个数据收集进行reduce处理，最后将数据保存或者显示，结束整个job。</p>
+</li>
+<li><p>MapReduce的大致过程：</p>
+<p> MapReduce大致可以分为<strong>input</strong>、<strong>split</strong>、<strong>map</strong>、<strong>shuffle</strong>、<strong>reduce</strong>、<strong>output</strong>六个步骤。</p>
+<ul>
+<li>输入input：输入数据，一般是HDFS上的文件或目录</li>
+<li>拆分split：切割文件，例如将字符串分割成每个单词</li>
+<li>映射map：将拆分的内容转换成key-value形式</li>
+<li>派发shuffle：将key相同的放到一起value是一个序列，这步涉及到数据移动，会将key相同的数据移动到一台机器上</li>
+<li>缩减recude：将同样key的value序列进行计算</li>
+<li>输入output：输出结果</li>
+</ul>
+</li>
+<li><p>为什么要用flume导入HDFS，HDFS的架构是怎么样的</p>
+</li>
+<li><p>MapReduce程序运行的时候会有什么比较常见的问题</p>
+</li>
+<li><p>Hadoop的性能调优</p>
+</li>
+<li><p>HDFS的特点</p>
+<ul>
+<li>处理超大文件</li>
+<li>高容错性，运行在廉价机器上</li>
+<li>横向扩展</li>
+<li>流式数据处理，而不是随机读写（流式数据读取指的是一个文件只能写一次，后面一直追加，所以每次读取只需要从头开始一直往后读即可）</li>
+<li>不支持文件修改，只能追加写入</li>
+<li>对大量的小文件性能不好</li>
+</ul>
+<ol>
+<li>主从架构，有两种角色namenode和datanode。namenode负责管理存储元数据，处理客户端读写请求；datanode存储真正的数据，执行读写操作；</li>
+<li>读流程：客户端访问namenode，验证权限，返回数据具体的datanode的地址，客户端访问datanode读取数据；</li>
+<li>写流程：客户端访问namenode，验证权限并确定文件是否存在，然后先记录到editLog返回输出流对象，客户端最近的一个datanode写数据，每写一个数据块，其余的datanode自己同步</li>
+</ol>
+</li>
+<li><p>YARN的工作原理，简述其工作方法</p>
+<p>YARN全称yet another resource negotiator，即另一种资源调度器。</p>
+<p><strong>ResourceManager</strong>：</p>
+<p>ResourceManager有为所有应用程序仲裁资源的权限的功能，用来代替JobTracker，主要由schedule和ApplicationManager组成。</p>
+<p>schedule通过container来分配资源，封装了磁盘、内存、CPU等资源。</p>
+<p>ApplicationManager负责接收作业的提交，并申请第一个container来执行作业的ApplicationMaster，并提供失败时重启ApplicationManager的container，而作业的ApplicationMaster向schedule申请资源。</p>
+<p><strong>NodeManager</strong>：</p>
+<p>NodeManager是YARN在每台机器上的代理，负责启动并管理节点上的container，container执行具体的由ApplicationMaster划分的任务。</p>
+<p><strong>整体流程</strong>：</p>
+<ol>
+<li>客户端向ResourceManager的ApplicationManager提交程序；</li>
+<li>ResourceManager的ApplicationManager在NodeManager启动第一个container执行ApplicationManager</li>
+<li>ApplicationManager拆分程序，划分成一个个的task，这些task可以在container上运行，然后向ResourceManager申请资源执行task，并向ResourceManager发送心跳；</li>
+<li>申请到container后，ApplicationMaster会和NodeManager通信，并将task发送到对应的container执行，task会向ApplicationMaster发送心跳；</li>
+<li>程序执行完成，ApplicationMaster会向ResourceManager注销并释放资源；</li>
+</ol>
+</li>
+</ol>
+<h3 id="Spark"><a href="#Spark" class="headerlink" title="Spark"></a>Spark</h3><ol>
+<li><p>Spark有几种部署模式，每种模式的特点</p>
+<ul>
+<li>local模式（本地模式）：运行在一台机器上，常用于本地开发测试，本地模式还分为local单线程和local-cluster多线程；</li>
+<li>standalone模式（集群模式）：典型的Master/Slave模式，起初Master是有单点故障的；</li>
+<li>yarn模式（集群模式）：运行在yarn资源管理器框架之上，由yarn负责资源管理，Spark负责任务调度和计算；</li>
+<li>mesos模式（集群模式）：运行在mesos资源管理器框架之上，由mesos负责资源管理，Spark负责任务调度和计算；</li>
+</ul>
+</li>
+<li><p>Spark为什么比MapReduce快（Run workloads 100x faster）</p>
+<ul>
+<li><p>Spark是基于内存计算的，减少了低效的磁盘交互；而MapReduce是基于磁盘的迭代。</p>
+<ul>
+<li>MapReduce的设计：中间结果保存在文件中，提高了可靠性，减少了内存占用，但是牺牲了性能；</li>
+<li>Spark的设计：数据在内存中进行交换，要更快一些，所以性能要比MapReduce好，但是内存的可靠性不如磁盘；</li>
+</ul>
+</li>
+<li><p>高效的调度算法，基于DAG；</p>
+</li>
+<li>容错机制Linage；</li>
+</ul>
+</li>
+<li><p>Hadoop和Spark的shuffle相同和差异</p>
+</li>
+<li><p>RDD宽依赖和窄依赖</p>
+</li>
+<li><p>cache和pesist的区别</p>
+</li>
+<li><p>RDD有哪些缺陷</p>
+</li>
+<li><p>RDD有哪几种操作类型</p>
+</li>
+<li><p>Spark的工作机制</p>
+</li>
+<li><p>Spark的优化怎么做</p>
+</li>
+<li><p>Spark中数据的位置是被谁管理的</p>
+</li>
+<li><p>Spark的数据本地性有哪几种</p>
+</li>
+<li><p>Spark的常用算子区别</p>
+</li>
+<li><p>Transformation和action是什么，有什么区别，举出一些常用方法</p>
+</li>
+<li><p>Spark on Yarn模式有哪些优点</p>
+</li>
+<li><p>描述Yarn执行一个任务的过程</p>
+</li>
+</ol>
+<h3 id="Storm"><a href="#Storm" class="headerlink" title="Storm"></a>Storm</h3><ol>
+<li>Storm的工作原理是什么</li>
+<li>流的模式是什么？默认是什么？</li>
+<li>Storm Group分类</li>
+<li>Storm的特点和特性是什么<ul>
+<li>编程简单：开发人员只需要关注应用逻辑，而且跟Hadoop类似，Storm提供的编程语言也很简单</li>
+<li>高性能，低延迟：可以应用于广告搜索引擎等要求实时响应的场景</li>
+<li>分布式：可以轻松应对数据量大，单机搞不定的场景</li>
+<li>可拓展：随着业务的发展，数据量和计算量越来越大，系统可水平扩展</li>
+<li>容错：单个节点挂了是不影响应用的</li>
+<li>消息不丢失：保证了消息处理</li>
+</ul>
+</li>
+<li>Storm组件有哪些</li>
+</ol>
+<h3 id="Kafka"><a href="#Kafka" class="headerlink" title="Kafka"></a>Kafka</h3><ol>
+<li>Kafka的设计是怎么样的</li>
+<li>数据传输的事物定义有哪三种</li>
+<li>Kafka判断一个节点是否还活着的两个条件</li>
+<li>Kafka与传统消息系统之间的三个关键区别</li>
+<li>Kafka高消息文件存储设计的特点</li>
+<li>Kafka有哪几个组件</li>
+</ol>
+<h3 id="ZooKeeper"><a href="#ZooKeeper" class="headerlink" title="ZooKeeper"></a>ZooKeeper</h3><ol>
+<li>ZooKeeper都要哪些功能</li>
+<li>ZooKeeper怎么保证主从节点的状态同步</li>
+<li>ZooKeeper有几种部署模式<ul>
+<li>单机部署：一台集群上运行；</li>
+<li>集群部署：多台集群上运行；</li>
+<li>伪集群部署：一台集群启动多个ZooKeeper实例运行</li>
+</ul>
+</li>
+<li>ZooKeeper的通知机制</li>
+<li>集群中有 3 台服务器，其中一个节点宕机，这个时候 Zookeeper 还可以使用吗</li>
+<li>两阶段提交和三阶段提交的过程</li>
+<li>ZooKeeper宕机如何处理</li>
+<li>获得分布式锁的流程</li>
+<li>ZooKeeper队列管理</li>
+<li>ZooKeeper下Server的工作状态</li>
+<li>ZooKeeper是如何保证事务的顺序一致性的</li>
+<li>ZooKeeper负载均衡和nginx负载均衡区别</li>
+</ol>
+<h3 id="Flink"><a href="#Flink" class="headerlink" title="Flink"></a>Flink</h3><h3 id="Flume"><a href="#Flume" class="headerlink" title="Flume"></a>Flume</h3><h3 id="Hive"><a href="#Hive" class="headerlink" title="Hive"></a>Hive</h3><ol>
+<li>Hive中存放的是什么</li>
+<li>Hive与关系型数据库的关系</li>
+</ol>
+<h3 id="Hbase"><a href="#Hbase" class="headerlink" title="Hbase"></a>Hbase</h3><h3 id="Pig"><a href="#Pig" class="headerlink" title="Pig"></a>Pig</h3><h3 id="Sqoop"><a href="#Sqoop" class="headerlink" title="Sqoop"></a>Sqoop</h3><h3 id="Kylin"><a href="#Kylin" class="headerlink" title="Kylin"></a>Kylin</h3><h3 id="布隆过滤器"><a href="#布隆过滤器" class="headerlink" title="布隆过滤器"></a>布隆过滤器</h3></div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined" target="_blank" rel="noopener">Hurley</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://hurleyjames.github.io/2020/06/06/Interview-Review(BigData)/">https://hurleyjames.github.io/2020/06/06/Interview-Review(BigData)/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://hurleyjames.github.io" target="_blank">Hurley</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E9%9D%A2%E8%AF%95/">面试</a></div><div class="post_share"><div class="social-share" data-image="/../image/merge-two-binary-trees.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><div class="post-reward"><button class="reward-button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="post-qr-code__img" src="/images/wechat.JPG" alt="wechat" onclick="window.open('/images/wechat.JPG')"/><div class="post-qr-code__desc">wechat</div></li><li class="reward-item"><img class="post-qr-code__img" src="/images/alipay.JPG" alt="alipay" onclick="window.open('/images/alipay.JPG')"/><div class="post-qr-code__desc">alipay</div></li></ul></div></button></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/06/06/Interview-Review(CloudComputing)/"><img class="prev-cover" data-src="/../image/cloud-computing-interview.png" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Interview-Review(CloudComputing)</div></div></a></div><div class="next-post pull-right"><a href="/2020/06/06/Interview-Review(Algorithm)/"><img class="next-cover" data-src="/../image/algorithm-interview.png" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Interview-Review(Algorithm)</div></div></a></div></nav></article></main><footer id="footer" style="background-image: url(/../image/big-data-interview.png)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2017 - 2020 By Hurley</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div><div class="footer_custom_text">随时意气风发，独自声势浩大</div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><button id="readmode" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font_plus" title="放大字体"><i class="fas fa-plus"></i></button><button id="font_minus" title="缩小字体"><i class="fas fa-minus"></i></button><button id="darkmode" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" title="设置"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  CommonHTML: {
+    linebreaks: { automatic: true, width: "90% container" }
+  },
+  "HTML-CSS": { 
+    linebreaks: { automatic: true, width: "90% container" }
+  },
+  "SVG": { 
+    linebreaks: { automatic: true, width: "90% container" }
+  }
+});
+</script><script type="text/x-mathjax-config">MathJax.Hub.Queue(function() {
+  var all = MathJax.Hub.getAllJax(), i;
+  for (i=0; i < all.length; i += 1) {
+    all[i].SourceElement().parentNode.className += ' has-jax';
+  }
+});
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script id="ribbon_piao" mobile="false" src="/js/third-party/piao.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script>var endLoading = function () {
+  document.body.style.overflow = 'auto';
+  document.getElementById('loading-box').classList.add("loaded")
+}
+window.addEventListener('load',endLoading)</script></body></html>
