@@ -1,0 +1,181 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RabbitMQ入门 | Hurley</title><meta name="description" content="AMQPAMQP，即Advanced Message Queuing Protocol，一个提供统一消息服务的应用层标准高级消息队列协议，是为面向消息的中间件设计的。基于此协议的客户端与消息中间件可传递消息，并不受不同产品或者不同编程语言等条件的限制。  AMQP的主要特征是面向消息、队列、路由（包括点对点和发布&#x2F;订阅）、可靠性、安全等。  消息队列消息队列，即Message Queue，是一种应"><meta name="keywords" content="消息队列"><meta name="author" content="Hurley"><meta name="copyright" content="Hurley"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/icon.png"><link rel="canonical" href="https://hurleyjames.github.io/2020/11/22/RabbitMQ%E5%85%A5%E9%97%A8/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="article"><meta property="og:title" content="RabbitMQ入门"><meta property="og:url" content="https://hurleyjames.github.io/2020/11/22/RabbitMQ%E5%85%A5%E9%97%A8/"><meta property="og:site_name" content="Hurley"><meta property="og:description" content="AMQPAMQP，即Advanced Message Queuing Protocol，一个提供统一消息服务的应用层标准高级消息队列协议，是为面向消息的中间件设计的。基于此协议的客户端与消息中间件可传递消息，并不受不同产品或者不同编程语言等条件的限制。  AMQP的主要特征是面向消息、队列、路由（包括点对点和发布&#x2F;订阅）、可靠性、安全等。  消息队列消息队列，即Message Queue，是一种应"><meta property="og:image" content="https://hurleyjames.github.io/../image/rabbitmq.png"><meta property="article:published_time" content="2020-11-21T16:00:00.000Z"><meta property="article:modified_time" content="2020-11-23T03:37:56.063Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'false'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="next" title="Interview-Review(Software Engineering)" href="https://hurleyjames.github.io/2020/11/19/Interview-Review(Software%20Engineering)/"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: false,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: true,
+  fancybox: false,
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isanchor: false    
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: true
+  }</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="https://avatars1.githubusercontent.com/u/26319720?s=460&amp;v=4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">69</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">27</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">13</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><i class="fas fa-arrow-right" id="toggle-sidebar"></i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#AMQP"><span class="toc-number">1.</span> <span class="toc-text">AMQP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#消息队列"><span class="toc-number">2.</span> <span class="toc-text">消息队列</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#应用场景"><span class="toc-number">3.</span> <span class="toc-text">应用场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RabbitMQ简介"><span class="toc-number">4.</span> <span class="toc-text">RabbitMQ简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用命令"><span class="toc-number">5.</span> <span class="toc-text">常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#概念介绍"><span class="toc-number">6.</span> <span class="toc-text">概念介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#四种交换机Exchange"><span class="toc-number">6.1.</span> <span class="toc-text">四种交换机Exchange</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Direct-Exchange"><span class="toc-number">6.1.1.</span> <span class="toc-text">Direct Exchange</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Topic-Exchange"><span class="toc-number">6.1.2.</span> <span class="toc-text">Topic Exchange</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Headers-Exchange"><span class="toc-number">6.1.3.</span> <span class="toc-text">Headers Exchange</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Fanout-Exchange"><span class="toc-number">6.1.4.</span> <span class="toc-text">Fanout Exchange</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用流程"><span class="toc-number">7.</span> <span class="toc-text">使用流程</span></a></li></ol></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/../image/rabbitmq.png)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">Hurley</a></span><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">RabbitMQ入门</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2020-11-22 00:00:00"><i class="far fa-calendar-alt fa-fw"></i> 发表于 2020-11-22</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-11-23 11:37:56"><i class="fas fa-history fa-fw"></i> 更新于 2020-11-23</span></time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fas fa-inbox fa-fw post-meta__icon"></i><a class="post-meta__categories" href="/categories/Java/">Java</a></span></div><div class="meta-secondline"> <span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta__icon"></i><span>字数总计:</span><span class="word-count">1.3k</span><span class="post-meta__separator">|</span><i class="far fa-clock fa-fw post-meta__icon"></i><span>阅读时长: 4 分钟</span></span></div><div class="meta-thirdline"><span class="post-meta-pv-cv"><span class="post-meta__separator">|</span><i class="far fa-eye fa-fw post-meta__icon"></i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h2 id="AMQP"><a href="#AMQP" class="headerlink" title="AMQP"></a>AMQP</h2><p>AMQP，即Advanced Message Queuing Protocol，一个提供统一消息服务的应用层标准<strong>高级消息队列协议</strong>，是为面向消息的中间件设计的。基于此协议的客户端与消息中间件可传递消息，并不受不同产品或者不同编程语言等条件的限制。</p>
+<blockquote>
+<p>AMQP的主要特征是面向消息、队列、路由（包括点对点和发布/订阅）、可靠性、安全等。</p>
+</blockquote>
+<h2 id="消息队列"><a href="#消息队列" class="headerlink" title="消息队列"></a>消息队列</h2><p>消息队列，即Message Queue，是一种应用程序对应用程序的通信方法。应用程序通过读写出入队列的消息来通信，而无须专用连接来连接它们。</p>
+<p>消息传递是指程序之间通过在消息中发送数据进行通信，而不是通过直接调用彼此来通信。</p>
+<p>使用消息队列的好处就是将一些无需即时返回且耗时的操作提取出来，进行了异步处理，大大节省了服务器的请求响应时间，从而提高了系统的吞吐量。</p>
+<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><p>一个大型的软件系统，会有很多的组件或者模块或者子系统，如果将这些模块进行通信呢？传统的IPC是很多都在单一系统上，模块耦合性很大，不适合拓展；如果使用Socket进行通信，那么又需要考虑到以下一些问题：</p>
+<ul>
+<li>信息的发送者和接收者如何维持这个连接，如果一方连接中断，丢失的数据怎么办</li>
+<li>如何降低发送者和接收者的耦合度</li>
+<li>如何让Priority高的接收者更先接受到数据</li>
+<li>如果做到负载均衡？</li>
+<li>如何做到可拓展，甚至可以将该通信模块发送到集群cluster上？</li>
+<li>如何保证接收者接受到了完整、正确的数据</li>
+</ul>
+<p>AMQP协议就解决了以上问题，而RabbitMQ就是基于AMQP实现的。</p>
+<h2 id="RabbitMQ简介"><a href="#RabbitMQ简介" class="headerlink" title="RabbitMQ简介"></a>RabbitMQ简介</h2><blockquote>
+<p>RabbitMQ is the most widely deployed open source message broker.</p>
+</blockquote>
+<p>RabbitMQ就是在AMQP的基础上实现的，可复用的企业消息系统。它可以用于大型软件系统各个模块之间的高效通信，支持<strong>高并发</strong>，支持可拓展。</p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><ul>
+<li>启动rabbitmq：<code>rabbitmq-service start</code></li>
+<li>关闭rabbitmq：<code>rabbitmq-service stop</code></li>
+<li>启动监控管理器：<code>rabbitmq-plugins enable rabbitmq_management</code></li>
+<li>关闭监控管理器：<code>rabbitmq-plugins disable rabbitmq_management</code></li>
+<li>关闭应用：<code>rabbitmqctl stop_app</code></li>
+<li>启动应用：<code>rabbitmqctl start_app</code></li>
+</ul>
+<h2 id="概念介绍"><a href="#概念介绍" class="headerlink" title="概念介绍"></a>概念介绍</h2><ul>
+<li>Broker：消息队列服务器实体</li>
+<li>Exchange：消息交换机，指定消息按什么原则，路由由哪个队列（用于转发消息，但是不会被存储）</li>
+<li>Queue：消息队列载体，每个消息都会被投入到一个或者多个队列中</li>
+<li>Binding：将exchange和queue按照路由的规则绑定起来</li>
+<li>Rounting Key：路由的关键字，exchange就是根据这个关键字进行消息投递</li>
+<li>vhost：虚拟主机，一个broker里可以开启多个vhost，用作不同用户的权限分离</li>
+<li>producer：消息生产者，就是投递消息的程序</li>
+<li>consumer：消息消费者，就是接受消息的程序</li>
+<li>channel：消息通道，在客户端的每个连接里，可以建立多个channel，每个channel代表一个任务</li>
+</ul>
+<h3 id="四种交换机Exchange"><a href="#四种交换机Exchange" class="headerlink" title="四种交换机Exchange"></a>四种交换机Exchange</h3><h4 id="Direct-Exchange"><a href="#Direct-Exchange" class="headerlink" title="Direct Exchange"></a>Direct Exchange</h4><p>其行为是「先匹配，再投送」。绑定时会设定一个rounting key，只有消息的rounting key匹配时，才会被交换机投送到绑定的队列中去。这是RabbitMQ默认的交换机模式，也是最简单的模式，是根据key全文匹配去寻找队列。</p>
+<h4 id="Topic-Exchange"><a href="#Topic-Exchange" class="headerlink" title="Topic Exchange"></a>Topic Exchange</h4><p>按规则转发消息主要是<strong>根据通配符</strong>。在这种交换机下，队列和交换机的绑定会定义一种路由模式。通配符需要在这种路由模式和路由键之间匹配后，交换机才能转发消息。</p>
+<p>路由键必须是一串字符，用句号（.）隔开。</p>
+<p>路由模式必须包含一个星号（*），主要是用于匹配路由键指定位置的一个单词，（#）表示相当于一个或者多个单词</p>
+<h4 id="Headers-Exchange"><a href="#Headers-Exchange" class="headerlink" title="Headers Exchange"></a>Headers Exchange</h4><p>设置header attribute参数类型的交换机，headers是一个自定义匹配规则的类型。在队列与交换器绑定时，会设定一组键值对规则，消息中也包括了一组键值对属性，当有一对或者全部匹配时，消息就会被投送到对应的队列中。</p>
+<h4 id="Fanout-Exchange"><a href="#Fanout-Exchange" class="headerlink" title="Fanout Exchange"></a>Fanout Exchange</h4><p>转发消息到所有绑定队列中，消息广播的模式，不管路由键或者是路由模式，会把消息发给绑定给它的全部队列。</p>
+<h2 id="使用流程"><a href="#使用流程" class="headerlink" title="使用流程"></a>使用流程</h2><blockquote>
+<p>消息在Producer中产生，发送到消息队列的Exchange上，Exchange根据配置的路由方式Rounting Key，发送到并绑定Queue。Queue将消息通过push或者pull的方式传递给Consumer。</p>
+</blockquote>
+<ol>
+<li>客户端连接到消息队列的服务器，开启一个channel</li>
+<li>客户端声明一个exchange，并设置相关属性</li>
+<li>客户端声明一个queue，并设置相关属性</li>
+<li>客户端使用rounting key，在exchange和queue之间建立好绑定关系</li>
+<li>客户端投递信息到exchange</li>
+<li>exchange收到信息后，根据rounting key和binding关系，将消息传递到queue中</li>
+</ol>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined" target="_blank" rel="noopener">Hurley</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://hurleyjames.github.io/2020/11/22/RabbitMQ%E5%85%A5%E9%97%A8/">https://hurleyjames.github.io/2020/11/22/RabbitMQ入门/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://hurleyjames.github.io" target="_blank">Hurley</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/">消息队列</a></div><div class="post_share"><div class="social-share" data-image="/../image/ioc-di-aop.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><div class="post-reward"><button class="reward-button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="post-qr-code__img" src="/images/wechat.JPG" alt="wechat" onclick="window.open('/images/wechat.JPG')"/><div class="post-qr-code__desc">wechat</div></li><li class="reward-item"><img class="post-qr-code__img" src="/images/alipay.JPG" alt="alipay" onclick="window.open('/images/alipay.JPG')"/><div class="post-qr-code__desc">alipay</div></li></ul></div></button></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2020/11/19/Interview-Review(Software%20Engineering)/"><img class="next-cover" data-src="/../image/software-engineering-interview.png" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Interview-Review(Software Engineering)</div></div></a></div></nav></article></main><footer id="footer" style="background-image: url(/../image/rabbitmq.png)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2017 - 2020 By Hurley</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div><div class="footer_custom_text">随时意气风发，独自声势浩大</div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><button id="readmode" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font_plus" title="放大字体"><i class="fas fa-plus"></i></button><button id="font_minus" title="缩小字体"><i class="fas fa-minus"></i></button><button id="darkmode" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" title="设置"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  CommonHTML: {
+    linebreaks: { automatic: true, width: "90% container" }
+  },
+  "HTML-CSS": { 
+    linebreaks: { automatic: true, width: "90% container" }
+  },
+  "SVG": { 
+    linebreaks: { automatic: true, width: "90% container" }
+  }
+});
+</script><script type="text/x-mathjax-config">MathJax.Hub.Queue(function() {
+  var all = MathJax.Hub.getAllJax(), i;
+  for (i=0; i < all.length; i += 1) {
+    all[i].SourceElement().parentNode.className += ' has-jax';
+  }
+});
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script id="ribbon_piao" mobile="false" src="/js/third-party/piao.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script>var endLoading = function () {
+  document.body.style.overflow = 'auto';
+  document.getElementById('loading-box').classList.add("loaded")
+}
+window.addEventListener('load',endLoading)</script></body></html>
