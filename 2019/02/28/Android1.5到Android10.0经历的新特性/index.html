@@ -1,0 +1,250 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Android1.5到Android10.0经历的新特性 | Hurley</title><meta name="description" content="Android 1.5(Cupcake 纸杯蛋糕) 智能虚拟键盘；使用widgets实现桌面个性化；在线文件夹(Live Folder)快速浏览在线数据；视频录制和分享；图片上传； 更快的标准兼容浏览器；Voice search 语音搜索；立体声蓝牙和免提电话   Android 1.6(Donut 甜甜圈) 完全重新设计的Android Market，可以显示更多的屏幕截图；手势支持，可以让开发"><meta name="keywords" content="面试"><meta name="author" content="Hurley"><meta name="copyright" content="Hurley"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/icon.png"><link rel="canonical" href="https://hurleyjames.github.io/2019/02/28/Android1.5%E5%88%B0Android10.0%E7%BB%8F%E5%8E%86%E7%9A%84%E6%96%B0%E7%89%B9%E6%80%A7/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="article"><meta property="og:title" content="Android1.5到Android10.0经历的新特性"><meta property="og:url" content="https://hurleyjames.github.io/2019/02/28/Android1.5%E5%88%B0Android10.0%E7%BB%8F%E5%8E%86%E7%9A%84%E6%96%B0%E7%89%B9%E6%80%A7/"><meta property="og:site_name" content="Hurley"><meta property="og:description" content="Android 1.5(Cupcake 纸杯蛋糕) 智能虚拟键盘；使用widgets实现桌面个性化；在线文件夹(Live Folder)快速浏览在线数据；视频录制和分享；图片上传； 更快的标准兼容浏览器；Voice search 语音搜索；立体声蓝牙和免提电话   Android 1.6(Donut 甜甜圈) 完全重新设计的Android Market，可以显示更多的屏幕截图；手势支持，可以让开发"><meta property="og:image" content="https://hurleyjames.github.io/../image/android1-to-android10.png"><meta property="article:published_time" content="2019-02-27T16:00:00.000Z"><meta property="article:modified_time" content="2020-07-21T00:14:26.526Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'false'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="prev" title="适配Android7.0以上调取相机拍照并返回照片" href="https://hurleyjames.github.io/2019/04/17/%E9%80%82%E9%85%8DAndroid7.0%E4%BB%A5%E4%B8%8A%E8%B0%83%E5%8F%96%E7%9B%B8%E6%9C%BA%E6%8B%8D%E7%85%A7%E5%B9%B6%E8%BF%94%E5%9B%9E%E7%85%A7%E7%89%87/"><link rel="next" title="搬家前一周" href="https://hurleyjames.github.io/2018/11/22/%E6%90%AC%E5%AE%B6%E5%89%8D%E4%B8%80%E5%91%A8/"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: false,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: true,
+  fancybox: false,
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isanchor: false    
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: true
+  }</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="https://avatars1.githubusercontent.com/u/26319720?s=460&amp;v=4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">71</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">30</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">14</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><i class="fas fa-arrow-right" id="toggle-sidebar"></i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Android-1-5-Cupcake-纸杯蛋糕"><span class="toc-number">1.</span> <span class="toc-text">Android 1.5(Cupcake 纸杯蛋糕)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Android-1-6-Donut-甜甜圈"><span class="toc-number">2.</span> <span class="toc-text">Android 1.6(Donut 甜甜圈)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Android-2-0-2-0-2-1-Eclair-松饼（闪电泡芙）"><span class="toc-number">3.</span> <span class="toc-text">Android 2.0(2.0~2.1 Eclair 松饼（闪电泡芙）)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Android-2-1"><span class="toc-number">4.</span> <span class="toc-text">Android 2.1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Android-2-2-Froyo-冻酸奶"><span class="toc-number">5.</span> <span class="toc-text">Android 2.2(Froyo 冻酸奶)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Android-2-3-Gingerbread-姜饼"><span class="toc-number">6.</span> <span class="toc-text">Android 2.3(Gingerbread 姜饼)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Android-3-0到3-1-3-0-Honeycomb-蜂巢"><span class="toc-number">7.</span> <span class="toc-text">Android 3.0到3.1(3.0 Honeycomb 蜂巢)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Android-4-0-Ice-CreamSandwich"><span class="toc-number">8.</span> <span class="toc-text">Android 4.0(Ice CreamSandwich)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Android-5-0-Lollipop-棒棒糖"><span class="toc-number">9.</span> <span class="toc-text">Android 5.0(Lollipop 棒棒糖)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Android-6-0-Marshmallow-棉花糖"><span class="toc-number">10.</span> <span class="toc-text">Android 6.0(Marshmallow 棉花糖)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Android-7-0-Nougat-牛轧糖"><span class="toc-number">11.</span> <span class="toc-text">Android 7.0(Nougat 牛轧糖)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Android-8-0-Oreo-奥利奥"><span class="toc-number">12.</span> <span class="toc-text">Android 8.0(Oreo 奥利奥)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Android-9-0-Pie-派"><span class="toc-number">13.</span> <span class="toc-text">Android 9.0(Pie 派)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Android-10-0"><span class="toc-number">14.</span> <span class="toc-text">Android 10.0</span></a></li></ol></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/../image/android1-to-android10.png)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">Hurley</a></span><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">Android1.5到Android10.0经历的新特性</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2019-02-28 00:00:00"><i class="far fa-calendar-alt fa-fw"></i> 发表于 2019-02-28</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-07-21 08:14:26"><i class="fas fa-history fa-fw"></i> 更新于 2020-07-21</span></time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fas fa-inbox fa-fw post-meta__icon"></i><a class="post-meta__categories" href="/categories/Android/">Android</a></span></div><div class="meta-secondline"> <span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta__icon"></i><span>字数总计:</span><span class="word-count">1.2k</span><span class="post-meta__separator">|</span><i class="far fa-clock fa-fw post-meta__icon"></i><span>阅读时长: 4 分钟</span></span></div><div class="meta-thirdline"><span class="post-meta-pv-cv"><span class="post-meta__separator">|</span><i class="far fa-eye fa-fw post-meta__icon"></i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h3 id="Android-1-5-Cupcake-纸杯蛋糕"><a href="#Android-1-5-Cupcake-纸杯蛋糕" class="headerlink" title="Android 1.5(Cupcake 纸杯蛋糕)"></a>Android 1.5(Cupcake 纸杯蛋糕)</h3><ul>
+<li>智能虚拟键盘；<strong>使用widgets实现桌面个性化</strong>；在线文件夹(Live Folder)快速浏览在线数据；视频录制和分享；图片上传；</li>
+<li>更快的标准兼容浏览器；Voice search 语音搜索；立体声蓝牙和免提电话</li>
+</ul>
+<a id="more"></a>
+<h3 id="Android-1-6-Donut-甜甜圈"><a href="#Android-1-6-Donut-甜甜圈" class="headerlink" title="Android 1.6(Donut 甜甜圈)"></a>Android 1.6(Donut 甜甜圈)</h3><ul>
+<li>完全重新设计的Android Market，可以显示更多的屏幕截图；手势支持，可以让开发者生成针对某个应用程序的手势库</li>
+<li>支持CDMA网络</li>
+<li>TXT-2-Speech，支持了更多语言的发音，包括英语、法语、德语、意大利语等</li>
+<li><strong>快速搜索框，可直接搜索括联系人，音乐，浏览历史，书签等手机内容</strong></li>
+<li>全新的拍照界面：新版相机程序启动速度快了39%，拍照间的延迟减少了28%</li>
+<li><strong>应用程序耗电查看</strong></li>
+<li>新增面向视觉或听觉困难人群的易用性插件</li>
+<li>Linux内核升级到2.6.29</li>
+<li>支持更多的屏幕分辨率</li>
+</ul>
+<h3 id="Android-2-0-2-0-2-1-Eclair-松饼（闪电泡芙）"><a href="#Android-2-0-2-0-2-1-Eclair-松饼（闪电泡芙）" class="headerlink" title="Android 2.0(2.0~2.1 Eclair 松饼（闪电泡芙）)"></a>Android 2.0(2.0~2.1 Eclair 松饼（闪电泡芙）)</h3><ul>
+<li>加强了网络社交功能，比如Facebook好友整合至联系人功能</li>
+<li>自带的Chrome Lite浏览器现在加入了对双击屏幕进行缩放的支持</li>
+<li>由于文件结构的改动优化，使得整个操作流畅性得到了很大的提升</li>
+<li>强化了语音识别的搜索控制。整个系统多处都支持语音控制，并拥有独立的控制面板</li>
+<li>谷歌地图服务更新，加入了全新的导航系统</li>
+<li>加入了原生微软Exchange邮件服务支持</li>
+<li>提供了多个不同帐户，统一的邮件收件箱</li>
+<li>优化了驾车时的体验，新的“Car Home”应用程序为各功能提供了易于操作的快捷链接，还能方便地使用语音控制功能，便于用户驾车时使用</li>
+</ul>
+<h3 id="Android-2-1"><a href="#Android-2-1" class="headerlink" title="Android 2.1"></a>Android 2.1</h3><ul>
+<li>可以同时绑定多个Google账号</li>
+<li>无线控件里有了VPN设置</li>
+<li>增加了连接到PC设置</li>
+<li>增强了语言和声音的转换功能，并加入了文字到语音转换</li>
+<li>全新的拨号界面，按键更大，更易于操作</li>
+<li>更多桌面Widget</li>
+<li>新的Google地图可以使用谷歌地图导航功能</li>
+<li>新的浏览器版本，加强了稳定性和网页渲染能力</li>
+<li>全局搜索功能加强</li>
+<li>全新的Market程序，搜索更快布局更合理</li>
+</ul>
+<h3 id="Android-2-2-Froyo-冻酸奶"><a href="#Android-2-2-Froyo-冻酸奶" class="headerlink" title="Android 2.2(Froyo 冻酸奶)"></a>Android 2.2(Froyo 冻酸奶)</h3><ul>
+<li>全面支持Flash 10.1</li>
+<li><strong>应用程序自动升级</strong>，让升级更加人性化</li>
+<li><strong>支持应用程序安装在外置内存上</strong></li>
+<li>对系统性能进一步优化，让手机有更多的运行内存</li>
+<li>增加了轨迹球LED指示灯变色这个新功能</li>
+<li>增加了对3D性能的优化，3D性能更加强大</li>
+<li>FM功能也将在新系统中得到全面支持</li>
+</ul>
+<h3 id="Android-2-3-Gingerbread-姜饼"><a href="#Android-2-3-Gingerbread-姜饼" class="headerlink" title="Android 2.3(Gingerbread 姜饼)"></a>Android 2.3(Gingerbread 姜饼)</h3><ul>
+<li><strong>原生支持前置摄像头</strong></li>
+<li>全新虚拟键盘</li>
+<li>全局下载管理</li>
+<li>NFC近场通信</li>
+<li>改善电源管理</li>
+<li>增加官方进程管理</li>
+<li>提升多媒体能力</li>
+<li>提升游戏体验</li>
+<li>用户界面更美观</li>
+</ul>
+<h3 id="Android-3-0到3-1-3-0-Honeycomb-蜂巢"><a href="#Android-3-0到3-1-3-0-Honeycomb-蜂巢" class="headerlink" title="Android 3.0到3.1(3.0 Honeycomb 蜂巢)"></a>Android 3.0到3.1(3.0 Honeycomb 蜂巢)</h3><p>安卓3.0系统主要用于安卓的平板产品</p>
+<h3 id="Android-4-0-Ice-CreamSandwich"><a href="#Android-4-0-Ice-CreamSandwich" class="headerlink" title="Android 4.0(Ice CreamSandwich)"></a>Android 4.0(Ice CreamSandwich)</h3><ul>
+<li><strong>一流的新UI</strong></li>
+<li>开源</li>
+</ul>
+<h3 id="Android-5-0-Lollipop-棒棒糖"><a href="#Android-5-0-Lollipop-棒棒糖" class="headerlink" title="Android 5.0(Lollipop 棒棒糖)"></a>Android 5.0(Lollipop 棒棒糖)</h3><ul>
+<li>通过Android Market购买音乐</li>
+<li>多核处理器优化</li>
+<li><strong>支持现有的智能手机</strong></li>
+<li>为OEM提供了官方的主题引擎</li>
+</ul>
+<h3 id="Android-6-0-Marshmallow-棉花糖"><a href="#Android-6-0-Marshmallow-棉花糖" class="headerlink" title="Android 6.0(Marshmallow 棉花糖)"></a>Android 6.0(Marshmallow 棉花糖)</h3><ul>
+<li>锁屏下语音搜索</li>
+<li><strong>原生指纹识别</strong></li>
+<li><strong>更完整的应用权限管理</strong></li>
+<li>Doze电量管理</li>
+<li>Now on Tap功能</li>
+<li><strong>App Links</strong></li>
+<li><strong>Android Pay</strong></li>
+</ul>
+<h3 id="Android-7-0-Nougat-牛轧糖"><a href="#Android-7-0-Nougat-牛轧糖" class="headerlink" title="Android 7.0(Nougat 牛轧糖)"></a>Android 7.0(Nougat 牛轧糖)</h3><ul>
+<li><strong>分屏多任务</strong></li>
+<li>全新下拉快捷开关页</li>
+<li><strong>通知消息快捷回复</strong></li>
+<li><strong>通知消息归拢</strong></li>
+<li><strong>夜间模式</strong></li>
+<li>流量保护模式</li>
+<li>全新设置样式</li>
+<li>改进的Doze休眠机制</li>
+<li>系统级电话黑名单功能</li>
+<li><strong>双击菜单键快速应用切换</strong></li>
+</ul>
+<h3 id="Android-8-0-Oreo-奥利奥"><a href="#Android-8-0-Oreo-奥利奥" class="headerlink" title="Android 8.0(Oreo 奥利奥)"></a>Android 8.0(Oreo 奥利奥)</h3><ul>
+<li>通知中心</li>
+<li>设置菜单</li>
+<li><strong>PinnedShortcuts</strong>，类似iOS中的3D Touch</li>
+<li><strong>图标形状</strong></li>
+<li>后台限制</li>
+<li>安装限制</li>
+<li><strong>TensorFlowLite</strong></li>
+<li>NotificationDots</li>
+<li>分屏</li>
+<li>SmartTextSelection</li>
+<li><strong>自动保存密码</strong></li>
+<li>GooglePlayProtect，主要用于Google Play中，下载的应用和游戏将会经过它的排查，来看看是否是有害甚至携带病毒的应用</li>
+<li>应用加速</li>
+<li>字体优化</li>
+<li>表情符号</li>
+</ul>
+<h3 id="Android-9-0-Pie-派"><a href="#Android-9-0-Pie-派" class="headerlink" title="Android 9.0(Pie 派)"></a>Android 9.0(Pie 派)</h3><ul>
+<li><strong>全面屏的全面支持</strong></li>
+<li>通知栏的多种通知</li>
+<li>多摄像头的更多画面</li>
+<li>GPS定位之外的WiFi定位</li>
+<li>神经网络</li>
+<li><strong>Material Design 2.0</strong></li>
+<li>全局黑夜模式</li>
+</ul>
+<h3 id="Android-10-0"><a href="#Android-10-0" class="headerlink" title="Android 10.0"></a>Android 10.0</h3><ul>
+<li><strong>暗黑模式</strong>，在 Android Q 中，暗黑模式适用于任何地方，如果应用不支持暗黑模式，那么系统将自动设置一个暗黑模式</li>
+<li>隐私增强</li>
+<li>运营商锁定</li>
+<li>多显示器支持</li>
+<li><strong>原生面部识别</strong></li>
+<li><strong>桌面模式</strong></li>
+<li><strong>原生屏幕录制</strong></li>
+<li><strong>更安全Smart Lock</strong></li>
+</ul>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined" target="_blank" rel="noopener">Hurley</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://hurleyjames.github.io/2019/02/28/Android1.5%E5%88%B0Android10.0%E7%BB%8F%E5%8E%86%E7%9A%84%E6%96%B0%E7%89%B9%E6%80%A7/">https://hurleyjames.github.io/2019/02/28/Android1.5到Android10.0经历的新特性/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://hurleyjames.github.io" target="_blank">Hurley</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E9%9D%A2%E8%AF%95/">面试</a></div><div class="post_share"><div class="social-share" data-image="/../image/dubbo.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><div class="post-reward"><button class="reward-button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="post-qr-code__img" src="/images/wechat.JPG" alt="wechat" onclick="window.open('/images/wechat.JPG')"/><div class="post-qr-code__desc">wechat</div></li><li class="reward-item"><img class="post-qr-code__img" src="/images/alipay.JPG" alt="alipay" onclick="window.open('/images/alipay.JPG')"/><div class="post-qr-code__desc">alipay</div></li></ul></div></button></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2019/04/17/%E9%80%82%E9%85%8DAndroid7.0%E4%BB%A5%E4%B8%8A%E8%B0%83%E5%8F%96%E7%9B%B8%E6%9C%BA%E6%8B%8D%E7%85%A7%E5%B9%B6%E8%BF%94%E5%9B%9E%E7%85%A7%E7%89%87/"><img class="prev-cover" data-src="/../image/android-camera-photo.png" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">适配Android7.0以上调取相机拍照并返回照片</div></div></a></div><div class="next-post pull-right"><a href="/2018/11/22/%E6%90%AC%E5%AE%B6%E5%89%8D%E4%B8%80%E5%91%A8/"><img class="next-cover" data-src="/../image/moving-before-week.png" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">搬家前一周</div></div></a></div></nav></article></main><footer id="footer" style="background-image: url(/../image/android1-to-android10.png)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2017 - 2021 By Hurley</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div><div class="footer_custom_text">随时意气风发，独自声势浩大</div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><button id="readmode" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font_plus" title="放大字体"><i class="fas fa-plus"></i></button><button id="font_minus" title="缩小字体"><i class="fas fa-minus"></i></button><button id="darkmode" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" title="设置"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  CommonHTML: {
+    linebreaks: { automatic: true, width: "90% container" }
+  },
+  "HTML-CSS": { 
+    linebreaks: { automatic: true, width: "90% container" }
+  },
+  "SVG": { 
+    linebreaks: { automatic: true, width: "90% container" }
+  }
+});
+</script><script type="text/x-mathjax-config">MathJax.Hub.Queue(function() {
+  var all = MathJax.Hub.getAllJax(), i;
+  for (i=0; i < all.length; i += 1) {
+    all[i].SourceElement().parentNode.className += ' has-jax';
+  }
+});
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script id="ribbon_piao" mobile="false" src="/js/third-party/piao.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script>var endLoading = function () {
+  document.body.style.overflow = 'auto';
+  document.getElementById('loading-box').classList.add("loaded")
+}
+window.addEventListener('load',endLoading)</script></body></html>

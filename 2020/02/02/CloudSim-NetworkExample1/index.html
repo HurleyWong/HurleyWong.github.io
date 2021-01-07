@@ -1,0 +1,133 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CloudSim NetworkExample1 | Hurley</title><meta name="description" content="CloudSim中的Network包同样含有很多个Example。在NetworkExample1.java文件中，与Example1.java的不同，主要在于模拟之前，需要初始化网络拓扑。即有以下代码： 1234567891011121314&#x2F;&#x2F; load the network topology file&#x2F;&#x2F; 直接运行有可能会运行失败，报错找不到toplogy.brite文件&#x2F;&#x2F; 方法一：bu"><meta name="keywords" content="CloudSim"><meta name="author" content="Hurley"><meta name="copyright" content="Hurley"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/icon.png"><link rel="canonical" href="https://hurleyjames.github.io/2020/02/02/CloudSim-NetworkExample1/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="article"><meta property="og:title" content="CloudSim NetworkExample1"><meta property="og:url" content="https://hurleyjames.github.io/2020/02/02/CloudSim-NetworkExample1/"><meta property="og:site_name" content="Hurley"><meta property="og:description" content="CloudSim中的Network包同样含有很多个Example。在NetworkExample1.java文件中，与Example1.java的不同，主要在于模拟之前，需要初始化网络拓扑。即有以下代码： 1234567891011121314&#x2F;&#x2F; load the network topology file&#x2F;&#x2F; 直接运行有可能会运行失败，报错找不到toplogy.brite文件&#x2F;&#x2F; 方法一：bu"><meta property="og:image" content="https://hurleyjames.github.io/../image/cloudsim.png"><meta property="article:published_time" content="2020-02-01T16:00:00.000Z"><meta property="article:modified_time" content="2020-07-22T15:50:05.506Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'false'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="prev" title="785.Is Graph Bipartite" href="https://hurleyjames.github.io/2020/02/02/785.Is-Graph-Bipartite/"><link rel="next" title="CloudSim Example1" href="https://hurleyjames.github.io/2020/02/01/CloudSim-Example1/"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: false,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: true,
+  fancybox: false,
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isanchor: false    
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: false
+  }</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="https://avatars1.githubusercontent.com/u/26319720?s=460&amp;v=4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">71</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">30</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">14</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/../image/cloudsim.png)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">Hurley</a></span><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">CloudSim NetworkExample1</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2020-02-02 00:00:00"><i class="far fa-calendar-alt fa-fw"></i> 发表于 2020-02-02</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-07-22 23:50:05"><i class="fas fa-history fa-fw"></i> 更新于 2020-07-22</span></time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fas fa-inbox fa-fw post-meta__icon"></i><a class="post-meta__categories" href="/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/">云计算</a></span></div><div class="meta-secondline"> <span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta__icon"></i><span>字数总计:</span><span class="word-count">547</span><span class="post-meta__separator">|</span><i class="far fa-clock fa-fw post-meta__icon"></i><span>阅读时长: 2 分钟</span></span></div><div class="meta-thirdline"><span class="post-meta-pv-cv"><span class="post-meta__separator">|</span><i class="far fa-eye fa-fw post-meta__icon"></i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><p>CloudSim中的Network包同样含有很多个Example。在NetworkExample1.java文件中，与Example1.java的不同，主要在于模拟之前，需要初始化网络拓扑。即有以下代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// load the network topology file</span></span><br><span class="line"><span class="comment">// 直接运行有可能会运行失败，报错找不到toplogy.brite文件</span></span><br><span class="line"><span class="comment">// 方法一：buildNetworkTopology()中的参数改为topology.brite的绝对路径</span></span><br><span class="line"><span class="comment">// 方法二：把topology.brite拷贝到项目的根目录下</span></span><br><span class="line">NetworkTopology.buildNetworkTopology(<span class="string">"topology.brite"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// maps CloudSim entities to BRITE entities</span></span><br><span class="line"><span class="comment">// PowerDatacenter will correspond to BRITE node 0</span></span><br><span class="line"><span class="keyword">int</span> briteNode=<span class="number">0</span>;</span><br><span class="line">NetworkTopology.mapNode(datacenter0.getId(),briteNode);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Broker will correspond to BRITE node 3</span></span><br><span class="line">briteNode=<span class="number">3</span>;</span><br><span class="line">NetworkTopology.mapNode(broker.getId(),briteNode);</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>那么，NetworkTopology这个类的作用是什么呢？</p>
+<p>它的实现主要是根据一个brite文件建立一个网络拓扑模型，topology.brite文件如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Topology: ( 5 Nodes, 8 Edges ) </span><br><span class="line">Model (1 - RTWaxman): 5 5 5 1 2 0.15000000596046448 0.20000000298023224 1 1 </span><br><span class="line">10.0 1024.0 </span><br><span class="line"></span><br><span class="line">Nodes: ( 5 ) </span><br><span class="line">0 1 3 3 3 -1 RT_NODE </span><br><span class="line">1 0 3 3 3 -1 RT_NODE </span><br><span class="line">2 4 3 3 3 -1 RT_NODE </span><br><span class="line">3 3 1 3 3 -1 RT_NODE </span><br><span class="line">4 3 3 4 4 -1 RT_NODE </span><br><span class="line"></span><br><span class="line">Edges: ( 8 ) </span><br><span class="line">0 2 0 3.0 1.1 10.0 -1 -1 E_RT U </span><br><span class="line">1 2 1 4.0 2.1 10.0 -1 -1 E_RT U </span><br><span class="line">2 3 0 2.8284271247461903 3.9 10.0 -1 -1 E_RT U </span><br><span class="line">3 3 1 3.605551275463989 4.1 10.0 -1 -1 E_RT U </span><br><span class="line">4 4 3 2.0 5.0 10.0 -1 -1 E_RT U </span><br><span class="line">5 4 2 1.0 4.0 10.0 -1 -1 E_RT U </span><br><span class="line">6 0 4 2.0 3.0 10.0 -1 -1 E_RT U </span><br><span class="line">7 1 4 3.0 4.1 10.0 -1 -1 E_RT U</span><br></pre></td></tr></table></figure>
+<p>程序运行后会寻找标记<code>Nodes</code>和<code>Edges</code>，<code>Nodes</code>是节点信息，其中第一列是节点序号，第二列是节点的横坐标，第三列是节点的纵坐标；<code>Edges</code>是边信息，第一列是边序号，第二列是始节点序号，第三列是终节点序号，第四列是边长度，第五列是边时延，第六列是边带宽。</p>
+<p>这里有一个关键类<code>ToplogicalGraph</code>，描绘了图的拓扑的数据结构。这里面包含两个链表，分别用来存储节点<code>ToplogicalNode</code>和边<code>ToplogicalLink</code>。</p>
+<p>在<code>ToplogicalGraph</code>中通过<code>readGraphFile</code>方法，将文件中的描述，转化为网络拓扑模型。接着用得到的网络拓扑，通过<code>generateMatrices()</code>和<code>createBwMatrix()</code>生成一个是实体间的时延矩阵和带宽矩阵。</p>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined" target="_blank" rel="noopener">Hurley</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://hurleyjames.github.io/2020/02/02/CloudSim-NetworkExample1/">https://hurleyjames.github.io/2020/02/02/CloudSim-NetworkExample1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://hurleyjames.github.io" target="_blank">Hurley</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/CloudSim/">CloudSim</a></div><div class="post_share"><div class="social-share" data-image="/../image/dubbo.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><div class="post-reward"><button class="reward-button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="post-qr-code__img" src="/images/wechat.JPG" alt="wechat" onclick="window.open('/images/wechat.JPG')"/><div class="post-qr-code__desc">wechat</div></li><li class="reward-item"><img class="post-qr-code__img" src="/images/alipay.JPG" alt="alipay" onclick="window.open('/images/alipay.JPG')"/><div class="post-qr-code__desc">alipay</div></li></ul></div></button></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/02/02/785.Is-Graph-Bipartite/"><img class="prev-cover" data-src="/../image/is-graph-bipartite.png" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">785.Is Graph Bipartite</div></div></a></div><div class="next-post pull-right"><a href="/2020/02/01/CloudSim-Example1/"><img class="next-cover" data-src="/../image/cloudsim.png" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">CloudSim Example1</div></div></a></div></nav></article></main><footer id="footer" style="background-image: url(/../image/cloudsim.png)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2017 - 2021 By Hurley</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div><div class="footer_custom_text">随时意气风发，独自声势浩大</div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><button id="readmode" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font_plus" title="放大字体"><i class="fas fa-plus"></i></button><button id="font_minus" title="缩小字体"><i class="fas fa-minus"></i></button><button id="darkmode" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  CommonHTML: {
+    linebreaks: { automatic: true, width: "90% container" }
+  },
+  "HTML-CSS": { 
+    linebreaks: { automatic: true, width: "90% container" }
+  },
+  "SVG": { 
+    linebreaks: { automatic: true, width: "90% container" }
+  }
+});
+</script><script type="text/x-mathjax-config">MathJax.Hub.Queue(function() {
+  var all = MathJax.Hub.getAllJax(), i;
+  for (i=0; i < all.length; i += 1) {
+    all[i].SourceElement().parentNode.className += ' has-jax';
+  }
+});
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script id="ribbon_piao" mobile="false" src="/js/third-party/piao.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script>var endLoading = function () {
+  document.body.style.overflow = 'auto';
+  document.getElementById('loading-box').classList.add("loaded")
+}
+window.addEventListener('load',endLoading)</script></body></html>

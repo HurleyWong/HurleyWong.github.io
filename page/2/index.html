@@ -1,0 +1,235 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hurley</title><meta name="description"><meta name="author" content="Hurley"><meta name="copyright" content="Hurley"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/icon.png"><link rel="canonical" href="https://hurleyjames.github.io/page/2/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="website"><meta property="og:title" content="Hurley"><meta property="og:url" content="https://hurleyjames.github.io/page/2/"><meta property="og:site_name" content="Hurley"><meta property="og:description"><meta property="og:image" content="https://avatars1.githubusercontent.com/u/26319720?s=460&amp;v=4"><meta property="article:published_time" content="2021-01-07T13:30:13.369Z"><meta property="article:modified_time" content="2021-01-07T13:30:13.369Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'false'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: false,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: true,
+  fancybox: false,
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isanchor: false    
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isSidebar: false
+  }</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="https://avatars1.githubusercontent.com/u/26319720?s=460&amp;v=4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">71</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">30</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">14</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(https://s1.ax1x.com/2020/05/03/JxTsBR.jpg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">Hurley</a></span><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="site-info"><h1 id="site_title">Hurley</h1><div id="site_subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/HurleyJames" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="/hurleyhuang@hotmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll_down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout_page" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/11/05/141.Linked-List-Cycle/" title="141.Linked List Cycle">     <img class="post_bg" data-src="/../image/linked-list-cycle.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="141.Linked List Cycle"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/05/141.Linked-List-Cycle/" title="141.Linked List Cycle">141.Linked List Cycle</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-11-05 00:00:00"><i class="far fa-calendar-alt"></i>2020-11-05</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/LeetCode/">LeetCode</a></span></div><div class="content">
+给定一个链表，判断链表中是否有环。
+
+代码位于：https://github.com/HurleyJames/MyLeetCode/blob/master/src/basic/LinkedListRing.java
+这个题目可以衍生为三个问题。
+
+判断一个带头节点的单链表L是否有环
+假如有环，找出环的入口节点
+求环的长度
+
+要判断单链表是否有环，肯定要判断两个指针是否相等。可以用到「快慢指针法」。设置两个指针fast和slow，都是从头节点触发往后走，slow每次走一步，fast每次走两步，这两个指针一直往后面走，直到后面fast为空，则说明单链表没有环。如果直到fast走到与slow相等，则说明单链表有环。
+123456789101112131415161718192021222324252627282930public static boolean hasRing(LNode l) &#123;    if (head == null) &#123;        return false;    &#125;    if (head.next == null) &#123;   ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/11/05/22.Generate-Parentheses/" title="22.Generate Parenttheses">     <img class="post_bg" data-src="/../image/generate-parenttheses.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="22.Generate Parenttheses"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/05/22.Generate-Parentheses/" title="22.Generate Parenttheses">22.Generate Parenttheses</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-11-05 00:00:00"><i class="far fa-calendar-alt"></i>2020-11-05</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/LeetCode/">LeetCode</a></span></div><div class="content">代码位于：https://github.com/HurleyJames/MyLeetCode/blob/master/src/basic/GenerateParentheses.java
+
+数字 n 代表生成括号的对数，请你设计一个函数，用于能够生成所有可能的并且有效的括号组合。
+
+假如输入n=3，结果会输出5，因为结果：”((()))”, “(())()”, “(()())”, “()(())”, “()()()”。
+即输入一个数，会返回所有可能的括号组合的数量。
+通过观察，会有以下规律：
+
+左括号的数量总是与右括号的数量相等
+左括号总是位于右括号的左侧
+必须要形成合理的包含关系
+
+这里可以使用递归帮助解决问题。
+1234567891011121314151617181920static List&lt;String&gt; lists = new ArrayList&lt;&gt;();public static void dfs(String str, List&lt;String&gt; lists, int left, int right) &#123;    if (lef ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/11/05/148.Sort-List/" title="148.Sort List">     <img class="post_bg" data-src="/../image/sort-list.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="148.Sort List"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/05/148.Sort-List/" title="148.Sort List">148.Sort List</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-11-05 00:00:00"><i class="far fa-calendar-alt"></i>2020-11-05</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/LeetCode/">LeetCode</a></span></div><div class="content">单链表的排序
+给你链表的头结点 head ，请将其按 升序 排列并返回 排序后的链表 。
+进阶：
+你可以在 O(n log n) 时间复杂度和常数级空间复杂度下，对链表进行排序吗？
+
+思路具体思路是：
+
+定义一个辅助节点aux，永远指向链表头结点，即aux.next=head;
+定义当前节点cur和它的上一个节点pre，如果pre.next&lt;=cur.next,那么pre节点和cur节点同时向后移动
+如果pre.next&gt;cur.next，切断pre节点和cur节点的引用关系，令pre.next=cur.next，把cur节点插入前面恰当位置
+定义节点node1=aux和node2=aux.next，同时向后移动node1和node2，当出现cur.val&lt;node2.val时，把cur插入node1和node2之间
+cur节点变为pre.next
+
+代码1234567891011121314151617181920212223242526272829303132333435public static Node sortLinkedList(Node head) &# ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/11/05/268.Missing-Number/" title="268.Missing Number">     <img class="post_bg" data-src="/../image/missing-number.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="268.Missing Number"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/05/268.Missing-Number/" title="268.Missing Number">268.Missing Number</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-11-05 00:00:00"><i class="far fa-calendar-alt"></i>2020-11-05</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/LeetCode/">LeetCode</a></span></div><div class="content"></div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/11/05/349.Intersection-of-Two-Arrays/" title="349.Intersection of Two Arrays">     <img class="post_bg" data-src="/../image/intersection-of-two-arrays.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="349.Intersection of Two Arrays"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/05/349.Intersection-of-Two-Arrays/" title="349.Intersection of Two Arrays">349.Intersection of Two Arrays</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-11-05 00:00:00"><i class="far fa-calendar-alt"></i>2020-11-05</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/LeetCode/">LeetCode</a></span></div><div class="content"></div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/11/01/547.Find-Circle-Num/" title="547.Find Circle Num">     <img class="post_bg" data-src="/../image/find-circle-num.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="547.Find Circle Num"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/01/547.Find-Circle-Num/" title="547.Find Circle Num">547.Find Circle Num</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-11-01 00:00:00"><i class="far fa-calendar-alt"></i>2020-11-01</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/LeetCode/">LeetCode</a></span></div><div class="content">
+朋友圈班上有 N 名学生。其中有些人是朋友，有些则不是。他们的友谊具有是传递性。如果已知 A 是 B 的朋友，B 是 C 的朋友，那么我们可以认为 A 也是 C 的朋友。所谓的朋友圈，是指所有朋友的集合。
+给定一个 N * N 的矩阵 M，表示班级中学生之间的朋友关系。如果M[i][j] = 1，表示已知第 i 个和 j 个学生互为朋友关系，否则为不知道。你必须输出所有学生中的已知的朋友圈总数。
+示例 1：
+输入：[[1,1,0], [1,1,0], [0,0,1]]
+输出：2 
+解释：已知学生 0 和学生 1 互为朋友，他们在一个朋友圈。第2个学生自己在一个朋友圈。所以返回 2 。
+示例 2：
+输入：[[1,1,0], [1,1,1], [0,1,1]]
+输出：1
+解释：已知学生 0 和学生 1 互为朋友，学生 1 和学生 2 互为朋友，所以学生 0 和学生 2 也是朋友，所以他们三个在一个朋友圈，返回 1 。
+提示：
+1 &lt;= N &lt;= 200
+M[I][I] == 1
+M[I][j] == M[j][I]
+
+深度优先遍历可以用邻接矩阵的方式将其看成是一个图，所以其实 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/10/29/Interview-Review(JVM)/" title="Interview-Review(JVM)">     <img class="post_bg" data-src="/../image/jvm-interview.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Interview-Review(JVM)"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/10/29/Interview-Review(JVM)/" title="Interview-Review(JVM)">Interview-Review(JVM)</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-10-29 00:00:00"><i class="far fa-calendar-alt"></i>2020-10-29</time></div><div class="content"> 运行时数据区域
+JVM内存共分为虚拟机栈、堆、方法区、程序计数器、本地方法栈五个部分。
+线程私有的：
+
+程序计数器 Program Counter Register
+虚拟机栈 VM Stack
+本地方法栈 Native Method Stack
+
+线程共享的：
+
+堆 Heap
+方法区 Method Area
+直接内存（直接内存并不是运行时数据区域的一部分）
+
+ 程序计数器
+程序计数器是一块较小的内存空间，是当前线程所执行的字节码的行号指示器。字节码解释器工作时，通过改变这个计数器的值来选取下一条需要执行的字节码指令，分支、循环、跳转、异常处理等都要依赖这个计数器来完成。
+每个线程都需要有一个独立的程序计数器，各个线程之间的计数器互不影响，独立存储，所以这块内存区域被称为线程私有的内存。
+作用：
+
+字节码解释器通过改变程序计数器来依次读取指令，从而实现代码的流程控制：顺序执行、选择、循环等。
+在多线程的情况下，程序计数器用于记录当前线程执行的位置，从而线程被切换回来可以知道上次运行到哪。
+
+
+程序计数器是唯一一个不会出现OutOfMemoryError的内存区域。生命周期随着线程的创建 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/10/03/%E9%9D%9E%E4%BA%92%E8%81%94%E7%BD%91%E4%BC%81%E4%B8%9A%E6%89%8B%E6%92%95%E4%BB%A3%E7%A0%81%E9%A2%98/" title="非互联网企业手撕代码题">     <img class="post_bg" data-src="/../image/nationalized-enterprise.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="非互联网企业手撕代码题"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/10/03/%E9%9D%9E%E4%BA%92%E8%81%94%E7%BD%91%E4%BC%81%E4%B8%9A%E6%89%8B%E6%92%95%E4%BB%A3%E7%A0%81%E9%A2%98/" title="非互联网企业手撕代码题">非互联网企业手撕代码题</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-10-03 00:00:00"><i class="far fa-calendar-alt"></i>2020-10-03</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></span></div><div class="content">总的来说，非互联网企业，包括银行、运营商等公司的笔试编程题相对还是简单的，很多都是大一接触到的，例如斐波那契数列等类型的题。然而，由于太久未看到这些基础的提醒，在一时间也有可能会反应不过来。毕竟，时间是有限的。因此，在这里做一个简单的汇总和说明。
+定义一个小顶堆手写一个循环队列代码位于：https://github.com/HurleyJames/MyLeetCode/tree/master/src/basic/LoopQueue
+一个队列是实行先进先出的原则，需要加上front和rear两个变量分别代表在数组中的位置，初值为0。
+在非空队列中，front指向队首元素，rear指向队尾元素的下一个存储位置。
+循环队列中会有一个问题：无法区分队空和队满的状态，因为条件都是rear == front。
+所以这里少使用一个存储单元，即队空的条件为rear == front，队满的条件是front == (rear + 1) % maxSize。
+编写队列接口，主要要实现入队、出队、长度、是否为空等方法。
+123456789public interface IQueue &#123;    p ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/09/23/Interview-Review(Git)/" title="Interview-Review(Git)">     <img class="post_bg" data-src="/../image/git-interview.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Interview-Review(Git)"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/09/23/Interview-Review(Git)/" title="Interview-Review(Git)">Interview-Review(Git)</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-09-23 00:00:00"><i class="far fa-calendar-alt"></i>2020-09-23</time></div><div class="content">本篇主要是面试复习内容的Git部分。
+ Git回滚以前的某个版本
+
+
+查找历史版本
+使用git log命令查看所有的历史版本，获取该仓库git的某个历史版本的id。例如，假设id是fae6966548e3ae76cfa7f38a461c438cf75ba965。
+
+
+恢复到历史版本
+$ git reset --hard fae6966548e3ae76cfa7f38a461c438cf75ba965
+
+
+把修改推送到远程的服务器
+git push -f -u origin master
+
+
+ git merge和git rebase的区别
+git merge和git rebase都是用于合并分支的，不同之处在于对于commit记录的处理上是不同的。
+例如，原始分支如下所示，一个是master(origin)分支，一个是dev(mywork)分支：
+
+当使用git merge的话，会新建一个新的commit对象，然后两个分支以前的commit记录都会指向这个新建的commit记录。这个方式可以保留之前的每一个分支中的commit的历史，如下图所示：
+
+当使用git rebase命令时，可 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/09/22/Android%20Jetpack%E7%BB%84%E4%BB%B6/" title="Android Jetpack组件">     <img class="post_bg" data-src="/../image/android-jetpack.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Android Jetpack组件"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/09/22/Android%20Jetpack%E7%BB%84%E4%BB%B6/" title="Android Jetpack组件">Android Jetpack组件</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-09-22 00:00:00"><i class="far fa-calendar-alt"></i>2020-09-22</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Android/">Android</a></span></div><div class="content"> Jetpack
+Jetpack是Google推出的一个框架，主要是可以对代码的逻辑和UI界面实现深层的解耦，打造数据驱动型的UI界面。Android Architecture组件是Android Jetpack的一部分，包含以下组件等：
+
+Lifecycle：能够处理Activity和Fragment的生命周期，在AndroidX中，Fragment和Activity已经对Lifecycle提供了默认的支持。
+ViewModel：当做MVVM的ViewModel层，并具有生命周期意识的处理和UI相关的数据。
+LiveData：和RxJava的作用是一样的，对数据进行监听，优点是无需处理生命周期、无内存泄漏等。
+Paging：是一个易于使用的数据分页库，支持RecyclerView。
+Room：强大的ORM数据库框架。
+Navigation：一个用于管理Fragment切换的工具类，可视化、可绑定控件、支持动画等优点。
+WorkManager：灵活、简单、延迟和保证执行的后台任务处理库。
+DataBinding：加速MVVM的创建。
+
+使用Android Jetpack组件具有以下优势 ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/3/"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="https://avatars1.githubusercontent.com/u/26319720?s=460&amp;v=4" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Hurley</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives"><div class="headline">文章</div><div class="length_num">71</div></a></div><div class="card-info-data-item is-center">      <a href="/tags"><div class="headline">标签</div><div class="length_num">30</div></a></div><div class="card-info-data-item is-center">     <a href="/categories"><div class="headline">分类</div><div class="length_num">14</div></a></div></div><div class="card-info-bookmark is-center"><button class="button--animated" id="bookmark-it" title="加入书签"><i class="fas fa-bookmark"></i><span>加入书签</span></button></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/HurleyJames" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="/hurleyhuang@hotmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">Hey I'm Hurley Huang 👋</div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-recent-item"><div class="aside-recent-post"><a href="/2021/01/02/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%A1%86%E6%9E%B6(%E4%BA%8C)%E2%80%94%E2%80%94Spring%20Cloud/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="/../image/spring-cloud.png" onerror="this.onerror=null;this.src='/img/404.jpg'" title="微服务框架(二)——Spring Cloud" alt="微服务框架(二)——Spring Cloud"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2021/01/02/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%A1%86%E6%9E%B6(%E4%BA%8C)%E2%80%94%E2%80%94Spring%20Cloud/" title="微服务框架(二)——Spring Cloud">微服务框架(二)——Spring Cloud</div><time class="aside-post_meta post-meta__date" title="发表于 2021-01-02 00:00:00">2021-01-02</time></div></a></div><div class="aside-recent-post"><a href="/2021/01/01/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%A1%86%E6%9E%B6(%E4%B8%80)--Dubbo/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="/../image/dubbo.png" onerror="this.onerror=null;this.src='/img/404.jpg'" title="微服务框架(一)——Dubbo" alt="微服务框架(一)——Dubbo"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2021/01/01/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%A1%86%E6%9E%B6(%E4%B8%80)--Dubbo/" title="微服务框架(一)——Dubbo">微服务框架(一)——Dubbo</div><time class="aside-post_meta post-meta__date" title="发表于 2021-01-01 00:00:00">2021-01-01</time></div></a></div><div class="aside-recent-post"><a href="/2020/12/09/%E9%87%8D%E5%85%A5%E9%94%81ReentrantLock%E4%BB%A5%E5%8F%8A%E5%85%AC%E5%B9%B3%E6%80%A7%E9%97%AE%E9%A2%98/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="/../image/reentrantlock.png" onerror="this.onerror=null;this.src='/img/404.jpg'" title="重入锁ReentrantLock以及公平性问题" alt="重入锁ReentrantLock以及公平性问题"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/12/09/%E9%87%8D%E5%85%A5%E9%94%81ReentrantLock%E4%BB%A5%E5%8F%8A%E5%85%AC%E5%B9%B3%E6%80%A7%E9%97%AE%E9%A2%98/" title="重入锁ReentrantLock以及公平性问题">重入锁ReentrantLock以及公平性问题</div><time class="aside-post_meta post-meta__date" title="发表于 2020-12-09 00:00:00">2020-12-09</time></div></a></div><div class="aside-recent-post"><a href="/2020/11/22/RabbitMQ%E5%85%A5%E9%97%A8/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="/../image/rabbitmq.png" onerror="this.onerror=null;this.src='/img/404.jpg'" title="RabbitMQ入门" alt="RabbitMQ入门"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/11/22/RabbitMQ%E5%85%A5%E9%97%A8/" title="RabbitMQ入门">RabbitMQ入门</div><time class="aside-post_meta post-meta__date" title="发表于 2020-11-22 00:00:00">2020-11-22</time></div></a></div><div class="aside-recent-post"><a href="/2020/11/19/Interview-Review(Testing)/"><div class="aside-post-cover"><img class="aside-post-bg" data-src="/../image/testing-interview.png" onerror="this.onerror=null;this.src='/img/404.jpg'" title="Interview-Review(Testing)" alt="Interview-Review(Testing)"/></div><div class="aside-post-title"><div class="aside-post_title" href="/2020/11/19/Interview-Review(Testing)/" title="Interview-Review(Testing)">Interview-Review(Testing)</div><time class="aside-post_meta post-meta__date" title="发表于 2020-11-19 00:00:00">2020-11-19</time></div></a></div></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div><ul class="card-category-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Android/"><span class="card-category-list-name">Android</span><span class="card-category-list-count">7</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Java/"><span class="card-category-list-name">Java</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Kotlin/"><span class="card-category-list-name">Kotlin</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/LeetCode/"><span class="card-category-list-name">LeetCode</span><span class="card-category-list-count">23</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Python/"><span class="card-category-list-name">Python</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/"><span class="card-category-list-name">云计算</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/"><span class="card-category-list-name">分布式系统</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%9B%BE%E8%AE%BA/"><span class="card-category-list-name">图论</span><span class="card-category-list-count">2</span></a></li>
+            <li class="card-category-list-item more is-center"><a class="card-category-list-link-more" href="/categories">
+                <span>查看更多</span><i class="fas fa-angle-right"></i></a></li>           
+            </ul></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/CloudSim/" style="font-size: 17.2px; color: #999ca1">CloudSim</a> <a href="/tags/Dubbo/" style="font-size: 16px; color: #999">Dubbo</a> <a href="/tags/He-said/" style="font-size: 18.4px; color: #999fa8">He said</a> <a href="/tags/I-said/" style="font-size: 17.2px; color: #999ca1">I said</a> <a href="/tags/Jetpack/" style="font-size: 16px; color: #999">Jetpack</a> <a href="/tags/Kotlin%E5%9F%BA%E7%A1%80/" style="font-size: 17.2px; color: #999ca1">Kotlin基础</a> <a href="/tags/NP%E9%97%AE%E9%A2%98/" style="font-size: 16px; color: #999">NP问题</a> <a href="/tags/Numpy/" style="font-size: 16px; color: #999">Numpy</a> <a href="/tags/PyTorch/" style="font-size: 16px; color: #999">PyTorch</a> <a href="/tags/Spring/" style="font-size: 16px; color: #999">Spring</a> <a href="/tags/Spring-Cloud/" style="font-size: 16px; color: #999">Spring Cloud</a> <a href="/tags/keras/" style="font-size: 16px; color: #999">keras</a> <a href="/tags/%E4%BA%8C%E5%88%86%E5%9B%BE/" style="font-size: 16px; color: #999">二分图</a> <a href="/tags/%E5%8A%A8%E7%94%BB/" style="font-size: 16px; color: #999">动画</a> <a href="/tags/%E5%90%8C%E6%AD%A5/" style="font-size: 16px; color: #999">同步</a> <a href="/tags/%E5%9B%BE/" style="font-size: 16px; color: #999">图</a> <a href="/tags/%E5%A4%9A%E5%AA%92%E4%BD%93%E6%8A%80%E6%9C%AF/" style="font-size: 16px; color: #999">多媒体技术</a> <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 16px; color: #999">字符串</a> <a href="/tags/%E5%AE%8C%E7%BE%8E%E5%8C%B9%E9%85%8D/" style="font-size: 16px; color: #999">完美匹配</a> <a href="/tags/%E5%AE%B9%E9%94%99/" style="font-size: 16px; color: #999">容错</a> <a href="/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" style="font-size: 16px; color: #999">开发工具</a> <a href="/tags/%E6%95%B0%E7%BB%84/" style="font-size: 20.8px; color: #99a6b7">数组</a> <a href="/tags/%E6%A0%91/" style="font-size: 19.6px; color: #99a3b0">树</a> <a href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" style="font-size: 16px; color: #999">消息队列</a> <a href="/tags/%E7%BA%BF%E7%A8%8B/" style="font-size: 16px; color: #999">线程</a> <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 20.8px; color: #99a6b7">链表</a> <a href="/tags/%E9%94%81/" style="font-size: 16px; color: #999">锁</a> <a href="/tags/%E9%9B%86%E5%90%88/" style="font-size: 16px; color: #999">集合</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 22px; color: #99a9bf">面试</a> <a href="/tags/%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB/" style="font-size: 16px; color: #999">马尔可夫</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/01/"><span class="card-archive-list-date">一月 2021</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/12/"><span class="card-archive-list-date">十二月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/11/"><span class="card-archive-list-date">十一月 2020</span><span class="card-archive-list-count">12</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/10/"><span class="card-archive-list-date">十月 2020</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/09/"><span class="card-archive-list-date">九月 2020</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/08/"><span class="card-archive-list-date">八月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/06/"><span class="card-archive-list-date">六月 2020</span><span class="card-archive-list-count">9</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/03/"><span class="card-archive-list-date">三月 2020</span><span class="card-archive-list-count">6</span></a></li><li class="card-archive-list-item more is-center"><a class="card-archive-list-link-more" href="/archives">
+              <span>查看更多</span><i class="fas fa-angle-right"  ></i></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="webinfo-article-name">文章数目 :</div><div class="webinfo-article-count">71</div></div><div class="webinfo-item"><div class="webinfo-site-wordcount-name">本站总字数 :</div><div class="webinfo-site-wordcount">169.1k</div></div><div class="webinfo-item">      <div class="webinfo-site-uv-name">本站访客数 :</div><div class="webinfo-site-uv-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="webinfo-site-name">本站总访问量 :</div><div class="webinfo-site-pv-count" id="busuanzi_value_site_pv"></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://s1.ax1x.com/2020/05/03/JxTsBR.jpg)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2017 - 2021 By Hurley</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div><div class="footer_custom_text">随时意气风发，独自声势浩大</div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><button id="darkmode" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script id="ribbon_piao" mobile="false" src="/js/third-party/piao.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script src="https://cdn.jsdelivr.net/npm/typed.js"></script><script>var subtitleEffect = true
+if (subtitleEffect) { 
+  var typed = new Typed("#subtitle", {
+    strings: "随时意气风发，独自声势浩大,High spirited and powerful at any time&#44; even alone".split(","),
+    startDelay: 300,
+    typeSpeed: 150,
+    loop: true,
+    backSpeed: 50
+  })
+} else {
+  document.getElementById("subtitle").innerHTML = '随时意气风发，独自声势浩大'
+}</script><script>var endLoading = function () {
+  document.body.style.overflow = 'auto';
+  document.getElementById('loading-box').classList.add("loaded")
+}
+window.addEventListener('load',endLoading)</script></body></html>
