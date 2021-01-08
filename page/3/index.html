@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hurley</title><meta name="description"><meta name="author" content="Hurley"><meta name="copyright" content="Hurley"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/icon.png"><link rel="canonical" href="https://hurleyjames.github.io/page/3/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="website"><meta property="og:title" content="Hurley"><meta property="og:url" content="https://hurleyjames.github.io/page/3/"><meta property="og:site_name" content="Hurley"><meta property="og:description"><meta property="og:image" content="https://avatars1.githubusercontent.com/u/26319720?s=460&amp;v=4"><meta property="article:published_time" content="2021-01-08T02:45:53.302Z"><meta property="article:modified_time" content="2021-01-08T02:45:53.302Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hurley</title><meta name="description"><meta name="author" content="Hurley"><meta name="copyright" content="Hurley"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/icon.png"><link rel="canonical" href="https://hurleyjames.github.io/page/3/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="website"><meta property="og:title" content="Hurley"><meta property="og:url" content="https://hurleyjames.github.io/page/3/"><meta property="og:site_name" content="Hurley"><meta property="og:description"><meta property="og:image" content="https://avatars1.githubusercontent.com/u/26319720?s=460&amp;v=4"><meta property="article:published_time" content="2021-01-08T03:15:26.928Z"><meta property="article:modified_time" content="2021-01-08T03:15:26.928Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
   document.documentElement.setAttribute('data-theme', 'dark')
   if (document.querySelector('meta[name="theme-color"]') !== null) {
     document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
@@ -242,7 +242,24 @@ SAP
 业务逻辑放在数据库上，比较难迭代
 
 触发器作用触发器是一种特殊的存储过程，主要是通过「事件」来触发而被执行的。它可以强化约束，来维护数据的完整性和一致性，可以跟踪数据库内的操作从而不允许未经许可的更新和变化。触发器不能由用户显示调用，而是只有当出发时间发生并且被捕捉到后，才会被触发。
-语句123456// 创建触发器create trigger trigger_ ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/06/06/Interview-Review(OS)/" title="Interview-Review(OS)">     <img class="post_bg" data-src="/../image/os-interview.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Interview-Review(OS)"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/06/06/Interview-Review(OS)/" title="Interview-Review(OS)">Interview-Review(OS)</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-06-06 00:00:00"><i class="far fa-calendar-alt"></i>2020-06-06</time></div><div class="content">本篇主要是面试复习内容的操作系统部分。
+语句123456// 创建触发器create trigger trigger_ ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/06/06/Interview-Review(Network)/" title="Interview-Review(Network)">     <img class="post_bg" data-src="/../image/network-interview.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Interview-Review(Network)"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/06/06/Interview-Review(Network)/" title="Interview-Review(Network)">Interview-Review(Network)</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-06-06 00:00:00"><i class="far fa-calendar-alt"></i>2020-06-06</time></div><div class="content">本篇主要是面试复习内容的计算机网络部分。
+
+
+HTTP和HTTPS的区别
+
+开销：HTTPS协议需要到CA申请证书或者自制证书
+安全性：HTTP的信息是明文传输，是简单无状态的；HTTPS则是具有安全性的SSL加密传输，HTTPS协议是由SSL+HTTP协议构建的，可进行加密传输、身份认证的网络协议，比HTTP协议安全
+资源消耗：HTTP是直接与TCP进行数据传输；HTTPS运行在SSL/TSL之上，SSL/TSL运行在TCP之上，需要消耗更多的CPU和内存资源；
+端口不同：HTTP用到的端口是80（需要国内备案），HTTPS用到的端口是443
+
+
+HTTP2与HTTP1.x相比的新特性
+
+HTTP2使用新的二进制格式传输，HTTP1.x使用文本（字符串）传输。二进制协议解析起来更高效
+
+HTTP2支持多路复用，即连接共享，即每一个request都是用作连接共享机制的。
+
+在HTTP1.x协议中，「浏览器客户端在同一时间，针对同一域名下的请求有一定的数量限制。超过限制数目的请求会被阻塞」。HTTP2的多路复用（Multiplexing）允许同时超过单一的HTTP2连接发起多重的请求-响 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/06/06/Interview-Review(OS)/" title="Interview-Review(OS)">     <img class="post_bg" data-src="/../image/os-interview.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Interview-Review(OS)"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/06/06/Interview-Review(OS)/" title="Interview-Review(OS)">Interview-Review(OS)</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-06-06 00:00:00"><i class="far fa-calendar-alt"></i>2020-06-06</time></div><div class="content">本篇主要是面试复习内容的操作系统部分。
 
 
 操作系统的四个特性：
@@ -268,24 +285,7 @@ SAP
 
 
 进程的通信方式有哪些
-  ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/06/06/Interview-Review(Network)/" title="Interview-Review(Network)">     <img class="post_bg" data-src="/../image/network-interview.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Interview-Review(Network)"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/06/06/Interview-Review(Network)/" title="Interview-Review(Network)">Interview-Review(Network)</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-06-06 00:00:00"><i class="far fa-calendar-alt"></i>2020-06-06</time></div><div class="content">本篇主要是面试复习内容的计算机网络部分。
-
-
-HTTP和HTTPS的区别
-
-开销：HTTPS协议需要到CA申请证书或者自制证书
-安全性：HTTP的信息是明文传输，是简单无状态的；HTTPS则是具有安全性的SSL加密传输，HTTPS协议是由SSL+HTTP协议构建的，可进行加密传输、身份认证的网络协议，比HTTP协议安全
-资源消耗：HTTP是直接与TCP进行数据传输；HTTPS运行在SSL/TSL之上，SSL/TSL运行在TCP之上，需要消耗更多的CPU和内存资源；
-端口不同：HTTP用到的端口是80（需要国内备案），HTTPS用到的端口是443
-
-
-HTTP2与HTTP1.x相比的新特性
-
-HTTP2使用新的二进制格式传输，HTTP1.x使用文本（字符串）传输。二进制协议解析起来更高效
-
-HTTP2支持多路复用，即连接共享，即每一个request都是用作连接共享机制的。
-
-在HTTP1.x协议中，「浏览器客户端在同一时间，针对同一域名下的请求有一定的数量限制。超过限制数目的请求会被阻塞」。HTTP2的多路复用（Multiplexing）允许同时超过单一的HTTP2连接发起多重的请求-响 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/06/06/Interview-Review(Java)/" title="Interview-Review(Java)">     <img class="post_bg" data-src="/../image/java-interview.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Interview-Review(Java)"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/06/06/Interview-Review(Java)/" title="Interview-Review(Java)">Interview-Review(Java)</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-06-06 00:00:00"><i class="far fa-calendar-alt"></i>2020-06-06</time></div><div class="content">本篇主要是面试复习内容的Java部分。
+  ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/06/06/Interview-Review(Java)/" title="Interview-Review(Java)">     <img class="post_bg" data-src="/../image/java-interview.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Interview-Review(Java)"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/06/06/Interview-Review(Java)/" title="Interview-Review(Java)">Interview-Review(Java)</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-06-06 00:00:00"><i class="far fa-calendar-alt"></i>2020-06-06</time></div><div class="content">本篇主要是面试复习内容的Java部分。
 
 关键字final关键字final关键字主要用在三个地方：变量、方法、类。
 
