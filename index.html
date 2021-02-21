@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hurley</title><meta name="description"><meta name="author" content="Hurley"><meta name="copyright" content="Hurley"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/icon.png"><link rel="canonical" href="https://hurleyjames.github.io/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="website"><meta property="og:title" content="Hurley"><meta property="og:url" content="https://hurleyjames.github.io/"><meta property="og:site_name" content="Hurley"><meta property="og:description"><meta property="og:image" content="https://avatars1.githubusercontent.com/u/26319720?s=460&amp;v=4"><meta property="article:published_time" content="2021-02-01T06:42:38.028Z"><meta property="article:modified_time" content="2021-02-01T06:42:38.028Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hurley</title><meta name="description"><meta name="author" content="Hurley"><meta name="copyright" content="Hurley"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="https://raw.githubusercontent.com/HurleyJames/ImageHosting/master/icon.png"><link rel="canonical" href="https://hurleyjames.github.io/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="website"><meta property="og:title" content="Hurley"><meta property="og:url" content="https://hurleyjames.github.io/"><meta property="og:site_name" content="Hurley"><meta property="og:description"><meta property="og:image" content="https://avatars1.githubusercontent.com/u/26319720?s=460&amp;v=4"><meta property="article:published_time" content="2021-02-21T12:49:48.570Z"><meta property="article:modified_time" content="2021-02-21T12:49:48.570Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
   document.documentElement.setAttribute('data-theme', 'dark')
   if (document.querySelector('meta[name="theme-color"]') !== null) {
     document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
@@ -182,7 +182,40 @@ Container：服务运行的容器
 异步处理例如，用户注册模块，需要发送注册邮件和注册短信，那么传统的方式有：
 
 串行的方式：将注册信息直接写入数据库后，然后先发送注册邮件，再发送注册短信，以上三个任务都完成了，才返回给客户端；这种方式会让用户一直等待，假如每个阶段要消耗50ms，那么用户就需要等待150ms；
-并行的方式：将注册的信息写入数据库后，同时发送邮件和短信，这样 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/11/19/Interview-Review(Testing)/" title="Interview-Review(Testing)">     <img class="post_bg" data-src="/../image/testing-interview.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Interview-Review(Testing)"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/19/Interview-Review(Testing)/" title="Interview-Review(Testing)">Interview-Review(Testing)</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-11-19 00:00:00"><i class="far fa-calendar-alt"></i>2020-11-19</time></div><div class="content">软件测试分类按开发阶段：
+并行的方式：将注册的信息写入数据库后，同时发送邮件和短信，这样 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/11/19/Interview-Review(Software%20Engineering)/" title="Interview-Review(Software Engineering)">     <img class="post_bg" data-src="/../image/software-engineering-interview.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Interview-Review(Software Engineering)"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/19/Interview-Review(Software%20Engineering)/" title="Interview-Review(Software Engineering)">Interview-Review(Software Engineering)</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-11-19 00:00:00"><i class="far fa-calendar-alt"></i>2020-11-19</time></div><div class="content">软件工程
+软件工程就是用科学的知识和技术原理来定义、开发、维护软件的一门学科。
+
+软件工程的三要素：工具、方法、过程
+软件开发中常见的软件过程模型有：
+
+瀑布模型
+快速原型模型
+增量模型
+螺旋模型
+喷泉模型
+统一软件过程
+
+其中喷泉模型、统一软件过程适用于面向对象的软件开发。
+瀑布模型
+瀑布模型（Waterfall Model）是一个项目开发架构，开发过程是通过设计一系列阶段顺序展开的，从系统需求分析开始直到产品发布和维护，每个阶段都会产生循环反馈
+
+优点：
+
+为项目提供了按阶段划分的检查点
+当前一阶段完成后，就只需要去关注后续阶段的实现
+可在迭代模型中应用瀑布模型
+
+缺点：
+
+在项目各个阶段之间极少有反馈
+只有在项目生命周期的后期才能看到结果
+需要通过过多的强制完成日期和里程碑来跟踪各个项目的阶段
+不适应用户需求的变化
+
+快速原型模型
+快速原型是快速建立起来的，可以在计算机运行的程序，它所能完成的功能往往是最终产品所完成的功能的一部分。
+
+它允许在需求分析阶段对软件的需求进行初步而非完全的分析和定义，这样就可以快速设计开发出软件系统的原型。该原型向用户展示待开发软件的全部或者部分功能 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/11/19/Interview-Review(Testing)/" title="Interview-Review(Testing)">     <img class="post_bg" data-src="/../image/testing-interview.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Interview-Review(Testing)"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/19/Interview-Review(Testing)/" title="Interview-Review(Testing)">Interview-Review(Testing)</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-11-19 00:00:00"><i class="far fa-calendar-alt"></i>2020-11-19</time></div><div class="content">软件测试分类按开发阶段：
 
 单元测试
 集成测试
@@ -221,40 +254,7 @@ Container：服务运行的容器
 
 单元测试：对源程序中每一个程序单元（最小可测试单元）进行测试，检查各个模块是否正确实现规定的功能，从而发现错误。（该阶段涉及到编码和详细设计文档）
 集成测试：为了检查与设计相关的软件体系结构的有关问题，检查概要设计是否合理。
-确认测试：主要是检查已实现的软件是否满足需求规格说明书中确定的 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/11/19/Interview-Review(Software%20Engineering)/" title="Interview-Review(Software Engineering)">     <img class="post_bg" data-src="/../image/software-engineering-interview.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Interview-Review(Software Engineering)"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/19/Interview-Review(Software%20Engineering)/" title="Interview-Review(Software Engineering)">Interview-Review(Software Engineering)</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-11-19 00:00:00"><i class="far fa-calendar-alt"></i>2020-11-19</time></div><div class="content">软件工程
-软件工程就是用科学的知识和技术原理来定义、开发、维护软件的一门学科。
-
-软件工程的三要素：工具、方法、过程
-软件开发中常见的软件过程模型有：
-
-瀑布模型
-快速原型模型
-增量模型
-螺旋模型
-喷泉模型
-统一软件过程
-
-其中喷泉模型、统一软件过程适用于面向对象的软件开发。
-瀑布模型
-瀑布模型（Waterfall Model）是一个项目开发架构，开发过程是通过设计一系列阶段顺序展开的，从系统需求分析开始直到产品发布和维护，每个阶段都会产生循环反馈
-
-优点：
-
-为项目提供了按阶段划分的检查点
-当前一阶段完成后，就只需要去关注后续阶段的实现
-可在迭代模型中应用瀑布模型
-
-缺点：
-
-在项目各个阶段之间极少有反馈
-只有在项目生命周期的后期才能看到结果
-需要通过过多的强制完成日期和里程碑来跟踪各个项目的阶段
-不适应用户需求的变化
-
-快速原型模型
-快速原型是快速建立起来的，可以在计算机运行的程序，它所能完成的功能往往是最终产品所完成的功能的一部分。
-
-它允许在需求分析阶段对软件的需求进行初步而非完全的分析和定义，这样就可以快速设计开发出软件系统的原型。该原型向用户展示待开发软件的全部或者部分功能 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/11/15/%E7%90%86%E8%A7%A3Spring%E7%9A%84IOC%E5%92%8CDI%E4%BB%A5%E5%8F%8AAOP/" title="理解Spring的控制反转和依赖注入以及AOP">     <img class="post_bg" data-src="/../image/ioc-di-aop.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="理解Spring的控制反转和依赖注入以及AOP"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/15/%E7%90%86%E8%A7%A3Spring%E7%9A%84IOC%E5%92%8CDI%E4%BB%A5%E5%8F%8AAOP/" title="理解Spring的控制反转和依赖注入以及AOP">理解Spring的控制反转和依赖注入以及AOP</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-11-15 00:00:00"><i class="far fa-calendar-alt"></i>2020-11-15</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Java/">Java</a></span></div><div class="content">依赖倒置原则在了解控制反转之前，有必要了解软件设计里的一个重要思想：依赖倒置原则。
+确认测试：主要是检查已实现的软件是否满足需求规格说明书中确定的 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/11/15/%E7%90%86%E8%A7%A3Spring%E7%9A%84IOC%E5%92%8CDI%E4%BB%A5%E5%8F%8AAOP/" title="理解Spring的控制反转和依赖注入以及AOP">     <img class="post_bg" data-src="/../image/ioc-di-aop.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="理解Spring的控制反转和依赖注入以及AOP"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/15/%E7%90%86%E8%A7%A3Spring%E7%9A%84IOC%E5%92%8CDI%E4%BB%A5%E5%8F%8AAOP/" title="理解Spring的控制反转和依赖注入以及AOP">理解Spring的控制反转和依赖注入以及AOP</a><div class="article-meta-wrap"><time class="post-meta__date" title="发表于 2020-11-15 00:00:00"><i class="far fa-calendar-alt"></i>2020-11-15</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Java/">Java</a></span></div><div class="content">依赖倒置原则在了解控制反转之前，有必要了解软件设计里的一个重要思想：依赖倒置原则。
 这里可以举一个汽车的例子来说明。假如我们来设计一辆汽车，先设计轮子，再根据轮子的大小去设计底盘，根据底盘去设计车身，最终根据车身来设计好整个车子。这样就会形成了一个如下的依赖关系：
 
 这种设计的维护性非常低。假如完工之后，需要更改轮子的设计，那么轮子上层的所有事物的设计都得修改，即整个设计都需要修改。
