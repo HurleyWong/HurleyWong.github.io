@@ -251,14 +251,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span></span>
+              <span>2.4k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>NaN:aN</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -272,34 +272,42 @@
       
         <p>在 Java 中，String 类是不可变的，即 String 中的对象是不可变的。</p>
 <span id="more"></span>
-<h3 id="区别对象和对象的引用"><a href="#区别对象和对象的引用" class="headerlink" title="区别对象和对象的引用"></a>区别对象和对象的引用</h3><p>对于 Java 初学者， 对于 String 是不可变对象总是存有疑惑。例如如下代码：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String s = <span class="string">&quot;ABCabc&quot;</span>;</span><br><span class="line">System.out.println(<span class="string">&quot;s = &quot;</span> + s);</span><br><span class="line"></span><br><span class="line">s = <span class="string">&quot;123456&quot;</span>;</span><br><span class="line">System.out.println(<span class="string">&quot;s = &quot;</span> + s);</span><br></pre></td></tr></table></figure>
-<p>打印出的结果为：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s = ABCabc</span><br><span class="line">s = <span class="number">123456</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="区别对象和对象的引用">区别对象和对象的引用</h3>
+<p>对于 Java 初学者， 对于 String 是不可变对象总是存有疑惑。例如如下代码：</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">String</span> s = <span class="st">&quot;ABCabc&quot;</span>;</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;s = &quot;</span> + s);</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>s = <span class="st">&quot;123456&quot;</span>;</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;s = &quot;</span> + s);</span></code></pre></div>
+<p>打印出的结果为：</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>s = ABCabc</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>s = <span class="dv">123456</span></span></code></pre></div>
 <p>首先创建一个 String 对象 s，然后让 s 的值为“ABCabc”， 然后又让 s 的值为“123456”。从打印结果可以看出，s 的值确实改变了，那么为什么说 String 对象是不可变的呢？其实这里存在一个误区：<strong>s 只是一个 String 对象的引用，并不是对象本身</strong>。对象在内存中是一块内存区，成员变量越多，这块内存区占的空间越大。引用只是一个 4 字节的数据，里面存放了它所指向的对象的地址，通过这个地址可以访问对象。</p>
 <p>也就是说，s 只是一个引用，它指向了一个具体的对象，当<code>s=“123456”;</code>这句代码执行过之后，又创建了一个新的对象“123456”， 而引用 s 重新指向了这个新的对象，原来的对象“ABCabc”还在内存中存在，并没有改变。内存结构如下图所示：</p>
-<p><img data-src="https://i.loli.net/2021/01/07/OL8ekRVIM6mwpsP.png" alt="String 真实的内存结构"></p>
-<h3 id="不可变类"><a href="#不可变类" class="headerlink" title="不可变类"></a>不可变类</h3><blockquote>
+<figure>
+<img data-src="https://i.loli.net/2021/01/07/OL8ekRVIM6mwpsP.png" alt="String 真实的内存结构" /><figcaption aria-hidden="true">String 真实的内存结构</figcaption>
+</figure>
+<h3 id="不可变类">不可变类</h3>
+<blockquote>
 <p>如果一个对象，在它创建完成之后，不能再改变它的状态，那么这个对象就是不可变的。即不能改变对象内的成员变量，包括基本数据类型的值不能改变，引用类型的变量不能再指向其它的对象，引用类型指向的对象的状态也不能改变。</p>
 </blockquote>
 <p>《Effective Java》中第 15 条<strong>使可变性最小化</strong>中对<strong>不可变类</strong>的解释：</p>
 <blockquote>
-<p>不可变类只是其实例不能被修改的类。每个实例中包含的所有信息都必须在创建该实例的时候就提供，并且在对象的整个生命周期内固定不变。为了使类不可变，要遵循下面五条规则：</p>
-<ol>
-<li>不要提供任何会修改对象状态的方法。</li>
-<li>保证类不会被扩展。一般的做法是让这个类称为<code>final</code>的，防止子类化，破坏该类的不可变行为。</li>
-<li>使所有的域都是<code>final</code>的。</li>
-<li>使所有的域都成为私有的。防止客户端获得访问被域引用的可变对象的权限，并防止客户端直接修改这些对象。</li>
-<li>确保对于任何可变性组件的互斥访问。如果类具有指向可变对象的域，则必须确保该类的客户端无法获得指向这些对象的引用。</li>
-</ol>
+<p>不可变类只是其实例不能被修改的类。每个实例中包含的所有信息都必须在创建该实例的时候就提供，并且在对象的整个生命周期内固定不变。为了使类不可变，要遵循下面五条规则： 1. 不要提供任何会修改对象状态的方法。 2. 保证类不会被扩展。一般的做法是让这个类称为<code>final</code>的，防止子类化，破坏该类的不可变行为。 3. 使所有的域都是<code>final</code>的。 4. 使所有的域都成为私有的。防止客户端获得访问被域引用的可变对象的权限，并防止客户端直接修改这些对象。 5. 确保对于任何可变性组件的互斥访问。如果类具有指向可变对象的域，则必须确保该类的客户端无法获得指向这些对象的引用。</p>
 </blockquote>
 <p>在 Java 平台类库中，包含许多不可变类，例如<code>String</code>, 基本类型的包装类，<code>BigInteger</code>, <code>BigDecimal</code>等等。综上所述，不可变类具有一些显著的通用特征：类本身是<code>final</code>修饰的；所有的域几乎都是私有<code>final</code>的；不会对外暴露可以修改对象属性的方法。通过查阅 String 的源码，可以清晰的看到这些特征。</p>
-<h3 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h3><p>通过查看 Java 中 String 的源码，如下所示：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">String</span> <span class="keyword">implements</span> <span class="title">Serializable</span>, <span class="title">Comparable</span>&lt;<span class="title">String</span>&gt;, <span class="title">CharSequence</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Stable</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">byte</span>[] value;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="源码">源码</h3>
+<p>通过查看 Java 中 String 的源码，如下所示：</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">final</span> <span class="kw">class</span> <span class="bu">String</span> <span class="kw">implements</span> <span class="bu">Serializable</span>, <span class="bu">Comparable</span>&lt;<span class="bu">String</span>&gt;, <span class="bu">CharSequence</span> &#123;</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">@Stable</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">final</span> <span class="dt">byte</span>[] value;</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>&#125;</span></code></pre></div>
 <p>首先，String 类是通过<code>final</code>修饰的，满足了第二条的：类不能被拓展。</p>
 <p>其次，在类中，最重要的一条<code>private final byte[] value;</code>中，我们可以看到 Java 是使用<strong>字节数组</strong>（Java9，之前的版本是采用字符 char 数组实现）来实现字符串的，并且使用了<code>final</code>修饰，这就是 String 为什么不可变的原因。</p>
 <p>因为它使用了<code>private final</code>，导致正常情况下外界没有办法去修改它的值。这满足了第三条：使所有的域都是<code>final</code>的，和第四条：使所有的域都是私有的。然而仅仅这样也仍然不是万无一失的。</p>
 <p>第一条原则是：不要提供任何会修改对象状态的方法。String 类在这点中做得很好。在 String 类中许多会对字符串进行操作的方法中，例如<code>replaceAll()</code>或者<code>substring()</code>等，其中的每一步实现都不会对<code>value</code>产生任何影响。即 String 类中并没有提供任何可以改变其值的方法，这比<code>final</code>更能确保其是不变的。</p>
-<h3 id="好处"><a href="#好处" class="headerlink" title="好处"></a>好处</h3><p>《Effective Java》一书中总结了不可变类的特点：</p>
+<h3 id="好处">好处</h3>
+<p>《Effective Java》一书中总结了不可变类的特点：</p>
 <ul>
 <li>不可变类比较简单。</li>
 <li>不可变对象本质上是线程安全的，它们不要求同步。不可变对象可以被自由地共享。</li>
@@ -307,8 +315,30 @@
 <li>不可变对象为其他对象提供了大量的构建。</li>
 <li>不可变类真正唯一的缺点是，对于每个不同的值都需要一个单独的对象。</li>
 </ul>
-<h3 id="String-真的不可变吗"><a href="#String-真的不可变吗" class="headerlink" title="String 真的不可变吗"></a>String 真的不可变吗</h3><p>其实可以通过<strong>反射机制</strong>来破坏 String 的不可变性。可以反射出 String 对象中的 value 属性，进而改变通过获得的 value 引用改变数组的结构。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">testReflection</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 创建字符串&quot;Hello World&quot;， 并赋给引用 s</span></span><br><span class="line">    String s = <span class="string">&quot;Hello World&quot;</span>;</span><br><span class="line"></span><br><span class="line">    System.out.println(<span class="string">&quot;s = &quot;</span> + s);	<span class="comment">// Hello World</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取 String 类中的 value 字段</span></span><br><span class="line">    Field valueFieldOfString = String.class.getDeclaredField(<span class="string">&quot;value&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 改变 value 属性的访问权限</span></span><br><span class="line">    valueFieldOfString.setAccessible(<span class="keyword">true</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取 s 对象上的 value 属性的值</span></span><br><span class="line">    <span class="keyword">char</span>[] value = (<span class="keyword">char</span>[]) valueFieldOfString.get(s);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 改变 value 所引用的数组中的第 5 个字符</span></span><br><span class="line">    value[<span class="number">5</span>] = <span class="string">&#x27;_&#x27;</span>;</span><br><span class="line"></span><br><span class="line">    System.out.println(<span class="string">&quot;s = &quot;</span> + s);  <span class="comment">// 变成 Hello_World</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="string-真的不可变吗">String 真的不可变吗</h3>
+<p>其实可以通过<strong>反射机制</strong>来破坏 String 的不可变性。可以反射出 String 对象中的 value 属性，进而改变通过获得的 value 引用改变数组的结构。</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">testReflection</span>() <span class="kw">throws</span> <span class="bu">Exception</span> &#123;</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 创建字符串&quot;Hello World&quot;， 并赋给引用 s</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">String</span> s = <span class="st">&quot;Hello World&quot;</span>;</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;s = &quot;</span> + s); <span class="co">// Hello World</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 获取 String 类中的 value 字段</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">Field</span> valueFieldOfString = <span class="bu">String</span>.<span class="fu">class</span>.<span class="fu">getDeclaredField</span>(<span class="st">&quot;value&quot;</span>);</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 改变 value 属性的访问权限</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    valueFieldOfString.<span class="fu">setAccessible</span>(<span class="kw">true</span>);</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 获取 s 对象上的 value 属性的值</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    <span class="dt">char</span>[] value = (<span class="dt">char</span>[]) valueFieldOfString.<span class="fu">get</span>(s);</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 改变 value 所引用的数组中的第 5 个字符</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    value[<span class="dv">5</span>] = <span class="ch">&#39;_&#39;</span>;</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;s = &quot;</span> + s);  <span class="co">// 变成 Hello_World</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>&#125;</span></code></pre></div>
+
     </div>
 
     
@@ -408,7 +438,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%BA%E5%88%AB%E5%AF%B9%E8%B1%A1%E5%92%8C%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%BC%95%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text">区别对象和对象的引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8D%E5%8F%AF%E5%8F%98%E7%B1%BB"><span class="nav-number">2.</span> <span class="nav-text">不可变类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%BA%90%E7%A0%81"><span class="nav-number">3.</span> <span class="nav-text">源码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A5%BD%E5%A4%84"><span class="nav-number">4.</span> <span class="nav-text">好处</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String-%E7%9C%9F%E7%9A%84%E4%B8%8D%E5%8F%AF%E5%8F%98%E5%90%97"><span class="nav-number">5.</span> <span class="nav-text">String 真的不可变吗</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%BA%E5%88%AB%E5%AF%B9%E8%B1%A1%E5%92%8C%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%BC%95%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text">区别对象和对象的引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8D%E5%8F%AF%E5%8F%98%E7%B1%BB"><span class="nav-number">2.</span> <span class="nav-text">不可变类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%BA%90%E7%A0%81"><span class="nav-number">3.</span> <span class="nav-text">源码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A5%BD%E5%A4%84"><span class="nav-number">4.</span> <span class="nav-text">好处</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#string-%E7%9C%9F%E7%9A%84%E4%B8%8D%E5%8F%AF%E5%8F%98%E5%90%97"><span class="nav-number">5.</span> <span class="nav-text">String 真的不可变吗</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -488,13 +518,13 @@
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">NaNm</span>
+    <span title="站点总字数">69k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">NaN:aN</span>
+    <span title="站点阅读时长">1:03</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

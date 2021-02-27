@@ -256,6 +256,13 @@
   </url>
   
   <url>
+    <loc>https://hurleyjames.github.io/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2021-02-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://hurleyjames.github.io/tags/%E4%BA%8C%E5%88%86%E5%9B%BE/</loc>
     <lastmod>2021-02-27</lastmod>
     <changefreq>daily</changefreq>
@@ -271,13 +278,6 @@
   
   <url>
     <loc>https://hurleyjames.github.io/tags/I-said/</loc>
-    <lastmod>2021-02-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hurleyjames.github.io/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2021-02-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -370,14 +370,14 @@
   </url>
   
   <url>
-    <loc>https://hurleyjames.github.io/categories/%E6%B8%85%E6%96%B0/</loc>
+    <loc>https://hurleyjames.github.io/categories/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/</loc>
     <lastmod>2021-02-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://hurleyjames.github.io/categories/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/</loc>
+    <loc>https://hurleyjames.github.io/categories/%E6%B8%85%E6%96%B0/</loc>
     <lastmod>2021-02-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

@@ -262,14 +262,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span></span>
+              <span>667</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>NaN:aN</span>
+              <span>1 分钟</span>
             </span>
             <div class="post-description">本文主要介绍二分图与完美匹配。</div>
 
@@ -282,20 +282,26 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="二分图定义"><a href="#二分图定义" class="headerlink" title="二分图定义"></a>二分图定义</h2><p>可以把图中的点分成两部分，使得每部分内部两两点之间没有连边。</p>
-<h2 id="判定是否是二分图"><a href="#判定是否是二分图" class="headerlink" title="判定是否是二分图"></a>判定是否是二分图</h2><p>没有奇数环的图，或者能够黑白染色（染色问题）的图。</p>
-<h2 id="完美匹配"><a href="#完美匹配" class="headerlink" title="完美匹配"></a>完美匹配</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>一个图的最大匹配中的每个点都是匹配点</p>
-<h3 id="Hall定理"><a href="#Hall定理" class="headerlink" title="Hall定理"></a>Hall定理</h3><p>设 G 是具有二划分$(X, Y)$的二部图，则G有饱和X的匹配当且仅当对$∀S ⊆ X ， N ( S ) ≥ |S|$，其中$N(S)$表示 S 的所有邻点之集。</p>
+        <h2 id="二分图定义">二分图定义</h2>
+<p>可以把图中的点分成两部分，使得每部分内部两两点之间没有连边。</p>
+<h2 id="判定是否是二分图">判定是否是二分图</h2>
+<p>没有奇数环的图，或者能够黑白染色（染色问题）的图。</p>
+<h2 id="完美匹配">完美匹配</h2>
+<h3 id="定义">定义</h3>
+<p>一个图的最大匹配中的每个点都是匹配点</p>
+<h3 id="hall定理">Hall定理</h3>
+<p>设 G 是具有二划分<span class="math inline">\((X, Y)\)</span>的二部图，则G有饱和X的匹配当且仅当对<span class="math inline">\(∀S ⊆ X ， N ( S ) ≥ |S|\)</span>，其中<span class="math inline">\(N(S)\)</span>表示 S 的所有邻点之集。</p>
 <p>通俗的说，即<strong>选择任意的左部点S个，把所有这S个点关联的K个右部点取出来，一定有|S|&lt;=|K|</strong>。如果满足这个条件，则是二分图。</p>
-<h3 id="Tutte定理"><a href="#Tutte定理" class="headerlink" title="Tutte定理"></a>Tutte定理</h3><blockquote>
-<p>A graph, <em>G</em> = (<em>V</em>, <em>E</em>), has a <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Perfect_matching">perfect matching</a> <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/If_and_only_if">if and only if</a> for every subset <em>U</em> of <em>V</em>, the <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Glossary_of_graph_theory#Subgraphs">subgraph</a> induced by <em>V</em> − <em>U</em> has at most |<em>U</em>| <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Connected_component_(graph_theory">connected components</a>) with an odd number of <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Vertex_(graph_theory">vertices</a>).</p>
+<h3 id="tutte定理">Tutte定理</h3>
+<blockquote>
+<p>A graph, <em>G</em> = (<em>V</em>, <em>E</em>), has a <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Perfect_matching">perfect matching</a> <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/If_and_only_if">if and only if</a> for every subset <em>U</em> of <em>V</em>, the <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Glossary_of_graph_theory#Subgraphs">subgraph</a> induced by <em>V</em> − <em>U</em> has at most |<em>U</em>| <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Connected_component_(graph_theory)">connected components</a> with an odd number of <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Vertex_(graph_theory)">vertices</a>.</p>
 </blockquote>
-<p>图 G 有完美匹配的充分必要条件是<strong>对∀S ⊂ V (G ) ， O (G \ S ) ≤| S |</strong>。</p>
+<p>图 G 有完美匹配的充分必要条件是<strong>对∀S ⊂ V (G ) ， O (G  S ) ≤| S |</strong>。</p>
 <p>即图 G 有完美匹配等价于，对于图 G 去掉任意一个点集之后，图的奇分支的个数小于等于点集的个数（奇分支：有奇数个点的分支）。</p>
 <p>例如，对于下图，证明其是否有完美匹配。</p>
-<p><img data-src="https://i.loli.net/2021/01/07/Xr2d6KgsbxOk8nP.png" alt=""></p>
+<p><img data-src="https://i.loli.net/2021/01/07/Xr2d6KgsbxOk8nP.png" /></p>
 <p>可以在图中挑出一些点，使得点与点之间分隔后的部分有<strong>奇数</strong>个顶点，然后比较挑出的点的数量，与分隔后的部分的数量的大小。如果分隔后部分的数量小于等于挑出点的数量，则有完美匹配。</p>
-<p><img data-src="https://i.loli.net/2021/01/07/pLsJGEZud2i6Njh.png" alt=""></p>
+<p><img data-src="https://i.loli.net/2021/01/07/pLsJGEZud2i6Njh.png" /></p>
 <p>如上图所示，挑出 12 个红点，这 12 个红点将图分成了 14 个部分（每个部分必须含有奇数个顶点）。因为 12&lt;14，不满足 Tutte 定理，所以这个图没有完美匹配。</p>
 
     </div>
@@ -398,7 +404,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%88%86%E5%9B%BE%E5%AE%9A%E4%B9%89"><span class="nav-number">1.</span> <span class="nav-text">二分图定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A4%E5%AE%9A%E6%98%AF%E5%90%A6%E6%98%AF%E4%BA%8C%E5%88%86%E5%9B%BE"><span class="nav-number">2.</span> <span class="nav-text">判定是否是二分图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8C%E7%BE%8E%E5%8C%B9%E9%85%8D"><span class="nav-number">3.</span> <span class="nav-text">完美匹配</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">3.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hall%E5%AE%9A%E7%90%86"><span class="nav-number">3.2.</span> <span class="nav-text">Hall定理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tutte%E5%AE%9A%E7%90%86"><span class="nav-number">3.3.</span> <span class="nav-text">Tutte定理</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%88%86%E5%9B%BE%E5%AE%9A%E4%B9%89"><span class="nav-number">1.</span> <span class="nav-text">二分图定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A4%E5%AE%9A%E6%98%AF%E5%90%A6%E6%98%AF%E4%BA%8C%E5%88%86%E5%9B%BE"><span class="nav-number">2.</span> <span class="nav-text">判定是否是二分图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8C%E7%BE%8E%E5%8C%B9%E9%85%8D"><span class="nav-number">3.</span> <span class="nav-text">完美匹配</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">3.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hall%E5%AE%9A%E7%90%86"><span class="nav-number">3.2.</span> <span class="nav-text">Hall定理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tutte%E5%AE%9A%E7%90%86"><span class="nav-number">3.3.</span> <span class="nav-text">Tutte定理</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -478,13 +484,13 @@
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">NaNm</span>
+    <span title="站点总字数">69k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">NaN:aN</span>
+    <span title="站点阅读时长">1:03</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

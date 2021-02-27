@@ -265,14 +265,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span></span>
+              <span>3.8k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>NaN:aN</span>
+              <span>3 分钟</span>
             </span>
             <div class="post-description">介绍有关马尔可夫决策过程的相关知识点。</div>
 
@@ -285,26 +285,35 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="马尔可夫性"><a href="#马尔可夫性" class="headerlink" title="马尔可夫性"></a>马尔可夫性</h2><p>某一状态信息包含了相关的历史，只要当前状态可知，所有的历史信息都不再需要，当前状态就可以决定未来，则认为该状态具有马尔可夫性（Markov Property）。</p>
-<p><img data-src="https://i.loli.net/2021/01/07/fk6g5r3bL2QnpHZ.png" alt="马尔可夫性"></p>
+        <h2 id="马尔可夫性">马尔可夫性</h2>
+<p>某一状态信息包含了相关的历史，只要当前状态可知，所有的历史信息都不再需要，当前状态就可以决定未来，则认为该状态具有马尔可夫性（Markov Property）。</p>
+<figure>
+<img data-src="https://i.loli.net/2021/01/07/fk6g5r3bL2QnpHZ.png" alt="马尔可夫性" /><figcaption aria-hidden="true">马尔可夫性</figcaption>
+</figure>
 <span id="more"></span>
-<h2 id="马尔可夫过程"><a href="#马尔可夫过程" class="headerlink" title="马尔可夫过程"></a>马尔可夫过程</h2><p>又叫马尔可夫链（Markov Chain）。它是一个无记忆的随机过程，可以用一个元组$<S, P>$表示，其中 S 是有限数量的状态集，P 是状态转移概率矩阵。</p>
-<p><img data-src="https://i.loli.net/2021/01/07/kjVv3wCQdELxm8p.png" alt="马尔可夫过程"></p>
-<h2 id="马尔可夫奖励过程"><a href="#马尔可夫奖励过程" class="headerlink" title="马尔可夫奖励过程"></a>马尔可夫奖励过程</h2><p>马尔可夫奖励过程（Markov Reward Process）在马尔可夫过程的基础上增加了奖励R和衰减系数V：$<S, P, R, V>$。R 是一个奖励函数。S 状态下的奖励是某一时刻$(t)$处所在状态 s 下在下一个时刻$(t+1)$能获得的奖励期望：</p>
-<script type="math/tex; mode=display">
-R_s = E[R_{t+1}|S_t=s]</script><p>衰减系数（Discount Factor）：$\gamma\in[0, 1]$，避免无限循环。</p>
-<h2 id="马尔可夫决策过程"><a href="#马尔可夫决策过程" class="headerlink" title="马尔可夫决策过程"></a>马尔可夫决策过程</h2><p>Markov Decision Process，MDP</p>
-<p>多了一个行为集合 A，元组$<S, A, P, R, V>$。</p>
-<script type="math/tex; mode=display">
-P^a_{ss'} = P[S_{t+1}=s'|S_t=s, A_t=a]\\
-R^a_s=E[R_{t+1}|S_t=s, A=a]</script><p>当给定一个 MDP： $<S, R, P,R, \gamma>$和一个策略$\pi$，那么状态序列$S_1，S_2$，是一个马尔可夫过程$<S, P^\pi>$。</p>
-<p>下一个时刻的状态$S_{t+1}$和<strong>当前时刻的状态$S_t$以及动作$a_t$有关</strong>。</p>
-<h3 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h3><script type="math/tex; mode=display">
+<h2 id="马尔可夫过程">马尔可夫过程</h2>
+<p>又叫马尔可夫链（Markov Chain）。它是一个无记忆的随机过程，可以用一个元组<span class="math inline">\(&lt;S, P&gt;\)</span>表示，其中 S 是有限数量的状态集，P 是状态转移概率矩阵。</p>
+<figure>
+<img data-src="https://i.loli.net/2021/01/07/kjVv3wCQdELxm8p.png" alt="马尔可夫过程" /><figcaption aria-hidden="true">马尔可夫过程</figcaption>
+</figure>
+<h2 id="马尔可夫奖励过程">马尔可夫奖励过程</h2>
+<p>马尔可夫奖励过程（Markov Reward Process）在马尔可夫过程的基础上增加了奖励R和衰减系数V：<span class="math inline">\(&lt;S, P, R, V&gt;\)</span>。R 是一个奖励函数。S 状态下的奖励是某一时刻<span class="math inline">\((t)\)</span>处所在状态 s 下在下一个时刻<span class="math inline">\((t+1)\)</span>能获得的奖励期望： <span class="math display">\[
+R_s = E[R_{t+1}|S_t=s]
+\]</span> 衰减系数（Discount Factor）：<span class="math inline">\(\gamma\in[0, 1]\)</span>，避免无限循环。</p>
+<h2 id="马尔可夫决策过程">马尔可夫决策过程</h2>
+<p>Markov Decision Process，MDP</p>
+<p>多了一个行为集合 A，元组<span class="math inline">\(&lt;S, A, P, R, V&gt;\)</span>。 <span class="math display">\[
+P^a_{ss&#39;} = P[S_{t+1}=s&#39;|S_t=s, A_t=a]\\
+R^a_s=E[R_{t+1}|S_t=s, A=a]
+\]</span> 当给定一个 MDP： <span class="math inline">\(&lt;S, R, P,R, \gamma&gt;\)</span>和一个策略<span class="math inline">\(\pi\)</span>，那么状态序列<span class="math inline">\(S_1，S_2\)</span>，是一个马尔可夫过程<span class="math inline">\(&lt;S, P^\pi&gt;\)</span>。</p>
+<p>下一个时刻的状态<span class="math inline">\(S_{t+1}\)</span>和<strong>当前时刻的状态<span class="math inline">\(S_t\)</span>以及动作<span class="math inline">\(a_t\)</span>有关</strong>。</p>
+<h3 id="过程">过程</h3>
+<p><span class="math display">\[
 初始化状态agent所处状态s_0\\
 \Downarrow\\
 根据policy\quad\pi(a|s)采取动作a_0，a_0\sim\pi(a|s_0)\\
 \Downarrow\\
-根据转移概率p(s'|s,a)采取新状态s_1，s_1\sim p(s'|s,a)\\
+根据转移概率p(s&#39;|s,a)采取新状态s_1，s_1\sim p(s&#39;|s,a)\\
 \Downarrow\\
 得到单步奖励r_1=R^{a_0}_{s_0s_1}\\
 \Downarrow\\
@@ -321,67 +330,100 @@ R=f(r_0,r_1\dots r_{T-1})\\
 \Downarrow
 期望累计奖励是E_R=E_p(r)[\sum^{T-1}_{t=0}\gamma^t·r_t^T]\\
 \therefore agent的目标策略就是使得期望累计奖励最大的策略\\
-\pi=\max\limits_{\pi}E_{p(r)}^\pi[\sum^{T-1}_{t=0}\gamma^t·r_t]</script><h3 id="状态-state"><a href="#状态-state" class="headerlink" title="状态 state"></a>状态 state</h3><p>agent 在每个步骤中所处于的状态集合。</p>
-<h3 id="行为-action"><a href="#行为-action" class="headerlink" title="行为 action"></a>行为 action</h3><p>agent 在每个步骤中所能执行的动作集合。</p>
-<h3 id="转移概率-transition"><a href="#转移概率-transition" class="headerlink" title="转移概率 transition"></a>转移概率 transition</h3><p>agent 处于状态 s 下，执行动作 a 后，会转移到状态 s’ 的概率。</p>
-<h3 id="奖励-reward"><a href="#奖励-reward" class="headerlink" title="奖励 reward"></a>奖励 reward</h3><p>agent 处于状态 s 下，执行动作 a 后，转移到状态 s’ 后获得的立即奖励值。</p>
-<h3 id="策略-Policy"><a href="#策略-Policy" class="headerlink" title="策略 Policy"></a>策略 Policy</h3><p>策略$\pi$是概率的集合或分布，其元素$\pi(a|s)$为对过程中的<strong>某一状态 s 采取可能的行为 a 的概率</strong>。</p>
+\pi=\max\limits_{\pi}E_{p(r)}^\pi[\sum^{T-1}_{t=0}\gamma^t·r_t]
+\]</span></p>
+<h3 id="状态-state">状态 state</h3>
+<p>agent 在每个步骤中所处于的状态集合。</p>
+<h3 id="行为-action">行为 action</h3>
+<p>agent 在每个步骤中所能执行的动作集合。</p>
+<h3 id="转移概率-transition">转移概率 transition</h3>
+<p>agent 处于状态 s 下，执行动作 a 后，会转移到状态 s' 的概率。</p>
+<h3 id="奖励-reward">奖励 reward</h3>
+<p>agent 处于状态 s 下，执行动作 a 后，转移到状态 s' 后获得的立即奖励值。</p>
+<h3 id="策略-policy">策略 Policy</h3>
+<p>策略<span class="math inline">\(\pi\)</span>是概率的集合或分布，其元素<span class="math inline">\(\pi(a|s)\)</span>为对过程中的<strong>某一状态 s 采取可能的行为 a 的概率</strong>。</p>
 <p>agent 处于状态s下，应执行动作 a 的概率。</p>
 <p>一个策略定义了个体在各个状态下的各种可能的行为方式以及其概率的大小。</p>
-<h3 id="回报-Return"><a href="#回报-Return" class="headerlink" title="回报 Return"></a>回报 Return</h3><p>回报$G_t$为在一个马尔可夫奖励链上<strong>从t时刻开始往后所有的奖励的有衰减的总和</strong>。</p>
-<h3 id="价值函数-Value-Function"><a href="#价值函数-Value-Function" class="headerlink" title="价值函数 Value Function"></a>价值函数 Value Function</h3><p>价值函数给出了某一状态或某一行为的长期价值。</p>
+<h3 id="回报-return">回报 Return</h3>
+<p>回报<span class="math inline">\(G_t\)</span>为在一个马尔可夫奖励链上<strong>从t时刻开始往后所有的奖励的有衰减的总和</strong>。</p>
+<h3 id="价值函数-value-function">价值函数 Value Function</h3>
+<p>价值函数给出了某一状态或某一行为的长期价值。</p>
 <p>某一状态的价值函数为从该状态开始的马尔可夫链收获的期望。</p>
 <p><strong>Bellman Optimality Equation</strong></p>
-<p>针对 V<em>，一个状态的最优价值等于从该状态出发采取的所有行为产生的行为价值中<em>*最大的</em></em>那个行为价值：</p>
-<script type="math/tex; mode=display">
-V_*(s)=\max_aq_*(s,a)</script><h2 id="值函数"><a href="#值函数" class="headerlink" title="值函数"></a>值函数</h2><h3 id="状态值函数-State-Value-Function"><a href="#状态值函数-State-Value-Function" class="headerlink" title="状态值函数 State Value Function"></a>状态值函数 State Value Function</h3><p>$V^\pi(s)$为状态值函数，表示从状态 s 开始，执行策略$\pi$得到的期望总回报：</p>
-<script type="math/tex; mode=display">
-V^\pi(s)=E_{r\sim p(r)}[\sum^{T-1}_{t=0}\gamma^t·r_{t+1}|\tau_{s_0}=s]</script><p>其中$\tau_{s_0}$表示轨迹$\gamma$的起始状态。</p>
-<script type="math/tex; mode=display">
-V^\pi(s)=E_{a\sim\pi}(a|s)E_{s'\sim p(s'|s,a)}[r(s,a,s')+\gamma V^\pi(s')]\\
-\downarrow</script><p>Bellman equation，表示当前状态的值函数可以通过下个状态的值函数来计算。</p>
-<h3 id="状态——动作值函数"><a href="#状态——动作值函数" class="headerlink" title="状态——动作值函数"></a>状态——动作值函数</h3><p>也叫 Q 函数，Q-function。指初始状态为 s 并进行动作a，然后执行策略$\pi$得到的期望总回报，即 state-action value function。</p>
-<script type="math/tex; mode=display">
-Q^\pi(s,a)=E_{s'\sim p(s'|s,a)}[r(s,a,s')+\gamma·V^\pi(s')]</script><p>也可以写成：</p>
-<script type="math/tex; mode=display">
-Q^\pi(s,a)=E_{s'\sim p(s'|s,a)}[r(s,a,s')+\gamma·E_{a'\sim\pi(a'|s')}[Q^\pi(s',a')]]\\
+<p>针对 V*，一个状态的最优价值等于从该状态出发采取的所有行为产生的行为价值中<strong>最大的</strong>那个行为价值： <span class="math display">\[
+V_*(s)=\max_aq_*(s,a)
+\]</span></p>
+<h2 id="值函数">值函数</h2>
+<h3 id="状态值函数-state-value-function">状态值函数 State Value Function</h3>
+<p><span class="math inline">\(V^\pi(s)\)</span>为状态值函数，表示从状态 s 开始，执行策略<span class="math inline">\(\pi\)</span>得到的期望总回报： <span class="math display">\[
+V^\pi(s)=E_{r\sim p(r)}[\sum^{T-1}_{t=0}\gamma^t·r_{t+1}|\tau_{s_0}=s]
+\]</span> 其中<span class="math inline">\(\tau_{s_0}\)</span>表示轨迹<span class="math inline">\(\gamma\)</span>的起始状态。 <span class="math display">\[
+V^\pi(s)=E_{a\sim\pi}(a|s)E_{s&#39;\sim p(s&#39;|s,a)}[r(s,a,s&#39;)+\gamma V^\pi(s&#39;)]\\
+\downarrow
+\]</span> Bellman equation，表示当前状态的值函数可以通过下个状态的值函数来计算。</p>
+<h3 id="状态动作值函数">状态——动作值函数</h3>
+<p>也叫 Q 函数，Q-function。指初始状态为 s 并进行动作a，然后执行策略<span class="math inline">\(\pi\)</span>得到的期望总回报，即 state-action value function。 <span class="math display">\[
+Q^\pi(s,a)=E_{s&#39;\sim p(s&#39;|s,a)}[r(s,a,s&#39;)+\gamma·V^\pi(s&#39;)]
+\]</span> 也可以写成： <span class="math display">\[
+Q^\pi(s,a)=E_{s&#39;\sim p(s&#39;|s,a)}[r(s,a,s&#39;)+\gamma·E_{a&#39;\sim\pi(a&#39;|s&#39;)}[Q^\pi(s&#39;,a&#39;)]]\\
 \uparrow\\
-Q函数的Bellman方程</script><hr>
+Q函数的Bellman方程
+\]</span></p>
+<hr />
 <p><strong>基于值函数的策略学习方法</strong></p>
 <p>主要分为<strong>动态规划</strong>和<strong>蒙特卡罗</strong>。</p>
-<h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><p>动态规划又分为<strong>策略迭代（policy iteration）</strong>算法和<strong>值迭代（value iteration）</strong>算法。</p>
-<h3 id="策略迭代"><a href="#策略迭代" class="headerlink" title="策略迭代"></a>策略迭代</h3><ol>
+<h2 id="动态规划">动态规划</h2>
+<p>动态规划又分为<strong>策略迭代（policy iteration）</strong>算法和<strong>值迭代（value iteration）</strong>算法。</p>
+<h3 id="策略迭代">策略迭代</h3>
+<ol type="1">
 <li><p>策略评估 policy evaluation</p>
-<p>计算当前策略下，每个状态的值函数。可以通过 Bellman 方程进行迭代计算$V^\pi(s)$。</p>
-</li>
+<p>计算当前策略下，每个状态的值函数。可以通过 Bellman 方程进行迭代计算<span class="math inline">\(V^\pi(s)\)</span>。</p></li>
 <li><p>策略改进 policy improvement</p>
-<p>根据值函数更新策略。</p>
-</li>
+<p>根据值函数更新策略。</p></li>
 </ol>
-<h3 id="值迭代"><a href="#值迭代" class="headerlink" title="值迭代"></a>值迭代</h3><p>将策略评估与策略改进合并，来直接计算出最优策略。</p>
-<p><img data-src="https://i.loli.net/2021/01/07/oYOnGDUXLir8awP.png" alt="策略迭代 vs 值迭代"></p>
-<h2 id="蒙特卡罗"><a href="#蒙特卡罗" class="headerlink" title="蒙特卡罗"></a>蒙特卡罗</h2><p>Q 函数。$Q^\pi(s,a)$为初始状态为 s，并执行动作 a 后所能得到的期望总回报。</p>
-<script type="math/tex; mode=display">
-Q^\pi(s,a)=E_{r\sim p(r)}[G(\tau_{s_0}=s,a_0=a)]</script><p>$\tau_{s_0}=s，a_0=a$表示轨迹$\tau$的起始状态和动作为s，a。</p>
-<h3 id="蒙特卡罗方法"><a href="#蒙特卡罗方法" class="headerlink" title="蒙特卡罗方法"></a>蒙特卡罗方法</h3><p>Q 函数通过<strong>采样</strong>进行计算。</p>
-<p>对于一个策略$\pi$，agent 从状态 s，执行动作 a 开始，然后通过随机游走的方法探索环境，并计算其总回报。</p>
-<p>在得到 Q 函数$Q^\pi(s,a)$之后，进行策略改进，在新策略下采样估计 Q 函数，不断重复。</p>
-<h3 id="epsilon-贪心法"><a href="#epsilon-贪心法" class="headerlink" title="$\epsilon$-贪心法"></a>$\epsilon$-贪心法</h3><script type="math/tex; mode=display">
+<h3 id="值迭代">值迭代</h3>
+<p>将策略评估与策略改进合并，来直接计算出最优策略。</p>
+<figure>
+<img data-src="https://i.loli.net/2021/01/07/oYOnGDUXLir8awP.png" alt="策略迭代 vs 值迭代" /><figcaption aria-hidden="true">策略迭代 vs 值迭代</figcaption>
+</figure>
+<h2 id="蒙特卡罗">蒙特卡罗</h2>
+<p>Q 函数。<span class="math inline">\(Q^\pi(s,a)\)</span>为初始状态为 s，并执行动作 a 后所能得到的期望总回报。 <span class="math display">\[
+Q^\pi(s,a)=E_{r\sim p(r)}[G(\tau_{s_0}=s,a_0=a)]
+\]</span> <span class="math inline">\(\tau_{s_0}=s，a_0=a\)</span>表示轨迹<span class="math inline">\(\tau\)</span>的起始状态和动作为s，a。</p>
+<h3 id="蒙特卡罗方法">蒙特卡罗方法</h3>
+<p>Q 函数通过<strong>采样</strong>进行计算。</p>
+<p>对于一个策略<span class="math inline">\(\pi\)</span>，agent 从状态 s，执行动作 a 开始，然后通过随机游走的方法探索环境，并计算其总回报。</p>
+<p>在得到 Q 函数<span class="math inline">\(Q^\pi(s,a)\)</span>之后，进行策略改进，在新策略下采样估计 Q 函数，不断重复。</p>
+<h3 id="epsilon-贪心法"><span class="math inline">\(\epsilon\)</span>-贪心法</h3>
+<p><span class="math display">\[
 \pi^\epsilon=\begin{cases}
 \pi(s),按概率1-\epsilon\\
 随机选择\mathcal{A}中的动作，按概率\epsilon
-\end{cases}</script><p>将一个仅利用的策略转为带探索的策略，每次选择动作$\pi(s)$的概率为$1-\epsilon+\frac{1}{|\mathcal{A}|}$，其它动作的概率为$\frac{1}{\mathcal{A}}$。</p>
-<p><img data-src="https://i.loli.net/2021/01/07/ZQzg2apVPY5ArCn.png" alt="同策略与异策略"></p>
-<h2 id="时序差分学习方法"><a href="#时序差分学习方法" class="headerlink" title="时序差分学习方法"></a>时序差分学习方法</h2><p>蒙特卡罗采样方法一般需要拿到完整的轨迹，才能对策略进行评估并更新模型，因此效率较低。</p>
+\end{cases}
+\]</span></p>
+<p>将一个仅利用的策略转为带探索的策略，每次选择动作<span class="math inline">\(\pi(s)\)</span>的概率为<span class="math inline">\(1-\epsilon+\frac{1}{|\mathcal{A}|}\)</span>，其它动作的概率为<span class="math inline">\(\frac{1}{\mathcal{A}}\)</span>。</p>
+<figure>
+<img data-src="https://i.loli.net/2021/01/07/ZQzg2apVPY5ArCn.png" alt="同策略与异策略" /><figcaption aria-hidden="true">同策略与异策略</figcaption>
+</figure>
+<h2 id="时序差分学习方法">时序差分学习方法</h2>
+<p>蒙特卡罗采样方法一般需要拿到完整的轨迹，才能对策略进行评估并更新模型，因此效率较低。</p>
 <p><strong>时序差分学习（temporal-difference learning）</strong>结合了动态规划和蒙特卡罗方法：模拟一段轨迹，每行动一步（或几步）就利用 Bellman 方程来评估行动前状态的值。（当每次更新动作数为最大数时，就等价于蒙特卡罗方法）。</p>
-<h3 id="SARSA-算法"><a href="#SARSA-算法" class="headerlink" title="SARSA 算法"></a>SARSA 算法</h3><p><strong>State Action Reward State Action</strong></p>
-<p>只需要知道当前状态 s 和动作 a，奖励 r(s,a,s’)，下一步的状态 s’ 和动作 a’，其采样和优化的策略都是$\pi^\epsilon$，因此是同策略。</p>
-<script type="math/tex; mode=display">
-Q^\pi(s,a)\longleftarrow Q^\pi(s,a)+\alpha(r(s,a,s')+rQ^\pi(s',a')-Q^\pi(s,a))</script><p><img data-src="https://i.loli.net/2021/01/07/kKlwCsz3dY85T9g.png" alt="SARSA 算法"></p>
-<h3 id="Q-学习算法"><a href="#Q-学习算法" class="headerlink" title="Q 学习算法"></a>Q 学习算法</h3><p><strong>Q-learning</strong></p>
-<script type="math/tex; mode=display">
-Q(s,a)\longleftarrow Q(s,a)+\alpha(r+\gamma\max_{a'}Q(s',a')-Q(s,a))</script><p><img data-src="https://i.loli.net/2021/01/07/vE2fCp69J71XB3T.png" alt="Q-learning 算法"></p>
-<p>与 SARSA 不同，Q-learning 不通过$\pi^\epsilon$来选下一步的动作 a’，而是<strong>直接选最优的 Q 函数</strong>。更新后的 Q 函数是关于策略$\pi$的，而不是策略$\pi^\epsilon$的。</p>
+<h3 id="sarsa-算法">SARSA 算法</h3>
+<p><strong>State Action Reward State Action</strong></p>
+<p>只需要知道当前状态 s 和动作 a，奖励 r(s,a,s')，下一步的状态 s' 和动作 a'，其采样和优化的策略都是<span class="math inline">\(\pi^\epsilon\)</span>，因此是同策略。 <span class="math display">\[
+Q^\pi(s,a)\longleftarrow Q^\pi(s,a)+\alpha(r(s,a,s&#39;)+rQ^\pi(s&#39;,a&#39;)-Q^\pi(s,a))
+\]</span></p>
+<figure>
+<img data-src="https://i.loli.net/2021/01/07/kKlwCsz3dY85T9g.png" alt="SARSA 算法" /><figcaption aria-hidden="true">SARSA 算法</figcaption>
+</figure>
+<h3 id="q-学习算法">Q 学习算法</h3>
+<p><strong>Q-learning</strong> <span class="math display">\[
+Q(s,a)\longleftarrow Q(s,a)+\alpha(r+\gamma\max_{a&#39;}Q(s&#39;,a&#39;)-Q(s,a))
+\]</span></p>
+<figure>
+<img data-src="https://i.loli.net/2021/01/07/vE2fCp69J71XB3T.png" alt="Q-learning 算法" /><figcaption aria-hidden="true">Q-learning 算法</figcaption>
+</figure>
+<p>与 SARSA 不同，Q-learning 不通过<span class="math inline">\(\pi^\epsilon\)</span>来选下一步的动作 a'，而是<strong>直接选最优的 Q 函数</strong>。更新后的 Q 函数是关于策略<span class="math inline">\(\pi\)</span>的，而不是策略<span class="math inline">\(\pi^\epsilon\)</span>的。</p>
 
     </div>
 
@@ -482,7 +524,7 @@ Q(s,a)\longleftarrow Q(s,a)+\alpha(r+\gamma\max_{a'}Q(s',a')-Q(s,a))</script><p>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E6%80%A7"><span class="nav-number">1.</span> <span class="nav-text">马尔可夫性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E8%BF%87%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">马尔可夫过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E5%A5%96%E5%8A%B1%E8%BF%87%E7%A8%8B"><span class="nav-number">3.</span> <span class="nav-text">马尔可夫奖励过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E5%86%B3%E7%AD%96%E8%BF%87%E7%A8%8B"><span class="nav-number">4.</span> <span class="nav-text">马尔可夫决策过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%87%E7%A8%8B"><span class="nav-number">4.1.</span> <span class="nav-text">过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8A%B6%E6%80%81-state"><span class="nav-number">4.2.</span> <span class="nav-text">状态 state</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%8C%E4%B8%BA-action"><span class="nav-number">4.3.</span> <span class="nav-text">行为 action</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AC%E7%A7%BB%E6%A6%82%E7%8E%87-transition"><span class="nav-number">4.4.</span> <span class="nav-text">转移概率 transition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A5%96%E5%8A%B1-reward"><span class="nav-number">4.5.</span> <span class="nav-text">奖励 reward</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AD%96%E7%95%A5-Policy"><span class="nav-number">4.6.</span> <span class="nav-text">策略 Policy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9E%E6%8A%A5-Return"><span class="nav-number">4.7.</span> <span class="nav-text">回报 Return</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%B7%E5%80%BC%E5%87%BD%E6%95%B0-Value-Function"><span class="nav-number">4.8.</span> <span class="nav-text">价值函数 Value Function</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%80%BC%E5%87%BD%E6%95%B0"><span class="nav-number">5.</span> <span class="nav-text">值函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8A%B6%E6%80%81%E5%80%BC%E5%87%BD%E6%95%B0-State-Value-Function"><span class="nav-number">5.1.</span> <span class="nav-text">状态值函数 State Value Function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8A%B6%E6%80%81%E2%80%94%E2%80%94%E5%8A%A8%E4%BD%9C%E5%80%BC%E5%87%BD%E6%95%B0"><span class="nav-number">5.2.</span> <span class="nav-text">状态——动作值函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92"><span class="nav-number">6.</span> <span class="nav-text">动态规划</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AD%96%E7%95%A5%E8%BF%AD%E4%BB%A3"><span class="nav-number">6.1.</span> <span class="nav-text">策略迭代</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%80%BC%E8%BF%AD%E4%BB%A3"><span class="nav-number">6.2.</span> <span class="nav-text">值迭代</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%92%99%E7%89%B9%E5%8D%A1%E7%BD%97"><span class="nav-number">7.</span> <span class="nav-text">蒙特卡罗</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%92%99%E7%89%B9%E5%8D%A1%E7%BD%97%E6%96%B9%E6%B3%95"><span class="nav-number">7.1.</span> <span class="nav-text">蒙特卡罗方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#epsilon-%E8%B4%AA%E5%BF%83%E6%B3%95"><span class="nav-number">7.2.</span> <span class="nav-text">$\epsilon$-贪心法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%B6%E5%BA%8F%E5%B7%AE%E5%88%86%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95"><span class="nav-number">8.</span> <span class="nav-text">时序差分学习方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SARSA-%E7%AE%97%E6%B3%95"><span class="nav-number">8.1.</span> <span class="nav-text">SARSA 算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q-%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95"><span class="nav-number">8.2.</span> <span class="nav-text">Q 学习算法</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E6%80%A7"><span class="nav-number">1.</span> <span class="nav-text">马尔可夫性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E8%BF%87%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">马尔可夫过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E5%A5%96%E5%8A%B1%E8%BF%87%E7%A8%8B"><span class="nav-number">3.</span> <span class="nav-text">马尔可夫奖励过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E5%86%B3%E7%AD%96%E8%BF%87%E7%A8%8B"><span class="nav-number">4.</span> <span class="nav-text">马尔可夫决策过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%87%E7%A8%8B"><span class="nav-number">4.1.</span> <span class="nav-text">过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8A%B6%E6%80%81-state"><span class="nav-number">4.2.</span> <span class="nav-text">状态 state</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%8C%E4%B8%BA-action"><span class="nav-number">4.3.</span> <span class="nav-text">行为 action</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AC%E7%A7%BB%E6%A6%82%E7%8E%87-transition"><span class="nav-number">4.4.</span> <span class="nav-text">转移概率 transition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A5%96%E5%8A%B1-reward"><span class="nav-number">4.5.</span> <span class="nav-text">奖励 reward</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AD%96%E7%95%A5-policy"><span class="nav-number">4.6.</span> <span class="nav-text">策略 Policy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9E%E6%8A%A5-return"><span class="nav-number">4.7.</span> <span class="nav-text">回报 Return</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%B7%E5%80%BC%E5%87%BD%E6%95%B0-value-function"><span class="nav-number">4.8.</span> <span class="nav-text">价值函数 Value Function</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%80%BC%E5%87%BD%E6%95%B0"><span class="nav-number">5.</span> <span class="nav-text">值函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8A%B6%E6%80%81%E5%80%BC%E5%87%BD%E6%95%B0-state-value-function"><span class="nav-number">5.1.</span> <span class="nav-text">状态值函数 State Value Function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8A%B6%E6%80%81%E5%8A%A8%E4%BD%9C%E5%80%BC%E5%87%BD%E6%95%B0"><span class="nav-number">5.2.</span> <span class="nav-text">状态——动作值函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92"><span class="nav-number">6.</span> <span class="nav-text">动态规划</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AD%96%E7%95%A5%E8%BF%AD%E4%BB%A3"><span class="nav-number">6.1.</span> <span class="nav-text">策略迭代</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%80%BC%E8%BF%AD%E4%BB%A3"><span class="nav-number">6.2.</span> <span class="nav-text">值迭代</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%92%99%E7%89%B9%E5%8D%A1%E7%BD%97"><span class="nav-number">7.</span> <span class="nav-text">蒙特卡罗</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%92%99%E7%89%B9%E5%8D%A1%E7%BD%97%E6%96%B9%E6%B3%95"><span class="nav-number">7.1.</span> <span class="nav-text">蒙特卡罗方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#epsilon-%E8%B4%AA%E5%BF%83%E6%B3%95"><span class="nav-number">7.2.</span> <span class="nav-text">\(\epsilon\)-贪心法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%B6%E5%BA%8F%E5%B7%AE%E5%88%86%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95"><span class="nav-number">8.</span> <span class="nav-text">时序差分学习方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#sarsa-%E7%AE%97%E6%B3%95"><span class="nav-number">8.1.</span> <span class="nav-text">SARSA 算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#q-%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95"><span class="nav-number">8.2.</span> <span class="nav-text">Q 学习算法</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -562,13 +604,13 @@ Q(s,a)\longleftarrow Q(s,a)+\alpha(r+\gamma\max_{a'}Q(s',a')-Q(s,a))</script><p>
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">NaNm</span>
+    <span title="站点总字数">69k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">NaN:aN</span>
+    <span title="站点阅读时长">1:03</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
