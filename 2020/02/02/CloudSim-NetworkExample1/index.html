@@ -5,20 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.4.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+  <link rel="mask-icon" href="/images/favicon.png" color="#222">
 
 <link rel="stylesheet" href="/css/main.css">
 
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=JetBrains Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"hurleyjames.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"hurleyjames.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="CloudSim 中的 Network 包同样含有很多个 Example。">
@@ -29,7 +28,7 @@
 <meta property="og:description" content="CloudSim 中的 Network 包同样含有很多个 Example。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-02-01T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-02-27T17:04:50.941Z">
+<meta property="article:modified_time" content="2021-02-28T05:44:02.687Z">
 <meta property="article:author" content="Hurley">
 <meta property="article:tag" content="CloudSim">
 <meta name="twitter:card" content="summary">
@@ -233,7 +232,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-28 01:04:50" itemprop="dateModified" datetime="2021-02-28T01:04:50+08:00">2021-02-28</time>
+                <time title="修改时间：2021-02-28 13:44:02" itemprop="dateModified" datetime="2021-02-28T13:44:02+08:00">2021-02-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -279,42 +278,10 @@
 
       
         <p>CloudSim 中的 Network 包同样含有很多个 Example。在<code>NetworkExample1.java</code>文件中，与<code>Example1.java</code>的不同，主要在于模拟之前，需要初始化网络拓扑。即有以下代码：</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">// load the network topology file</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">// 直接运行有可能会运行失败，报错找不到 toplogy.brite 文件</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">// 方法一：buildNetworkTopology() 中的参数改为 topology.brite 的绝对路径</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">// 方法二：把 topology.brite 拷贝到项目的根目录下</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>NetworkTopology.<span class="fu">buildNetworkTopology</span>(<span class="st">&quot;topology.brite&quot;</span>);</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">// maps CloudSim entities to BRITE entities</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">// PowerDatacenter will correspond to BRITE node 0</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> briteNode=<span class="dv">0</span>;</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>NetworkTopology.<span class="fu">mapNode</span>(datacenter0.<span class="fu">getId</span>(),briteNode);</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">// Broker will correspond to BRITE node 3</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>briteNode=<span class="dv">3</span>;</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>NetworkTopology.<span class="fu">mapNode</span>(broker.<span class="fu">getId</span>(),briteNode);</span></code></pre></div>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// load the network topology file</span></span><br><span class="line"><span class="comment">// 直接运行有可能会运行失败，报错找不到 toplogy.brite 文件</span></span><br><span class="line"><span class="comment">// 方法一：buildNetworkTopology() 中的参数改为 topology.brite 的绝对路径</span></span><br><span class="line"><span class="comment">// 方法二：把 topology.brite 拷贝到项目的根目录下</span></span><br><span class="line">NetworkTopology.buildNetworkTopology(<span class="string">&quot;topology.brite&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// maps CloudSim entities to BRITE entities</span></span><br><span class="line"><span class="comment">// PowerDatacenter will correspond to BRITE node 0</span></span><br><span class="line"><span class="keyword">int</span> briteNode=<span class="number">0</span>;</span><br><span class="line">NetworkTopology.mapNode(datacenter0.getId(),briteNode);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Broker will correspond to BRITE node 3</span></span><br><span class="line">briteNode=<span class="number">3</span>;</span><br><span class="line">NetworkTopology.mapNode(broker.getId(),briteNode);</span><br></pre></td></tr></table></figure>
 <p>那么，NetworkTopology 这个类的作用是什么呢？</p>
 <p>它的实现主要是根据一个 brite 文件建立一个网络拓扑模型，topology.brite 文件如下：</p>
-<pre><code>Topology: ( 5 Nodes, 8 Edges ) 
-Model (1 - RTWaxman): 5 5 5 1 2 0.15000000596046448 0.20000000298023224 1 1 
-10.0 1024.0 
-
-Nodes: ( 5 ) 
-0 1 3 3 3 -1 RT_NODE 
-1 0 3 3 3 -1 RT_NODE 
-2 4 3 3 3 -1 RT_NODE 
-3 3 1 3 3 -1 RT_NODE 
-4 3 3 4 4 -1 RT_NODE 
-
-Edges: ( 8 ) 
-0 2 0 3.0 1.1 10.0 -1 -1 E_RT U 
-1 2 1 4.0 2.1 10.0 -1 -1 E_RT U 
-2 3 0 2.8284271247461903 3.9 10.0 -1 -1 E_RT U 
-3 3 1 3.605551275463989 4.1 10.0 -1 -1 E_RT U 
-4 4 3 2.0 5.0 10.0 -1 -1 E_RT U 
-5 4 2 1.0 4.0 10.0 -1 -1 E_RT U 
-6 0 4 2.0 3.0 10.0 -1 -1 E_RT U 
-7 1 4 3.0 4.1 10.0 -1 -1 E_RT U </code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Topology: ( 5 Nodes, 8 Edges ) </span><br><span class="line">Model (1 - RTWaxman): 5 5 5 1 2 0.15000000596046448 0.20000000298023224 1 1 </span><br><span class="line">10.0 1024.0 </span><br><span class="line"></span><br><span class="line">Nodes: ( 5 ) </span><br><span class="line">0 1 3 3 3 -1 RT_NODE </span><br><span class="line">1 0 3 3 3 -1 RT_NODE </span><br><span class="line">2 4 3 3 3 -1 RT_NODE </span><br><span class="line">3 3 1 3 3 -1 RT_NODE </span><br><span class="line">4 3 3 4 4 -1 RT_NODE </span><br><span class="line"></span><br><span class="line">Edges: ( 8 ) </span><br><span class="line">0 2 0 3.0 1.1 10.0 -1 -1 E_RT U </span><br><span class="line">1 2 1 4.0 2.1 10.0 -1 -1 E_RT U </span><br><span class="line">2 3 0 2.8284271247461903 3.9 10.0 -1 -1 E_RT U </span><br><span class="line">3 3 1 3.605551275463989 4.1 10.0 -1 -1 E_RT U </span><br><span class="line">4 4 3 2.0 5.0 10.0 -1 -1 E_RT U </span><br><span class="line">5 4 2 1.0 4.0 10.0 -1 -1 E_RT U </span><br><span class="line">6 0 4 2.0 3.0 10.0 -1 -1 E_RT U </span><br><span class="line">7 1 4 3.0 4.1 10.0 -1 -1 E_RT U </span><br></pre></td></tr></table></figure>
 <p>程序运行后会寻找标记<code>Nodes</code>和<code>Edges</code>，<code>Nodes</code>是节点信息，其中第一列是节点序号，第二列是节点的横坐标，第三列是节点的纵坐标；<code>Edges</code>是边信息，第一列是边序号，第二列是始节点序号，第三列是终节点序号，第四列是边长度，第五列是边时延，第六列是边带宽。</p>
 <p>这里有一个关键类<code>ToplogicalGraph</code>，描绘了图的拓扑的数据结构。这里面包含两个链表，分别用来存储节点<code>ToplogicalNode</code>和边<code>ToplogicalLink</code>。</p>
 <p>在<code>ToplogicalGraph</code>中通过<code>readGraphFile</code>方法，将文件中的描述，转化为网络拓扑模型。接着用得到的网络拓扑，通过<code>generateMatrices()</code>和<code>createBwMatrix()</code>生成一个是实体间的时延矩阵和带宽矩阵。</p>
@@ -467,6 +434,26 @@ Edges: ( 8 )
   </div>
 
 
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-fa fa-link"></i>
+      友链
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://withh.life/" title="https:&#x2F;&#x2F;withh.life" rel="noopener" target="_blank">Homepage</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://article.withh.life/" title="https:&#x2F;&#x2F;article.withh.life" rel="noopener" target="_blank">Article</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://portfolio.withh.life/" title="https:&#x2F;&#x2F;portfolio.withh.life" rel="noopener" target="_blank">Portfolio</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://interview.withh.life/" title="https:&#x2F;&#x2F;interview.withh.life" rel="noopener" target="_blank">Interview</a>
+        </li>
+    </ul>
+  </div>
 
       </div>
 
@@ -497,13 +484,13 @@ Edges: ( 8 )
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">69k</span>
+    <span title="站点总字数">70k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1:03</span>
+    <span title="站点阅读时长">1:04</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
@@ -543,8 +530,6 @@ Edges: ( 8 )
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
-  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>

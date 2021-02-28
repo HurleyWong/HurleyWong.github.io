@@ -5,20 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.4.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+  <link rel="mask-icon" href="/images/favicon.png" color="#222">
 
 <link rel="stylesheet" href="/css/main.css">
 
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=JetBrains Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"hurleyjames.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"hurleyjames.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="本篇主要是面试复习内容的大数据部分。">
@@ -457,9 +456,7 @@
 </blockquote>
 <ol type="1">
 <li><p>Kafka的设计是怎么样的</p>
-<figure>
-<img data-src="https://i.loli.net/2021/01/07/n6oUKCm4tZrGTv3.png" alt="Kafka的设计结构" /><figcaption aria-hidden="true">Kafka的设计结构</figcaption>
-</figure>
+<p><img data-src="https://i.loli.net/2021/01/07/n6oUKCm4tZrGTv3.png" alt="Kafka的设计结构" /><span class="image-caption">Kafka的设计结构</span></p>
 <ol type="1">
 <li>Kafka是可以配合zookeeper集群进行工作的</li>
 <li>Kafka集群中有若干个Broker，<strong>其中一个是leader，其它的是follower</strong></li>
@@ -497,15 +494,11 @@
 <li>Streams：使用Streams API充当一个流处理器，从1个或多个topic消息输入流，产生一个输出流到1个或者多个topic，有效地<strong>将输入流转化为输出流</strong></li>
 <li>Connector：允许构建或者运行可重复使用的生产者或者消费者，将topic连接到现有的应用程序或者数据系统</li>
 </ul>
-<figure>
-<img data-src="https://i.loli.net/2021/01/07/OltHomjCFWpG2Sk.png" alt="Kafka的四个核心API" /><figcaption aria-hidden="true">Kafka的四个核心API</figcaption>
-</figure></li>
+<p><img data-src="https://i.loli.net/2021/01/07/OltHomjCFWpG2Sk.png" alt="Kafka的四个核心API" /><span class="image-caption">Kafka的四个核心API</span></p></li>
 <li><p>Kafka分区的概念</p>
 <p>大多数消息系统，在同一个topic下的消息，都会存储在一个队列中。而分区的概念就是**把这个队列划分为若干个小的队列，每一个小的队列就是一个分区。</p>
 <p>创建分区的好处就是可以让多个消费者同时消费，这样速度就大大提升。</p>
-<figure>
-<img data-src="https://i.loli.net/2021/01/07/hvbTipcM2yne87j.png" alt="Kafka分区的概念" /><figcaption aria-hidden="true">Kafka分区的概念</figcaption>
-</figure>
+<p><img data-src="https://i.loli.net/2021/01/07/hvbTipcM2yne87j.png" alt="Kafka分区的概念" /><span class="image-caption">Kafka分区的概念</span></p>
 <p>分区有以下几个特征：</p>
 <ul>
 <li>一个partition只能被同组的一个consumer对象消费</li>
@@ -514,9 +507,7 @@
 <li>consumer数量是不能大于partition的数量的，不然就会有consumer闲置</li>
 <li>consumer group是一个订阅者的集群，其中的每个consumer负责自己消费的分区</li>
 </ul>
-<figure>
-<img data-src="https://i.loli.net/2021/01/07/N7KpFanochzJBM5.png" alt="Kafka分区的特征" /><figcaption aria-hidden="true">Kafka分区的特征</figcaption>
-</figure></li>
+<p><img data-src="https://i.loli.net/2021/01/07/N7KpFanochzJBM5.png" alt="Kafka分区的特征" /><span class="image-caption">Kafka分区的特征</span></p></li>
 </ol>
 <h3 id="zookeeper">ZooKeeper</h3>
 <blockquote>
@@ -781,6 +772,26 @@
   </div>
 
 
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-fa fa-link"></i>
+      友链
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://withh.life/" title="https:&#x2F;&#x2F;withh.life" rel="noopener" target="_blank">Homepage</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://article.withh.life/" title="https:&#x2F;&#x2F;article.withh.life" rel="noopener" target="_blank">Article</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://portfolio.withh.life/" title="https:&#x2F;&#x2F;portfolio.withh.life" rel="noopener" target="_blank">Portfolio</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://interview.withh.life/" title="https:&#x2F;&#x2F;interview.withh.life" rel="noopener" target="_blank">Interview</a>
+        </li>
+    </ul>
+  </div>
 
       </div>
 
@@ -811,13 +822,13 @@
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">69k</span>
+    <span title="站点总字数">70k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1:03</span>
+    <span title="站点阅读时长">1:04</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
@@ -857,8 +868,6 @@
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
-  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
