@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>数仓搭建</title>
+      <link href="/2021/08/31/%E6%95%B0%E4%BB%93%E6%90%AD%E5%BB%BA/"/>
+      <url>/2021/08/31/%E6%95%B0%E4%BB%93%E6%90%AD%E5%BB%BA/</url>
+      
+        <content type="html"><![CDATA[<h2 id="数仓分层概念"><a href="#数仓分层概念" class="headerlink" title="数仓分层概念"></a>数仓分层概念</h2><blockquote><p>数据仓库定义：是为企业所有决策制定过程，提供所有系统数据支持的战略集合。</p></blockquote><p><img data-src="https://i.loli.net/2021/08/31/kI1vVXABmR2Kpdx.png"></p><p>在技术选型方面，主要有：</p><p><img data-src="https://i.loli.net/2021/08/31/fdpa3c2wHGzKO8F.png"></p><p>整个数据仓库搭建以及使用的流程大致是：</p><ol><li>需求分析</li><li>架构设计</li><li>生成数据</li><li>采集数据</li><li>搭建行为数仓</li><li>搭建业务数仓</li><li>导出数据</li><li>作业调度</li><li>数据可视化</li></ol><hr><p><img data-src="https://i.loli.net/2021/08/31/TSNaHXQ18EgUkvB.png"></p><h3 id="ODS-层（Operational-Data-Store）"><a href="#ODS-层（Operational-Data-Store）" class="headerlink" title="ODS 层（Operational Data Store）"></a>ODS 层（Operational Data Store）</h3><p>原始数据层 | 操作数据层 | 数据运营层 | <strong>数据贴源层</strong>，存放原始数据，直接加载<strong>原始日志</strong>、<strong>数据</strong>，数据保持原貌不做处理。</p><p><img data-src="https://i.loli.net/2021/09/01/evdEmulgSIBboPW.png"></p><p>ODS 层数据的来源方式可以是：</p><ul><li>业务库<ul><li>例如使用 sqoop 每天定时抽取一次</li><li>使用 cancal 监听 MySQL 的 binlog，实时接入</li></ul></li><li>埋点日志<ul><li>可以使用 flume 定时同步</li><li>可以使用 Spark Streaming 或者 Flink 来实时接入</li><li>Kafka</li></ul></li><li>消息队列<ul><li>ActiveMQ 或者 Kafka 的数据等</li></ul></li></ul><p>ODS 的作用是：</p><ul><li>在业务系统和数据仓库之间形成一个<strong>隔离层</strong>，降低数据来源复杂性</li><li>转移一部分业务系统查询细节的功能，降低业务系统的查询压力</li><li>完成数据仓库中一些不能完成的功能，因为数据仓库中的数据粒度是根据实际需要而确定的，有时并不会存储过于细节的粒度。此时 ODS 层就可以完成。</li></ul><h3 id="DWD-层（Data-Warehouse-Detail）"><a href="#DWD-层（Data-Warehouse-Detail）" class="headerlink" title="DWD 层（Data Warehouse Detail）"></a>DWD 层（Data Warehouse Detail）</h3><p>数据细节层，对 ODS 层数据进行清洗，去除空值、脏数据、超过极限范围的数据。DWD 层处理后的表，能够成为非常明确可用的基础明细数据。</p><h3 id="DWB-层（Data-Warehouse-Base）"><a href="#DWB-层（Data-Warehouse-Base）" class="headerlink" title="DWB 层（Data Warehouse Base）"></a>DWB 层（Data Warehouse Base）</h3><p>数据基础层，存储的是客观数据，一般用作中间层，可以认为是大量指标的数据层。</p><h3 id="DWS-层（Data-Warehouse-Service）"><a href="#DWS-层（Data-Warehouse-Service）" class="headerlink" title="DWS 层（Data Warehouse Service）"></a>DWS 层（Data Warehouse Service）</h3><p>数据服务层，以 DWD/DWB 层为基础，针对明细粒度的数据进行短周期的轻度汇总。一般是<strong>宽表</strong>。用于提供后续的业务查询，OLAP 分析，数据分发等。</p><blockquote><p>宽表，字段比较多的数据库表。通常是指业务主题相关的指标、维度、属性关联在一起的一张数据库表。<br>由于把不同的内容都放在同一张表存储，宽表已经不符合<strong>三范式</strong>的模型设计规范，随之带来的主要坏处就是<strong>数据的大量冗余</strong>，与之相对应的好处就是<strong>查询性能的提高与便捷</strong>。</p></blockquote><h3 id="ADS-层（Application-Data-Store）"><a href="#ADS-层（Application-Data-Store）" class="headerlink" title="ADS 层（Application Data Store）"></a>ADS 层（Application Data Store）</h3><p>为各种统计报表提供数据，针对某一个特定的维度进行的汇总。通常说的报表数据或者大宽表就放在这里。</p><h2 id="数仓命名规范"><a href="#数仓命名规范" class="headerlink" title="数仓命名规范"></a>数仓命名规范</h2><ul><li>ODS 层命名为 ods 前缀</li><li>DWD 层命名为 dwd 前缀</li><li>DWS 层命名为 dws 前缀</li><li>ADS 层命名为 ads 前缀</li><li>维度表命名为 dim 前缀</li><li>每日全量导入命名为 df(day full) 前缀</li><li>每日增量导入命名为 di(day increase) 后缀</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 大数据 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数据仓库 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>SpringMVC 配置文件</title>
       <link href="/2021/05/06/SpringMVC%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/"/>
       <url>/2021/05/06/SpringMVC%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</url>
