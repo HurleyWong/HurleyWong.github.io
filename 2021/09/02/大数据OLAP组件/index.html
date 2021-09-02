@@ -30,8 +30,9 @@
 <meta property="og:image" content="https://i.loli.net/2021/09/02/WZzLrMTNbe7qsCQ.jpg">
 <meta property="og:image" content="https://i.loli.net/2021/09/02/Z7Qnz9Bl6o2qmNw.jpg">
 <meta property="og:image" content="https://i.loli.net/2021/09/02/6fFGzJ3KcXQwg4Z.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/09/02/s25edFxcHSUXpgG.jpg">
 <meta property="article:published_time" content="2021-09-01T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-09-02T07:13:25.873Z">
+<meta property="article:modified_time" content="2021-09-02T10:40:54.102Z">
 <meta property="article:author" content="Hurley">
 <meta property="article:tag" content="数据仓库">
 <meta name="twitter:card" content="summary">
@@ -230,7 +231,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-09-02 00:00:00 / 修改时间：15:13:25" itemprop="dateCreated datePublished" datetime="2021-09-02T00:00:00+08:00">2021-09-02</time>
+              <time title="创建时间：2021-09-02 00:00:00 / 修改时间：18:40:54" itemprop="dateCreated datePublished" datetime="2021-09-02T00:00:00+08:00">2021-09-02</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -255,14 +256,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.3k</span>
+              <span>4.8k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
+              <span>4 分钟</span>
             </span>
             <div class="post-description">OLAP(OnLine Analytical Processing)，即联机分析处理。OLAP 对业务数据执行多维分析，并提供复杂计算，趋势分析和复杂数据建模的能力。</div>
 
@@ -294,12 +295,12 @@
 <p><strong>ROLAP 将分析用的多维数据存储在关系数据库中</strong>。这种方式依赖 SQL 语言实现传统 OLAP 的切片和切块功能，本质上，切片和切块等动作都等同于在 SQL 语句中添加<code>WHERE</code>子句。ROLAP 工具不使用预先计算的多维数据集，而是对标准关系数据库及其表进行查询，以获取回答问题所需的数据。ROLAP 工具具有询问任何问题的能力，因为该方法（SQL）不仅限于多维数据集的内容。</p>
 </blockquote>
 <h2 id="开源组件"><a href="#开源组件" class="headerlink" title="开源组件"></a>开源组件</h2><p>开源大数据 OLAP 组件，可以分为 MOLAP 和 ROLAP 两类。ROLAP 中又可细分为 MPP 数据库和 SQL 引擎两类。对于 SQL 引擎又可以再细分为基于 MPP 架构的 SQL 引擎和基于通用计算框架的 SQL 引擎：</p>
-<p><img data-src="https://i.loli.net/2021/09/02/WZzLrMTNbe7qsCQ.jpg"></p>
-<h3 id="开源-MOLAP-系统分析"><a href="#开源-MOLAP-系统分析" class="headerlink" title="开源 MOLAP 系统分析"></a>开源 MOLAP 系统分析</h3><h4 id="Kylin"><a href="#Kylin" class="headerlink" title="Kylin"></a>Kylin</h4><p><img data-src="https://i.loli.net/2021/09/02/Z7Qnz9Bl6o2qmNw.jpg"></p>
+<p><img data-src="https://i.loli.net/2021/09/02/WZzLrMTNbe7qsCQ.jpg" alt=""></p>
+<h3 id="开源-MOLAP-系统分析"><a href="#开源-MOLAP-系统分析" class="headerlink" title="开源 MOLAP 系统分析"></a>开源 MOLAP 系统分析</h3><h4 id="Kylin"><a href="#Kylin" class="headerlink" title="Kylin"></a>Kylin</h4><p><img data-src="https://i.loli.net/2021/09/02/Z7Qnz9Bl6o2qmNw.jpg" alt=""></p>
 <blockquote>
 <p>Apache Kylin 是一个开源的分布式分析引擎，提供 Hadoop/Spark 之上的 SQL 查询接口及多维分析（OLAP）能力以支持超大规模数据，它能在<strong>亚秒</strong>内查询巨大的 Hive 表。不管是 Hive 还是 Spark SQL，经过计算生成报表的时间都在分钟级以上。<br>Kylin 的核心思想是预计算，理论基础是：以空间换时间。即将多维分析可能用到的度量进行预计算，将计算好的结果保存成 Cube 并存储到 HBase 中，而后用户能够经过 JDBC Driver 以 SQL 的方式对数据进行直接访问、快速查询。把高复杂度的聚合运算，多表连接等操作转换成对预计算结果的查询。</p>
 </blockquote>
-<p><img data-src="https://i.loli.net/2021/09/02/6fFGzJ3KcXQwg4Z.jpg"></p>
+<p><img data-src="https://i.loli.net/2021/09/02/6fFGzJ3KcXQwg4Z.jpg" alt=""></p>
 <p><strong>优点</strong>：</p>
 <ul>
 <li>亚秒级查询响应交互，在同样的数据集上提供比 Hive 更好的性能</li>
@@ -332,7 +333,54 @@
 <li>无法查询明细，无法做到精确查询</li>
 <li>不支持事实表之间的关联</li>
 </ul>
-<h3 id="开源-MPP-数据库分析"><a href="#开源-MPP-数据库分析" class="headerlink" title="开源 MPP 数据库分析"></a>开源 MPP 数据库分析</h3><h4 id="Greenplum"><a href="#Greenplum" class="headerlink" title="Greenplum"></a>Greenplum</h4><h4 id="ClickHouse"><a href="#ClickHouse" class="headerlink" title="ClickHouse"></a>ClickHouse</h4><h3 id="基于-MPP-架构的-SQL-引擎分析"><a href="#基于-MPP-架构的-SQL-引擎分析" class="headerlink" title="基于 MPP 架构的 SQL 引擎分析"></a>基于 MPP 架构的 SQL 引擎分析</h3><h4 id="Presto"><a href="#Presto" class="headerlink" title="Presto"></a>Presto</h4><h4 id="Impala"><a href="#Impala" class="headerlink" title="Impala"></a>Impala</h4><h3 id="基于通用计算框架的-SQL-引擎分析"><a href="#基于通用计算框架的-SQL-引擎分析" class="headerlink" title="基于通用计算框架的 SQL 引擎分析"></a>基于通用计算框架的 SQL 引擎分析</h3><h4 id="SparkSQL"><a href="#SparkSQL" class="headerlink" title="SparkSQL"></a>SparkSQL</h4><h4 id="Hive"><a href="#Hive" class="headerlink" title="Hive"></a>Hive</h4><hr>
+<h3 id="开源-MPP-数据库分析"><a href="#开源-MPP-数据库分析" class="headerlink" title="开源 MPP 数据库分析"></a>开源 MPP 数据库分析</h3><h4 id="Greenplum"><a href="#Greenplum" class="headerlink" title="Greenplum"></a>Greenplum</h4><p>时间回到 2002 年，那时整个互联网数据量正处于快速增长期，一方面传统数据库难以满足当前的计算需求，另一方面传统数据库大多基于 SMP 架构，这种架构最大的一个特点是共享所有资源，扩展性能差，因此面对日益增长的数据量，难以继续支撑，需要一种具有分布式并行数据计算能力的数据库，Greenplum 正是在此背景下诞生了。 和传统数据库的 SMP 架构不同，Greenplum 主要基于 MPP 架构，这是由多个服务器通过节点互联网络连接而成的系统，每个节点只访问自己的本地资源（包括内存、存储等），是一种完全无共享（Share Nothing）结构，扩展能力较之前有明显提升。</p>
+<h4 id="ClickHouse"><a href="#ClickHouse" class="headerlink" title="ClickHouse"></a>ClickHouse</h4><blockquote>
+<p>ClickHouse 是一款由俄罗斯 Yandex 公司开发的 C++ 开源高性能 OLAP 组件。在 Yandex 内部, ClickHouse 主要用于在线流量分析产品 Yandex Metrica，类似于 Google Analytics 或者百度统计。</p>
+</blockquote>
+<p><strong>特点</strong>：</p>
+<ul>
+<li>SQL 支持: 支持大部分 SQL 功能。 列式存储，数据压缩: 列式存储能够更加有利于 OLAP 聚合查询，同时也能大大提高数据压缩率。</li>
+<li>多核（垂直扩展），分布式处理（水平扩展）: 使用多线程和多分片并行处理。</li>
+<li>实时数据摄入: 数据可以实时批量摄入立即被查询。</li>
+<li>向量化引擎 / 代码编译生成: 传统火山模型的虚函数，分支预测等开销大大降低了整个算子流水线的执行，尤其对于 OLAP 这种聚合计算，CPU 密集的场景下。向量化引擎通过将算子处理从当个 tuple 变成向量的方式分摊了这部分的开销，也更容易使用 SMID 去加速 CPU 计算，尽可能地将计算保持在 CPU Cache 内。而代码编译生成通过改成以数据为中心的方式消除这部分的开销，尽可能地将计算保持在 CPU 寄存器中。当然这两项技术也不是万能的，由于有些情况，比如 Aggregation 或者 Join 时过多的数据，不可避免地只能通过物化到内存中，导致瓶颈产生，无法有效地提高性能。两者在有些场景甚至是可以混合使用的，一些前沿论文中还有使用软件预取的方式去尽可能地优化。</li>
+<li>主键索引，二级索引: ClickHouse 主要采用了稀疏索引的方式做主键索引，minmax，set，ngrambf/tokenbf 等 Bloom Filter 去做二级索引。</li>
+</ul>
+<p><strong>缺点</strong>：</p>
+<ul>
+<li>没有高速，低延迟的更新和删除方法。</li>
+<li>稀疏索引使得点查性能不佳。</li>
+<li>不支持事务。</li>
+</ul>
+<p>ClickHouse 要比类似的产品 Presto、Impala 快很多。其应用场景有：</p>
+<ul>
+<li>用户行为分析，精细化运营分析: 日活，留存率分析，路径分析，有序漏斗转化率分 析，Session 分析等。</li>
+<li><strong>实时</strong>日志分析，监控分析。</li>
+<li><strong>实时</strong>数仓。</li>
+</ul>
+<h3 id="基于-MPP-架构的-SQL-引擎分析"><a href="#基于-MPP-架构的-SQL-引擎分析" class="headerlink" title="基于 MPP 架构的 SQL 引擎分析"></a>基于 MPP 架构的 SQL 引擎分析</h3><h4 id="Presto"><a href="#Presto" class="headerlink" title="Presto"></a>Presto</h4><blockquote>
+<p>Presto 是由 Facebook 开发的开源大数据分布式高性能 SQL 查询引擎。起初，Facebook 使用 Hive 来进行交互式查询分析，但 Hive 是基于 MapReduce 为批处理而设计的，延时很高，满足不了用户对于交互式查询想要快速出结果的场景。为了解决 Hive 并不擅长的交互式查询领域，Facebook 开发了 Presto，专门为交互式查询所设计，提供分钟级乃至亚秒级低延时的查询性能。</p>
+</blockquote>
+<h4 id="Impala"><a href="#Impala" class="headerlink" title="Impala"></a>Impala</h4><blockquote>
+<p>Impala 是 Cloudera 在受到 Google 的 Dremel 启发下开发的实时交互 SQL 大数据查询工具，Impala 没有再使用缓慢的 Hive + MapReduce 批处理，而是通过使用与商用并行关系数据库中类似的分布式查询引擎（由 Query Planner、Query Coordinator 和 Query Exec Engine 三部分组成），可以直接从 HDFS 或 HBase 中用 SELECT、JOIN 和统计函数查询数据，从而大大降低了延迟。<br>Impala 架构类似分布式数据库 Greenplum 数据库，一个大的查询通过分析为一个个子查询，分布到底层的执行，最后再合并结果，通过多线程并发来暴力 SCAN 来实现高速。</p>
+</blockquote>
+<p>架构是完美的，现实是骨感的，实际使用过程中，Impala 性能和稳定性还差得远。尤其是 Impala 虽然号称支持 HDFS 和 HBase，但实际使用中发现，运行在 HDFS 上，性能还差强人意，运行在 HBase 上性能很差，另外还经常有内存溢出之类的问题尚待解决。</p>
+<h3 id="基于通用计算框架的-SQL-引擎分析"><a href="#基于通用计算框架的-SQL-引擎分析" class="headerlink" title="基于通用计算框架的 SQL 引擎分析"></a>基于通用计算框架的 SQL 引擎分析</h3><h4 id="SparkSQL"><a href="#SparkSQL" class="headerlink" title="SparkSQL"></a>SparkSQL</h4><p>Spark SQL 是在 Spark 的基础之上构建的，于 2014 年 5 月发布。从名称上可以看出，该模块是 Spark 提供的关系型操作 API，实现了<strong>SQL-on-Spark</strong>的功能。对于一些熟悉 SQL 的用户，可以直接使用 SQL 在 Spark 上进行复杂的数据处理。</p>
+<p>Spark SQL 是 Spark 的其中一个模块，用于结构化数据处理。与基本的 Spark RDD API 不同，Spark SQL 提供的接口为 Spark 提供了有关数据结构和正在执行的计算的更多信息，Spark SQL 会使用这些额外的信息来执行额外的优化。使用 SparkSQL 的方式有很多种，包括 SQL、DataFrame API 以及 Dataset API。值得注意的是，无论使用何种方式何种语言，其执行引擎都是相同的。实现这种统一，意味着开发人员可以轻松地在不同的 API 之间来回切换，从而使数据处理更加地灵活。</p>
+<h4 id="Hive"><a href="#Hive" class="headerlink" title="Hive"></a>Hive</h4><p><img data-src="https://i.loli.net/2021/09/02/s25edFxcHSUXpgG.jpg" alt=""></p>
+<p>Hive 由 Facebook 实现并开源，是基于 Hadoop 的一个数据仓库工具，可以将结构化的数据映射为一张数据库表，并提供 HQL(Hive SQL) 查询功能，底层数据是存储在 HDFS 上。Hive 的本质是将 SQL 语句转换为 MapReduce 任务运行，使不熟悉 MapReduce 的用户很方便地利用 HQL 处理和计算 HDFS 上的结构化的数据，适用于<strong>离线</strong>的<strong>批量数据</strong>计算。Hive 依赖于 HDFS 存储数据，将 HQL 转换成 MapReduce 执行，所以说 Hive 是基于 Hadoop 的一个数据仓库工具，实质就是一款基于 HDFS 的 MapReduce计算框架，对存储在 HDFS 中的数据进行分析和管理。</p>
+<p><strong>优点</strong>：</p>
+<ul>
+<li>可扩展性，横向扩展</li>
+<li>支持自定义函数，可以根据自己的需求来实现自定义函数</li>
+<li>良好的容错性，即使节点出现问题，SQL 语句仍可执行</li>
+</ul>
+<p><strong>缺点</strong>：</p>
+<ul>
+<li>不支持记录级别的增删改操作，但是用户可以通过查询生成新表或者将查询的结果导入到文件中</li>
+<li><strong>查询延时非常严重</strong>，因为 MapReduce Job 的启动过程消耗时间很长，所以不能用于交互查询系统中</li>
+<li>不支持事务，所以主要用于 OLAP 而不能用于 OLTP</li>
+</ul>
+<hr>
 <h4 id="Doris"><a href="#Doris" class="headerlink" title="Doris"></a>Doris</h4><h4 id="Snowflake"><a href="#Snowflake" class="headerlink" title="Snowflake"></a>Snowflake</h4><h4 id="Hudi"><a href="#Hudi" class="headerlink" title="Hudi"></a>Hudi</h4><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>[1] <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/a078fed07acc">大数据OLAP系统（1）——概念篇</a><br>[2] <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/4b3bcbabad77">大数据OLAP系统（2）——开源组件篇</a></p>
 
     </div>
@@ -537,13 +585,13 @@
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">84k</span>
+    <span title="站点总字数">87k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1:17</span>
+    <span title="站点阅读时长">1:19</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
