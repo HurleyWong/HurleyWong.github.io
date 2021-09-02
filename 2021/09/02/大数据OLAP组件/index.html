@@ -20,25 +20,24 @@
     var CONFIG = {"hostname":"hurleywong.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="该如何设计数据仓库？">
+  <meta name="description" content="OLAP(OnLine Analytical Processing)，即联机分析处理。OLAP 对业务数据执行多维分析，并提供复杂计算，趋势分析和复杂数据建模的能力。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="离线数仓搭建">
-<meta property="og:url" content="https://hurleywong.github.io/2021/08/31/%E7%A6%BB%E7%BA%BF%E6%95%B0%E4%BB%93%E6%90%AD%E5%BB%BA/index.html">
+<meta property="og:title" content="大数据OLAP组件">
+<meta property="og:url" content="https://hurleywong.github.io/2021/09/02/%E5%A4%A7%E6%95%B0%E6%8D%AEOLAP%E7%BB%84%E4%BB%B6/index.html">
 <meta property="og:site_name" content="Hurley">
-<meta property="og:description" content="该如何设计数据仓库？">
+<meta property="og:description" content="OLAP(OnLine Analytical Processing)，即联机分析处理。OLAP 对业务数据执行多维分析，并提供复杂计算，趋势分析和复杂数据建模的能力。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://i.loli.net/2021/08/31/kI1vVXABmR2Kpdx.png">
-<meta property="og:image" content="https://i.loli.net/2021/08/31/fdpa3c2wHGzKO8F.png">
-<meta property="og:image" content="https://i.loli.net/2021/08/31/TSNaHXQ18EgUkvB.png">
-<meta property="og:image" content="https://i.loli.net/2021/09/01/evdEmulgSIBboPW.png">
-<meta property="article:published_time" content="2021-08-30T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-09-02T02:51:53.618Z">
+<meta property="og:image" content="https://i.loli.net/2021/09/02/WZzLrMTNbe7qsCQ.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/09/02/Z7Qnz9Bl6o2qmNw.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/09/02/6fFGzJ3KcXQwg4Z.jpg">
+<meta property="article:published_time" content="2021-09-01T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-09-02T07:13:25.873Z">
 <meta property="article:author" content="Hurley">
 <meta property="article:tag" content="数据仓库">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.loli.net/2021/08/31/kI1vVXABmR2Kpdx.png">
+<meta name="twitter:image" content="https://i.loli.net/2021/09/02/WZzLrMTNbe7qsCQ.jpg">
 
-<link rel="canonical" href="https://hurleywong.github.io/2021/08/31/%E7%A6%BB%E7%BA%BF%E6%95%B0%E4%BB%93%E6%90%AD%E5%BB%BA/">
+<link rel="canonical" href="https://hurleywong.github.io/2021/09/02/%E5%A4%A7%E6%95%B0%E6%8D%AEOLAP%E7%BB%84%E4%BB%B6/">
 
 
 <script id="page-configurations">
@@ -51,7 +50,7 @@
   };
 </script>
 
-  <title>离线数仓搭建 | Hurley</title>
+  <title>大数据OLAP组件 | Hurley</title>
   
 
 
@@ -207,7 +206,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://hurleywong.github.io/2021/08/31/%E7%A6%BB%E7%BA%BF%E6%95%B0%E4%BB%93%E6%90%AD%E5%BB%BA/">
+    <link itemprop="mainEntityOfPage" href="https://hurleywong.github.io/2021/09/02/%E5%A4%A7%E6%95%B0%E6%8D%AEOLAP%E7%BB%84%E4%BB%B6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/author.jpg">
@@ -220,7 +219,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          离线数仓搭建
+          大数据OLAP组件
         </h1>
 
         <div class="post-meta">
@@ -229,16 +228,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2021-08-31 00:00:00" itemprop="dateCreated datePublished" datetime="2021-08-31T00:00:00+08:00">2021-08-31</time>
+              <time title="创建时间：2021-09-02 00:00:00 / 修改时间：15:13:25" itemprop="dateCreated datePublished" datetime="2021-09-02T00:00:00+08:00">2021-09-02</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-09-02 10:51:53" itemprop="dateModified" datetime="2021-09-02T10:51:53+08:00">2021-09-02</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -262,16 +255,16 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.3k</span>
+              <span>2.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
-            <div class="post-description">该如何设计数据仓库？</div>
+            <div class="post-description">OLAP(OnLine Analytical Processing)，即联机分析处理。OLAP 对业务数据执行多维分析，并提供复杂计算，趋势分析和复杂数据建模的能力。</div>
 
         </div>
       </header>
@@ -282,78 +275,65 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="离线数仓分层概念"><a href="#离线数仓分层概念" class="headerlink" title="离线数仓分层概念"></a>离线数仓分层概念</h2><blockquote>
-<p>数据仓库定义：是为企业所有决策制定过程，提供所有系统数据支持的战略集合。</p>
+        <h2 id="什么是-OLAP"><a href="#什么是-OLAP" class="headerlink" title="什么是 OLAP"></a>什么是 OLAP</h2><blockquote>
+<p>OLAP(OnLine Analytical Processing)，即联机分析处理。OLAP 对业务数据执行多维分析，并提供复杂计算，趋势分析和复杂数据建模的能力。它主要用于支持企业决策管理分析，是许多商务智能（BI）应用程序背后的技术。 OLAP 使最终用户可以对多个维度的数据进行即席分析，从而获取他们所需知识，以便更好地制定决策。OLAP 技术已被定义为实现“快速访问共享的多维信息”的能力。</p>
 </blockquote>
-<p><img data-src="https://i.loli.net/2021/08/31/kI1vVXABmR2Kpdx.png" alt=""></p>
-<p>在技术选型方面，主要有：</p>
-<p><img data-src="https://i.loli.net/2021/08/31/fdpa3c2wHGzKO8F.png" alt=""></p>
-<p>其中，离线平台组件主要是</p>
+<p><strong>传统的关系型数据库</strong>采用的是 <strong>OLTP</strong>，主要数据操作是<strong>随机读写</strong>，主要采用 <strong>3NF</strong> 的实体关系模型存储数据，从而在事务处理中解决数据的冗余和一致性问题。用 E-R 模型的一个原则就是，尽量把一个表拆分，拆分的越细越好，拆分后尽量满足 3NF 范式的原则，<strong>减少冗余</strong>。</p>
+<p>相反，OLAP 系统的主要数据操作是<strong>批量读写</strong>，事务处理中的一致性不是 OLAP 所关注的，其主要关注数据的整合，以及在一次性的复杂大数据查询和处理的性能，因此它需要采用不同的<strong>建模方法</strong>，例如<strong>维度</strong>建模。OLAP 是<strong>数据仓库</strong>系统的主要应用，支持复杂的分析操作，侧重决策支持，并且提供直观易懂的查询结果。</p>
+<p>所以，OLAP 的核心概念有：</p>
 <ul>
-<li>离线计算元数据组件：HIVE META</li>
-<li>离线计算引擎：HIVE / Spark SQL / Presto</li>
+<li>维度（Dimension）：维度是描述与业务主题相关的一组属性，单个属性或属性集合可以构成一个维。如时间、地理位置、年龄和性别等都是维度。</li>
+<li>维的层次（Level of Dimension）：一个维往往可以具有多个层次，例如<strong>时间维度分为年、季度、月和日</strong>等层次，<strong>地区维可以是国家、地区、省、市</strong>等层次。这里的层次表示数据细化程度，对应概念分层。</li>
+<li>维的成员（Member of Dimension）：若维是多层次的，则不同的层次的取值构成一个维成员。部分维层次同样可以构成维成员，例如“<strong>某年某季度</strong>”、“<strong>某季某月</strong>”等都可以是时间维的成员。</li>
+<li>度量（Measure）：表示事实在某一个维成员上的取值。例如<strong>开发部门汉族男性有 39 人，就表示在部门、民族、性别三个维度上，企业人数的事实度量</strong>。</li>
 </ul>
-<p>实时平台则是一些实时计算框架：</p>
-<p>Flume / Kafka / HBase / Kylin / Spark Streaming / Flink 等。</p>
-<p>分布式在线存储组件则是：HBase / Kafka / Druid 等。</p>
-<p>整个数据仓库搭建以及使用的流程大致是：</p>
-<ol>
-<li>需求分析</li>
-<li>架构设计</li>
-<li>生成数据</li>
-<li>采集数据</li>
-<li>搭建行为数仓</li>
-<li>搭建业务数仓</li>
-<li>导出数据</li>
-<li>作业调度</li>
-<li>数据可视化</li>
-</ol>
-<hr>
-<p><img data-src="https://i.loli.net/2021/08/31/TSNaHXQ18EgUkvB.png" alt=""></p>
-<h3 id="ODS-层（Operational-Data-Store）"><a href="#ODS-层（Operational-Data-Store）" class="headerlink" title="ODS 层（Operational Data Store）"></a>ODS 层（Operational Data Store）</h3><p>原始数据层 | 操作数据层 | 数据运营层 | <strong>数据贴源层</strong>，存放原始数据，直接加载<strong>原始日志</strong>、<strong>数据</strong>，数据保持原貌不做处理。</p>
-<p><img data-src="https://i.loli.net/2021/09/01/evdEmulgSIBboPW.png" alt=""></p>
-<p>ODS 层数据的来源方式可以是：</p>
-<ul>
-<li>业务库<ul>
-<li>例如使用 sqoop 每天定时抽取一次</li>
-<li>使用 cancal 监听 MySQL 的 binlog，实时接入</li>
-</ul>
-</li>
-<li>埋点日志<ul>
-<li>可以使用 flume 定时同步</li>
-<li>可以使用 Spark Streaming 或者 Flink 来实时接入（实时数仓）</li>
-<li>Kafka</li>
-</ul>
-</li>
-<li>消息队列<ul>
-<li>ActiveMQ 或者 Kafka 的数据等</li>
-</ul>
-</li>
-</ul>
-<p>ODS 的作用是：</p>
-<ul>
-<li>在业务系统和数据仓库之间形成一个<strong>隔离层</strong>，降低数据来源复杂性</li>
-<li>转移一部分业务系统查询细节的功能，降低业务系统的查询压力</li>
-<li>完成数据仓库中一些不能完成的功能，因为数据仓库中的数据粒度是根据实际需要而确定的，有时并不会存储过于细节的粒度。此时 ODS 层就可以完成。</li>
-</ul>
-<h3 id="DWD-层（Data-Warehouse-Detail）"><a href="#DWD-层（Data-Warehouse-Detail）" class="headerlink" title="DWD 层（Data Warehouse Detail）"></a>DWD 层（Data Warehouse Detail）</h3><p><strong>数据明细层</strong>，对 ODS 层数据进行清洗，去除空值、脏数据、超过极限范围的数据。DWD 层处理后的表，能够成为非常明确可用的基础明细数据。</p>
-<h3 id="DWB-层（Data-Warehouse-Base）"><a href="#DWB-层（Data-Warehouse-Base）" class="headerlink" title="DWB 层（Data Warehouse Base）"></a>DWB 层（Data Warehouse Base）</h3><p>数据基础层，存储的是客观数据，一般用作中间层，可以认为是大量指标的数据层。它是对 DWD 数据明细层进行清洗转换。</p>
-<p>（<strong>这一层有时可以省略</strong>）</p>
-<h3 id="DWS-层（Data-Warehouse-Service）"><a href="#DWS-层（Data-Warehouse-Service）" class="headerlink" title="DWS 层（Data Warehouse Service）"></a>DWS 层（Data Warehouse Service）</h3><p><strong>数据汇总层</strong> | 数据服务层，以 DWD/DWB 层为基础，针对明细粒度的数据进行短周期的轻度汇总。一般是<strong>宽表</strong>。用于提供后续的业务查询，OLAP 分析，数据分发等。</p>
+<h2 id="OLAP-的分类"><a href="#OLAP-的分类" class="headerlink" title="OLAP 的分类"></a>OLAP 的分类</h2><h3 id="MOLAP"><a href="#MOLAP" class="headerlink" title="MOLAP"></a>MOLAP</h3><blockquote>
+<p>MOLAP 是 OLAP的经典形式。<strong>MOLAP 将数据存储在优化的多维数组中，而不是关系数据库中</strong>。维的属性值被映射成多维数组的下标值或下标的范围，而度量数据作为多维数组的值存储在数组的单元中。由于 MOLAP 采用了新的存储结构，从物理层实现，因此又称为物理 OLAP（PhysicalOLAP）；而 ROLAP 主要通过一些软件工具或中间软件实现，物理层仍采用关系数据库的存储结构，因此称为 虚拟OLAP（VirtualOLAP）。</p>
+</blockquote>
+<h3 id="ROLAP"><a href="#ROLAP" class="headerlink" title="ROLAP"></a>ROLAP</h3><blockquote>
+<p><strong>ROLAP 将分析用的多维数据存储在关系数据库中</strong>。这种方式依赖 SQL 语言实现传统 OLAP 的切片和切块功能，本质上，切片和切块等动作都等同于在 SQL 语句中添加<code>WHERE</code>子句。ROLAP 工具不使用预先计算的多维数据集，而是对标准关系数据库及其表进行查询，以获取回答问题所需的数据。ROLAP 工具具有询问任何问题的能力，因为该方法（SQL）不仅限于多维数据集的内容。</p>
+</blockquote>
+<h2 id="开源组件"><a href="#开源组件" class="headerlink" title="开源组件"></a>开源组件</h2><p>开源大数据 OLAP 组件，可以分为 MOLAP 和 ROLAP 两类。ROLAP 中又可细分为 MPP 数据库和 SQL 引擎两类。对于 SQL 引擎又可以再细分为基于 MPP 架构的 SQL 引擎和基于通用计算框架的 SQL 引擎：</p>
+<p><img data-src="https://i.loli.net/2021/09/02/WZzLrMTNbe7qsCQ.jpg"></p>
+<h3 id="开源-MOLAP-系统分析"><a href="#开源-MOLAP-系统分析" class="headerlink" title="开源 MOLAP 系统分析"></a>开源 MOLAP 系统分析</h3><h4 id="Kylin"><a href="#Kylin" class="headerlink" title="Kylin"></a>Kylin</h4><p><img data-src="https://i.loli.net/2021/09/02/Z7Qnz9Bl6o2qmNw.jpg"></p>
 <blockquote>
-<p>宽表，字段比较多的数据库表。通常是指业务主题相关的指标、维度、属性关联在一起的一张数据库表。<br>由于把不同的内容都放在同一张表存储，宽表已经不符合<strong>三范式</strong>的模型设计规范，随之带来的主要坏处就是<strong>数据的大量冗余</strong>，与之相对应的好处就是<strong>查询性能的提高与便捷</strong>。</p>
+<p>Apache Kylin 是一个开源的分布式分析引擎，提供 Hadoop/Spark 之上的 SQL 查询接口及多维分析（OLAP）能力以支持超大规模数据，它能在<strong>亚秒</strong>内查询巨大的 Hive 表。不管是 Hive 还是 Spark SQL，经过计算生成报表的时间都在分钟级以上。<br>Kylin 的核心思想是预计算，理论基础是：以空间换时间。即将多维分析可能用到的度量进行预计算，将计算好的结果保存成 Cube 并存储到 HBase 中，而后用户能够经过 JDBC Driver 以 SQL 的方式对数据进行直接访问、快速查询。把高复杂度的聚合运算，多表连接等操作转换成对预计算结果的查询。</p>
 </blockquote>
-<h3 id="ADS-层（Application-Data-Store）"><a href="#ADS-层（Application-Data-Store）" class="headerlink" title="ADS 层（Application Data Store）"></a>ADS 层（Application Data Store）</h3><p>为各种统计报表提供数据，针对某一个特定的维度进行的汇总。通常说的报表数据或者大宽表就放在这里。例如，前端报表、分析图表、KPI、仪表盘、OLAP 分析等。</p>
-<p>（<strong>有时可以直接叫 APP 层</strong>）</p>
-<h2 id="离线数仓命名规范"><a href="#离线数仓命名规范" class="headerlink" title="离线数仓命名规范"></a>离线数仓命名规范</h2><ul>
-<li>ODS 层命名为 ods 前缀</li>
-<li>DWD 层命名为 dwd 前缀</li>
-<li>DWS 层命名为 dws 前缀</li>
-<li>ADS 层命名为 ads 前缀</li>
-<li>维度表命名为 dim 前缀</li>
-<li>每日全量导入命名为 df(day full) 前缀</li>
-<li>每日增量导入命名为 di(day increase) 后缀</li>
+<p><img data-src="https://i.loli.net/2021/09/02/6fFGzJ3KcXQwg4Z.jpg"></p>
+<p><strong>优点</strong>：</p>
+<ul>
+<li>亚秒级查询响应交互，在同样的数据集上提供比 Hive 更好的性能</li>
+<li>支持百亿、千亿甚至万亿级别交互式分析</li>
+<li>提供与多种数据可视化 BI 工具的整合能力，如 Tableau，PowerBI、Excel 等</li>
+<li>可以在数据产生时进行<strong>实时处理</strong></li>
+<li>提供标准 SQL 支持大部分<strong>查询</strong>功能</li>
 </ul>
+<p><strong>缺点</strong>：</p>
+<ul>
+<li>由于 Kylin 是一个分析引擎，只读，不支持 <code>insert</code>，<code>update</code>，<code>delete</code> 等 SQL 操作，用户修改数据的话需要重新批量导入（构建）</li>
+<li>需要预先建立模型后加载数据到 Cube 后才可进行查询</li>
+<li>使用 Kylin 的建模人员需要了解一定的数据仓库知识</li>
+</ul>
+<h4 id="Druid"><a href="#Druid" class="headerlink" title="Druid"></a>Druid</h4><blockquote>
+<p>Apache Druid 是高性能的实时分析数据库，实时 OLAP 系统。主要提供对大量的基于时序的数据进行 OLAP 查询能力。支持毫秒级的快速的交互式查询。</p>
+</blockquote>
+<p>Druid 通过位图索引，预计算最细粒度的聚合 + 实时聚合这种方式来牺牲一点点 RT，来改善维度爆炸的问题。</p>
+<p><strong>优点</strong>：</p>
+<ul>
+<li>为分析而设计：为 OLAP 工作流的探索性分析而构建。它支持各种 filter、aggregator 和查询类型。</li>
+<li>交互式查询：低延迟数据摄取架构允许事件在它们创建后毫秒内查询。</li>
+<li>高可用：你的数据在系统更新时依然可用、可查询。规模的扩大和缩小不会造成数据丢失。</li>
+<li>可伸缩：每天处理数十亿事件和 TB 级数据。</li>
+</ul>
+<p><strong>缺点</strong>：</p>
+<ul>
+<li>不支持<code>join</code>，导致用户需要导入大宽表</li>
+<li>不支持更新操作，数据不可更改</li>
+<li>无法查询明细，无法做到精确查询</li>
+<li>不支持事实表之间的关联</li>
+</ul>
+<h3 id="开源-MPP-数据库分析"><a href="#开源-MPP-数据库分析" class="headerlink" title="开源 MPP 数据库分析"></a>开源 MPP 数据库分析</h3><h4 id="Greenplum"><a href="#Greenplum" class="headerlink" title="Greenplum"></a>Greenplum</h4><h4 id="ClickHouse"><a href="#ClickHouse" class="headerlink" title="ClickHouse"></a>ClickHouse</h4><h3 id="基于-MPP-架构的-SQL-引擎分析"><a href="#基于-MPP-架构的-SQL-引擎分析" class="headerlink" title="基于 MPP 架构的 SQL 引擎分析"></a>基于 MPP 架构的 SQL 引擎分析</h3><h4 id="Presto"><a href="#Presto" class="headerlink" title="Presto"></a>Presto</h4><h4 id="Impala"><a href="#Impala" class="headerlink" title="Impala"></a>Impala</h4><h3 id="基于通用计算框架的-SQL-引擎分析"><a href="#基于通用计算框架的-SQL-引擎分析" class="headerlink" title="基于通用计算框架的 SQL 引擎分析"></a>基于通用计算框架的 SQL 引擎分析</h3><h4 id="SparkSQL"><a href="#SparkSQL" class="headerlink" title="SparkSQL"></a>SparkSQL</h4><h4 id="Hive"><a href="#Hive" class="headerlink" title="Hive"></a>Hive</h4><hr>
+<h4 id="Doris"><a href="#Doris" class="headerlink" title="Doris"></a>Doris</h4><h4 id="Snowflake"><a href="#Snowflake" class="headerlink" title="Snowflake"></a>Snowflake</h4><h4 id="Hudi"><a href="#Hudi" class="headerlink" title="Hudi"></a>Hudi</h4><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>[1] <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/a078fed07acc">大数据OLAP系统（1）——概念篇</a><br>[2] <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/4b3bcbabad77">大数据OLAP系统（2）——开源组件篇</a></p>
 
     </div>
 
@@ -369,7 +349,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://hurleywong.github.io/2021/08/31/%E7%A6%BB%E7%BA%BF%E6%95%B0%E4%BB%93%E6%90%AD%E5%BB%BA/" title="离线数仓搭建">https://hurleywong.github.io/2021/08/31/离线数仓搭建/</a>
+    <a href="https://hurleywong.github.io/2021/09/02/%E5%A4%A7%E6%95%B0%E6%8D%AEOLAP%E7%BB%84%E4%BB%B6/" title="大数据OLAP组件">https://hurleywong.github.io/2021/09/02/大数据OLAP组件/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -389,13 +369,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/05/06/SpringMVC%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/" rel="prev" title="SpringMVC 配置文件">
-      <i class="fa fa-chevron-left"></i> SpringMVC 配置文件
+    <a href="/2021/09/01/%E5%AE%9E%E6%97%B6%E6%95%B0%E4%BB%93%E5%BB%BA%E8%AE%BE/" rel="prev" title="实时数仓建设">
+      <i class="fa fa-chevron-left"></i> 实时数仓建设
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/09/01/%E5%AE%9E%E6%97%B6%E6%95%B0%E4%BB%93%E5%BB%BA%E8%AE%BE/" rel="next" title="实时数仓建设">
-      实时数仓建设 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -454,7 +431,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A6%BB%E7%BA%BF%E6%95%B0%E4%BB%93%E5%88%86%E5%B1%82%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">离线数仓分层概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ODS-%E5%B1%82%EF%BC%88Operational-Data-Store%EF%BC%89"><span class="nav-number">1.1.</span> <span class="nav-text">ODS 层（Operational Data Store）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DWD-%E5%B1%82%EF%BC%88Data-Warehouse-Detail%EF%BC%89"><span class="nav-number">1.2.</span> <span class="nav-text">DWD 层（Data Warehouse Detail）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DWB-%E5%B1%82%EF%BC%88Data-Warehouse-Base%EF%BC%89"><span class="nav-number">1.3.</span> <span class="nav-text">DWB 层（Data Warehouse Base）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DWS-%E5%B1%82%EF%BC%88Data-Warehouse-Service%EF%BC%89"><span class="nav-number">1.4.</span> <span class="nav-text">DWS 层（Data Warehouse Service）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ADS-%E5%B1%82%EF%BC%88Application-Data-Store%EF%BC%89"><span class="nav-number">1.5.</span> <span class="nav-text">ADS 层（Application Data Store）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A6%BB%E7%BA%BF%E6%95%B0%E4%BB%93%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83"><span class="nav-number">2.</span> <span class="nav-text">离线数仓命名规范</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-OLAP"><span class="nav-number">1.</span> <span class="nav-text">什么是 OLAP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OLAP-%E7%9A%84%E5%88%86%E7%B1%BB"><span class="nav-number">2.</span> <span class="nav-text">OLAP 的分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MOLAP"><span class="nav-number">2.1.</span> <span class="nav-text">MOLAP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ROLAP"><span class="nav-number">2.2.</span> <span class="nav-text">ROLAP</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E6%BA%90%E7%BB%84%E4%BB%B6"><span class="nav-number">3.</span> <span class="nav-text">开源组件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E6%BA%90-MOLAP-%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90"><span class="nav-number">3.1.</span> <span class="nav-text">开源 MOLAP 系统分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Kylin"><span class="nav-number">3.1.1.</span> <span class="nav-text">Kylin</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Druid"><span class="nav-number">3.1.2.</span> <span class="nav-text">Druid</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E6%BA%90-MPP-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%88%86%E6%9E%90"><span class="nav-number">3.2.</span> <span class="nav-text">开源 MPP 数据库分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Greenplum"><span class="nav-number">3.2.1.</span> <span class="nav-text">Greenplum</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ClickHouse"><span class="nav-number">3.2.2.</span> <span class="nav-text">ClickHouse</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E-MPP-%E6%9E%B6%E6%9E%84%E7%9A%84-SQL-%E5%BC%95%E6%93%8E%E5%88%86%E6%9E%90"><span class="nav-number">3.3.</span> <span class="nav-text">基于 MPP 架构的 SQL 引擎分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Presto"><span class="nav-number">3.3.1.</span> <span class="nav-text">Presto</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Impala"><span class="nav-number">3.3.2.</span> <span class="nav-text">Impala</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E9%80%9A%E7%94%A8%E8%AE%A1%E7%AE%97%E6%A1%86%E6%9E%B6%E7%9A%84-SQL-%E5%BC%95%E6%93%8E%E5%88%86%E6%9E%90"><span class="nav-number">3.4.</span> <span class="nav-text">基于通用计算框架的 SQL 引擎分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#SparkSQL"><span class="nav-number">3.4.1.</span> <span class="nav-text">SparkSQL</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hive"><span class="nav-number">3.4.2.</span> <span class="nav-text">Hive</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Doris"><span class="nav-number">3.4.3.</span> <span class="nav-text">Doris</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Snowflake"><span class="nav-number">3.4.4.</span> <span class="nav-text">Snowflake</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hudi"><span class="nav-number">3.4.5.</span> <span class="nav-text">Hudi</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">4.</span> <span class="nav-text">Reference</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

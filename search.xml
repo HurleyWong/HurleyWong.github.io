@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>大数据OLAP组件</title>
+      <link href="/2021/09/02/%E5%A4%A7%E6%95%B0%E6%8D%AEOLAP%E7%BB%84%E4%BB%B6/"/>
+      <url>/2021/09/02/%E5%A4%A7%E6%95%B0%E6%8D%AEOLAP%E7%BB%84%E4%BB%B6/</url>
+      
+        <content type="html"><![CDATA[<h2 id="什么是-OLAP"><a href="#什么是-OLAP" class="headerlink" title="什么是 OLAP"></a>什么是 OLAP</h2><blockquote><p>OLAP(OnLine Analytical Processing)，即联机分析处理。OLAP 对业务数据执行多维分析，并提供复杂计算，趋势分析和复杂数据建模的能力。它主要用于支持企业决策管理分析，是许多商务智能（BI）应用程序背后的技术。 OLAP 使最终用户可以对多个维度的数据进行即席分析，从而获取他们所需知识，以便更好地制定决策。OLAP 技术已被定义为实现“快速访问共享的多维信息”的能力。</p></blockquote><p><strong>传统的关系型数据库</strong>采用的是 <strong>OLTP</strong>，主要数据操作是<strong>随机读写</strong>，主要采用 <strong>3NF</strong> 的实体关系模型存储数据，从而在事务处理中解决数据的冗余和一致性问题。用 E-R 模型的一个原则就是，尽量把一个表拆分，拆分的越细越好，拆分后尽量满足 3NF 范式的原则，<strong>减少冗余</strong>。</p><p>相反，OLAP 系统的主要数据操作是<strong>批量读写</strong>，事务处理中的一致性不是 OLAP 所关注的，其主要关注数据的整合，以及在一次性的复杂大数据查询和处理的性能，因此它需要采用不同的<strong>建模方法</strong>，例如<strong>维度</strong>建模。OLAP 是<strong>数据仓库</strong>系统的主要应用，支持复杂的分析操作，侧重决策支持，并且提供直观易懂的查询结果。</p><p>所以，OLAP 的核心概念有：</p><ul><li>维度（Dimension）：维度是描述与业务主题相关的一组属性，单个属性或属性集合可以构成一个维。如时间、地理位置、年龄和性别等都是维度。</li><li>维的层次（Level of Dimension）：一个维往往可以具有多个层次，例如<strong>时间维度分为年、季度、月和日</strong>等层次，<strong>地区维可以是国家、地区、省、市</strong>等层次。这里的层次表示数据细化程度，对应概念分层。</li><li>维的成员（Member of Dimension）：若维是多层次的，则不同的层次的取值构成一个维成员。部分维层次同样可以构成维成员，例如“<strong>某年某季度</strong>”、“<strong>某季某月</strong>”等都可以是时间维的成员。</li><li>度量（Measure）：表示事实在某一个维成员上的取值。例如<strong>开发部门汉族男性有 39 人，就表示在部门、民族、性别三个维度上，企业人数的事实度量</strong>。</li></ul><h2 id="OLAP-的分类"><a href="#OLAP-的分类" class="headerlink" title="OLAP 的分类"></a>OLAP 的分类</h2><h3 id="MOLAP"><a href="#MOLAP" class="headerlink" title="MOLAP"></a>MOLAP</h3><blockquote><p>MOLAP 是 OLAP的经典形式。<strong>MOLAP 将数据存储在优化的多维数组中，而不是关系数据库中</strong>。维的属性值被映射成多维数组的下标值或下标的范围，而度量数据作为多维数组的值存储在数组的单元中。由于 MOLAP 采用了新的存储结构，从物理层实现，因此又称为物理 OLAP（PhysicalOLAP）；而 ROLAP 主要通过一些软件工具或中间软件实现，物理层仍采用关系数据库的存储结构，因此称为 虚拟OLAP（VirtualOLAP）。</p></blockquote><h3 id="ROLAP"><a href="#ROLAP" class="headerlink" title="ROLAP"></a>ROLAP</h3><blockquote><p><strong>ROLAP 将分析用的多维数据存储在关系数据库中</strong>。这种方式依赖 SQL 语言实现传统 OLAP 的切片和切块功能，本质上，切片和切块等动作都等同于在 SQL 语句中添加<code>WHERE</code>子句。ROLAP 工具不使用预先计算的多维数据集，而是对标准关系数据库及其表进行查询，以获取回答问题所需的数据。ROLAP 工具具有询问任何问题的能力，因为该方法（SQL）不仅限于多维数据集的内容。</p></blockquote><h2 id="开源组件"><a href="#开源组件" class="headerlink" title="开源组件"></a>开源组件</h2><p>开源大数据 OLAP 组件，可以分为 MOLAP 和 ROLAP 两类。ROLAP 中又可细分为 MPP 数据库和 SQL 引擎两类。对于 SQL 引擎又可以再细分为基于 MPP 架构的 SQL 引擎和基于通用计算框架的 SQL 引擎：</p><p><img data-src="https://i.loli.net/2021/09/02/WZzLrMTNbe7qsCQ.jpg"></p><h3 id="开源-MOLAP-系统分析"><a href="#开源-MOLAP-系统分析" class="headerlink" title="开源 MOLAP 系统分析"></a>开源 MOLAP 系统分析</h3><h4 id="Kylin"><a href="#Kylin" class="headerlink" title="Kylin"></a>Kylin</h4><p><img data-src="https://i.loli.net/2021/09/02/Z7Qnz9Bl6o2qmNw.jpg"></p><blockquote><p>Apache Kylin 是一个开源的分布式分析引擎，提供 Hadoop/Spark 之上的 SQL 查询接口及多维分析（OLAP）能力以支持超大规模数据，它能在<strong>亚秒</strong>内查询巨大的 Hive 表。不管是 Hive 还是 Spark SQL，经过计算生成报表的时间都在分钟级以上。<br>Kylin 的核心思想是预计算，理论基础是：以空间换时间。即将多维分析可能用到的度量进行预计算，将计算好的结果保存成 Cube 并存储到 HBase 中，而后用户能够经过 JDBC Driver 以 SQL 的方式对数据进行直接访问、快速查询。把高复杂度的聚合运算，多表连接等操作转换成对预计算结果的查询。</p></blockquote><p><img data-src="https://i.loli.net/2021/09/02/6fFGzJ3KcXQwg4Z.jpg"></p><p><strong>优点</strong>：</p><ul><li>亚秒级查询响应交互，在同样的数据集上提供比 Hive 更好的性能</li><li>支持百亿、千亿甚至万亿级别交互式分析</li><li>提供与多种数据可视化 BI 工具的整合能力，如 Tableau，PowerBI、Excel 等</li><li>可以在数据产生时进行<strong>实时处理</strong></li><li>提供标准 SQL 支持大部分<strong>查询</strong>功能</li></ul><p><strong>缺点</strong>：</p><ul><li>由于 Kylin 是一个分析引擎，只读，不支持 <code>insert</code>，<code>update</code>，<code>delete</code> 等 SQL 操作，用户修改数据的话需要重新批量导入（构建）</li><li>需要预先建立模型后加载数据到 Cube 后才可进行查询</li><li>使用 Kylin 的建模人员需要了解一定的数据仓库知识</li></ul><h4 id="Druid"><a href="#Druid" class="headerlink" title="Druid"></a>Druid</h4><blockquote><p>Apache Druid 是高性能的实时分析数据库，实时 OLAP 系统。主要提供对大量的基于时序的数据进行 OLAP 查询能力。支持毫秒级的快速的交互式查询。</p></blockquote><p>Druid 通过位图索引，预计算最细粒度的聚合 + 实时聚合这种方式来牺牲一点点 RT，来改善维度爆炸的问题。</p><p><strong>优点</strong>：</p><ul><li>为分析而设计：为 OLAP 工作流的探索性分析而构建。它支持各种 filter、aggregator 和查询类型。</li><li>交互式查询：低延迟数据摄取架构允许事件在它们创建后毫秒内查询。</li><li>高可用：你的数据在系统更新时依然可用、可查询。规模的扩大和缩小不会造成数据丢失。</li><li>可伸缩：每天处理数十亿事件和 TB 级数据。</li></ul><p><strong>缺点</strong>：</p><ul><li>不支持<code>join</code>，导致用户需要导入大宽表</li><li>不支持更新操作，数据不可更改</li><li>无法查询明细，无法做到精确查询</li><li>不支持事实表之间的关联</li></ul><h3 id="开源-MPP-数据库分析"><a href="#开源-MPP-数据库分析" class="headerlink" title="开源 MPP 数据库分析"></a>开源 MPP 数据库分析</h3><h4 id="Greenplum"><a href="#Greenplum" class="headerlink" title="Greenplum"></a>Greenplum</h4><h4 id="ClickHouse"><a href="#ClickHouse" class="headerlink" title="ClickHouse"></a>ClickHouse</h4><h3 id="基于-MPP-架构的-SQL-引擎分析"><a href="#基于-MPP-架构的-SQL-引擎分析" class="headerlink" title="基于 MPP 架构的 SQL 引擎分析"></a>基于 MPP 架构的 SQL 引擎分析</h3><h4 id="Presto"><a href="#Presto" class="headerlink" title="Presto"></a>Presto</h4><h4 id="Impala"><a href="#Impala" class="headerlink" title="Impala"></a>Impala</h4><h3 id="基于通用计算框架的-SQL-引擎分析"><a href="#基于通用计算框架的-SQL-引擎分析" class="headerlink" title="基于通用计算框架的 SQL 引擎分析"></a>基于通用计算框架的 SQL 引擎分析</h3><h4 id="SparkSQL"><a href="#SparkSQL" class="headerlink" title="SparkSQL"></a>SparkSQL</h4><h4 id="Hive"><a href="#Hive" class="headerlink" title="Hive"></a>Hive</h4><hr><h4 id="Doris"><a href="#Doris" class="headerlink" title="Doris"></a>Doris</h4><h4 id="Snowflake"><a href="#Snowflake" class="headerlink" title="Snowflake"></a>Snowflake</h4><h4 id="Hudi"><a href="#Hudi" class="headerlink" title="Hudi"></a>Hudi</h4><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>[1] <a href="https://www.jianshu.com/p/a078fed07acc">大数据OLAP系统（1）——概念篇</a><br>[2] <a href="https://www.jianshu.com/p/4b3bcbabad77">大数据OLAP系统（2）——开源组件篇</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 大数据 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数据仓库 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>实时数仓建设</title>
       <link href="/2021/09/01/%E5%AE%9E%E6%97%B6%E6%95%B0%E4%BB%93%E5%BB%BA%E8%AE%BE/"/>
       <url>/2021/09/01/%E5%AE%9E%E6%97%B6%E6%95%B0%E4%BB%93%E5%BB%BA%E8%AE%BE/</url>
