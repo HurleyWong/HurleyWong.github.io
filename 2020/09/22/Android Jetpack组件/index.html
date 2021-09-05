@@ -27,13 +27,13 @@
 <meta property="og:site_name" content="Hurley">
 <meta property="og:description" content="Jetpack 是 Google 推出的针对代码逻辑和 UI 界面解耦的框架。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://i.loli.net/2021/01/07/cSOh1EUeYDV3K68.png">
+<meta property="og:image" content="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F865d2955-9b17-4632-b308-8aee02af4f1b%2FUntitled.png?table=block&id=69603571-79da-4800-8939-caed7ae499f1&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1410&userId=&cache=v2">
 <meta property="article:published_time" content="2020-09-21T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-05-11T15:34:25.006Z">
+<meta property="article:modified_time" content="2021-09-05T02:19:31.040Z">
 <meta property="article:author" content="Hurley">
 <meta property="article:tag" content="Jetpack">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.loli.net/2021/01/07/cSOh1EUeYDV3K68.png">
+<meta name="twitter:image" content="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F865d2955-9b17-4632-b308-8aee02af4f1b%2FUntitled.png?table=block&id=69603571-79da-4800-8939-caed7ae499f1&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1410&userId=&cache=v2">
 
 <link rel="canonical" href="https://hurleywong.github.io/2020/09/22/Android%20Jetpack%E7%BB%84%E4%BB%B6/">
 
@@ -234,7 +234,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-05-11 23:34:25" itemprop="dateModified" datetime="2021-05-11T23:34:25+08:00">2021-05-11</time>
+                <time title="修改时间：2021-09-05 10:19:31" itemprop="dateModified" datetime="2021-09-05T10:19:31+08:00">2021-09-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -279,8 +279,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="jetpack">Jetpack</h1>
-<p>Jetpack 是 Google 推出的一个框架，主要是可以对代码的逻辑和 UI 界面实现深层的解耦，打造数据驱动型的 UI 界面。Android Architecture 组件是 Android Jetpack 的一部分，包含以下组件等：</p>
+        <h1 id="Jetpack"><a href="#Jetpack" class="headerlink" title="Jetpack"></a>Jetpack</h1><p>Jetpack 是 Google 推出的一个框架，主要是可以对代码的逻辑和 UI 界面实现深层的解耦，打造数据驱动型的 UI 界面。Android Architecture 组件是 Android Jetpack 的一部分，包含以下组件等：</p>
 <ul>
 <li><strong>Lifecycle</strong>：能够处理 Activity 和 Fragment 的生命周期，在 AndroidX 中，Fragment 和 Activity 已经对 Lifecycle 提供了默认的支持。</li>
 <li><strong>ViewModel</strong>：当做 MVVM 的 ViewModel 层，并具有生命周期意识的处理和 UI 相关的数据。</li>
@@ -293,6 +292,7 @@
 <li><strong>DataBinding</strong>：加速 MVVM 的创建。</li>
 </ul>
 <span id="more"></span>
+
 <p>使用 Android Jetpack 组件具有以下优势：</p>
 <ul>
 <li>轻松管理应用程序的生命周期</li>
@@ -303,7 +303,7 @@
 <li>支持 RxJava：由于 RxJava 强大的生态环境，几乎和数据相关的组件都对 RxJava 提供了支持。</li>
 <li>减少代码量：以 Data Binding + ViewModel + LiveData 或者 RxJava 构建的 MVVM 模式能够显著地减少代码量，比平时用的 MVP 模式也会更加方便，无需主动更新 UI。</li>
 </ul>
-<p><img data-src="https://i.loli.net/2021/01/07/cSOh1EUeYDV3K68.png" alt="Android JetPack 组件" /><span class="image-caption">Android JetPack 组件</span></p>
+<p><img data-src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F865d2955-9b17-4632-b308-8aee02af4f1b%2FUntitled.png?table=block&id=69603571-79da-4800-8939-caed7ae499f1&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1410&userId=&cache=v2" alt="Android JetPack 组件"><span class="image-caption">Android JetPack 组件</span></p>
 <p>上述组件的架构功能如下：</p>
 <ul>
 <li>Activity 和 Fragment 负责产品与用户的交互</li>
@@ -312,8 +312,7 @@
 <li>Room 储存本地序列化的数据</li>
 <li>Retrofit 获取远程数据的数据</li>
 </ul>
-<h2 id="navigation">Navigation</h2>
-<p>Navigation 是一个可以简化 Android 导航的库和插件。它可以用来管理 Fragment 的切换。</p>
+<h2 id="Navigation"><a href="#Navigation" class="headerlink" title="Navigation"></a>Navigation</h2><p>Navigation 是一个可以简化 Android 导航的库和插件。它可以用来管理 Fragment 的切换。</p>
 <ul>
 <li>处理 Fragment 的切换</li>
 <li>默认情况下正确处理 Fragment 的前进和后退</li>
@@ -327,15 +326,11 @@
 <li>NavHostFragment：是当前 Fragment 的容器</li>
 <li>NavController：导航的控制者</li>
 </ul>
-<h2 id="data-binding">Data Binding</h2>
-<p>Data Binding 和 MVVM 其实是两个不同的概念，MVVM 是一种架构模式，而 Data Binding 是一个实现数据和 UI 绑定的框架，即 Data Binding 是构建 MVVM 模式的一个工具。</p>
-<h2 id="lifecycle">Lifecycle</h2>
-<p>Lifecycle 是一个生命周期的感知组件，执行操作以响应另一个组件（例如 Activity 和 Fragment）的生命周期状态的更改，可以监听 Activity 组件生命周期的变化，在每个生命周期执行相应的方法。</p>
+<h2 id="Data-Binding"><a href="#Data-Binding" class="headerlink" title="Data Binding"></a>Data Binding</h2><p>Data Binding 和 MVVM 其实是两个不同的概念，MVVM 是一种架构模式，而 Data Binding 是一个实现数据和 UI 绑定的框架，即 Data Binding 是构建 MVVM 模式的一个工具。</p>
+<h2 id="Lifecycle"><a href="#Lifecycle" class="headerlink" title="Lifecycle"></a>Lifecycle</h2><p>Lifecycle 是一个生命周期的感知组件，执行操作以响应另一个组件（例如 Activity 和 Fragment）的生命周期状态的更改，可以监听 Activity 组件生命周期的变化，在每个生命周期执行相应的方法。</p>
 <p>不同于以往会在生命周期中执行相应的方法时，需要设置接口，然后在生命周期中回调接口，这样会造成代码的耦合，也会引发生命周期的问题。Lifecycle 的<strong>优点</strong>是实现了执行的逻辑和活动的分离，代码解耦并且增加了代码的可读性。Lifecycle 在活动结束时会自定义移除监听。</p>
-<h2 id="livedata">LiveData</h2>
-<p>一个应用肯定要进行数据的更新。当用户执行某种操作或者服务器端的数据发生改变后，都需要重新获取数据，再次刷新界面的 UI。那么，每改变一次就需要重复一次，如何使用一个方式可以监听数据状态，在数据变化时就自动更新 UI 呢？LiveData 就是用来实现此功能的，它解决了数据展示和刷新的问题：只需要创建 LiveData 实例后，为可观察的数据添加观察者，在数据改变时会自动回调观察者。</p>
-<h2 id="viewmodel">ViewModel</h2>
-<p>用户在使用应用的过程中，可能随时会被中断或者界面发生了重建，如果重新进入后数据丢失了就会造成不好的用户体验。我们可以使用<code>onSaveInstanceState()</code>方法来保存数据，然后在界面重建后使用<code>onRestoreInstanceState()</code>方法来恢复数据。这种方式虽然可以解决问题，但是如果过于频繁，在每个界面都要编写重建和恢复的代码，就会造成十分繁琐，且数据量过大时会影响执行性能。ViewModel 就是来解决这个问题的。</p>
+<h2 id="LiveData"><a href="#LiveData" class="headerlink" title="LiveData"></a>LiveData</h2><p>一个应用肯定要进行数据的更新。当用户执行某种操作或者服务器端的数据发生改变后，都需要重新获取数据，再次刷新界面的 UI。那么，每改变一次就需要重复一次，如何使用一个方式可以监听数据状态，在数据变化时就自动更新 UI 呢？LiveData 就是用来实现此功能的，它解决了数据展示和刷新的问题：只需要创建 LiveData 实例后，为可观察的数据添加观察者，在数据改变时会自动回调观察者。</p>
+<h2 id="ViewModel"><a href="#ViewModel" class="headerlink" title="ViewModel"></a>ViewModel</h2><p>用户在使用应用的过程中，可能随时会被中断或者界面发生了重建，如果重新进入后数据丢失了就会造成不好的用户体验。我们可以使用<code>onSaveInstanceState()</code>方法来保存数据，然后在界面重建后使用<code>onRestoreInstanceState()</code>方法来恢复数据。这种方式虽然可以解决问题，但是如果过于频繁，在每个界面都要编写重建和恢复的代码，就会造成十分繁琐，且数据量过大时会影响执行性能。ViewModel 就是来解决这个问题的。</p>
 <p>ViewModel 会在活动重建时仍然保存数据，在活动创建完成后从中获取数据。</p>
 <p>ViewModel 的优点：</p>
 <ul>
@@ -345,41 +340,39 @@
 <li>实现了 Activity 和 Fragment 之间的数据交互</li>
 </ul>
 <p>ViewModel 的<strong>原理</strong>：将数据保存到 ViewModel 中，然后为活动中添加一个 HolderFragment，HolderFragment 中保存了 ViewStore 的实例，ViewStore 中使用 Map 保存了 ViewModel，从而在活动重新创建时获取到原来的 ViewModel。</p>
-<hr />
+<hr>
 <blockquote>
 <p>一般 ViewModel 会和 LiveData 组合，保存可观察的数据</p>
 </blockquote>
 <p>在研究生毕业设计的项目中，我在安卓端的代码中就使用到了 LiveData 搭配 ViewModel 的组合。</p>
 <p>在<code>ContractViewModel</code>类中的代码如下。这里主要是使用到了一个<code>MutableLiveData</code>的类。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ContractViewModel</span> <span class="keyword">extends</span> <span class="title">ViewModel</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> MutableLiveData contractModel = <span class="keyword">new</span> MutableLiveData();</span><br><span class="line">    <span class="keyword">private</span> MutableLiveData callContractResult = <span class="keyword">new</span> MutableLiveData();</span><br><span class="line">    <span class="keyword">private</span> MutableLiveData proofPlace = <span class="keyword">new</span> MutableLiveData();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> MutableLiveData&lt;ContractModel&gt; <span class="title">getContractModel</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> contractModel;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> MutableLiveData&lt;Boolean&gt; <span class="title">getCallContractResult</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> callContractResult;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> MutableLiveData&lt;String&gt; <span class="title">getProofPlace</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> proofPlace;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>然后，在 Fragment 中这样使用：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> ContractViewModel mViewModel;</span><br><span class="line"></span><br><span class="line">mViewModel = ViewModelProviders.of(fragmentActivity).get(ContractViewModel.class);</span><br><span class="line"></span><br><span class="line">mViewModel = mViewModel.getContractModel().observe(<span class="keyword">this</span>, o -&gt; &#123;</span><br><span class="line">    CertificateModel certificateModel = (CertificateModel) o;</span><br><span class="line">    <span class="comment">// TODO</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">mViewModel.getCallContractResult().postValue(XXX);</span><br><span class="line">mViewModel.getProofPlace().postValue(XXX);</span><br></pre></td></tr></table></figure>
+
 <p>从上面可以看出，<code>mViewModel</code>可以通过<code>ViewModelProviders</code>与<code>fragmentActivity</code>，再与<code>ContractViewModel</code>绑定。<code>mViewModel.getContractModel().observe()</code>的方式。除此之外，可以使用<code>postValue()</code>的方式去传递值。</p>
-<h2 id="room">Room</h2>
-<p>在此之前，在 Android 通常是使用第三方的优秀 ORM 数据库框架，例如 GreenDao 等，但是现在，谷歌官方已经推出了 Room 这个强大的 SQLite 数据库框架。</p>
+<h2 id="Room"><a href="#Room" class="headerlink" title="Room"></a>Room</h2><p>在此之前，在 Android 通常是使用第三方的优秀 ORM 数据库框架，例如 GreenDao 等，但是现在，谷歌官方已经推出了 Room 这个强大的 SQLite 数据库框架。</p>
 <ul>
 <li>与 SQL 语句接近</li>
 <li>支持 RxJava2，支持 LiveData</li>
 </ul>
-<h2 id="paging">Paging</h2>
-<p>当使用到 RecyclerView 进行大量的数据展示时，列表通常需要进行分页的操作。Paging 就是 Jetpack 中的分页库。</p>
+<h2 id="Paging"><a href="#Paging" class="headerlink" title="Paging"></a>Paging</h2><p>当使用到 RecyclerView 进行大量的数据展示时，列表通常需要进行分页的操作。Paging 就是 Jetpack 中的分页库。</p>
 <p>而实际上，分页的解决方法有很多种，为什么我们需要使用 Paging 呢？</p>
 <ul>
 <li>支持 RxJava2、LiveData、Room 等</li>
 <li>可以自定义分页策略</li>
 <li>可以异步处理数据</li>
 </ul>
-<h2 id="workmanager">WorkManager</h2>
-<p>WorkManger 是一个可兼容、灵活和简单的延迟后台任务。而Android 中处理后台任务的选择有很多种，比如 Service 等等，那么为什么选择使用 WorkManager 呢？</p>
+<h2 id="WorkManager"><a href="#WorkManager" class="headerlink" title="WorkManager"></a>WorkManager</h2><p>WorkManger 是一个可兼容、灵活和简单的延迟后台任务。而Android 中处理后台任务的选择有很多种，比如 Service 等等，那么为什么选择使用 WorkManager 呢？</p>
 <ul>
 <li>可以指定约束条件，比如必须在有网络的条件下执行</li>
 <li>可以定时执行或者单次执行</li>
 <li>监听和管理任务状态</li>
 <li>多个任务可以使用任务链的方式</li>
 </ul>
-<h2 id="startup">StartUp</h2>
-<p>StartUp 是一个和启动有关的库。在之前的开发中，许多第三方的库需要在 Application 中进行初始化，即进入 Activity 之前就要初始化完成。常用的初始化的方式有两种：</p>
-<ol type="1">
+<h2 id="StartUp"><a href="#StartUp" class="headerlink" title="StartUp"></a>StartUp</h2><p>StartUp 是一个和启动有关的库。在之前的开发中，许多第三方的库需要在 Application 中进行初始化，即进入 Activity 之前就要初始化完成。常用的初始化的方式有两种：</p>
+<ol>
 <li>自定义 Application，然后在<code>onCreate()</code>方法中进行初始化。</li>
 <li>自定义 ContentProvider，在<code>onCreate()</code>方法中进行初始化。</li>
 </ol>
@@ -484,7 +477,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#jetpack"><span class="nav-number">1.</span> <span class="nav-text">Jetpack</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#navigation"><span class="nav-number">1.1.</span> <span class="nav-text">Navigation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#data-binding"><span class="nav-number">1.2.</span> <span class="nav-text">Data Binding</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lifecycle"><span class="nav-number">1.3.</span> <span class="nav-text">Lifecycle</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#livedata"><span class="nav-number">1.4.</span> <span class="nav-text">LiveData</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#viewmodel"><span class="nav-number">1.5.</span> <span class="nav-text">ViewModel</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#room"><span class="nav-number">1.6.</span> <span class="nav-text">Room</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#paging"><span class="nav-number">1.7.</span> <span class="nav-text">Paging</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#workmanager"><span class="nav-number">1.8.</span> <span class="nav-text">WorkManager</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#startup"><span class="nav-number">1.9.</span> <span class="nav-text">StartUp</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Jetpack"><span class="nav-number">1.</span> <span class="nav-text">Jetpack</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Navigation"><span class="nav-number">1.1.</span> <span class="nav-text">Navigation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-Binding"><span class="nav-number">1.2.</span> <span class="nav-text">Data Binding</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lifecycle"><span class="nav-number">1.3.</span> <span class="nav-text">Lifecycle</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LiveData"><span class="nav-number">1.4.</span> <span class="nav-text">LiveData</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ViewModel"><span class="nav-number">1.5.</span> <span class="nav-text">ViewModel</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Room"><span class="nav-number">1.6.</span> <span class="nav-text">Room</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Paging"><span class="nav-number">1.7.</span> <span class="nav-text">Paging</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WorkManager"><span class="nav-number">1.8.</span> <span class="nav-text">WorkManager</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#StartUp"><span class="nav-number">1.9.</span> <span class="nav-text">StartUp</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -590,13 +583,13 @@
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">87k</span>
+    <span title="站点总字数">86k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1:19</span>
+    <span title="站点阅读时长">1:18</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

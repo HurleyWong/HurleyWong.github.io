@@ -27,14 +27,14 @@
 <meta property="og:site_name" content="Hurley">
 <meta property="og:description" content="NP 完全问题（NP-C 问题），是世界上七大数学难题之一。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://i.loli.net/2021/01/07/wkGF648EsRtgl3B.png">
-<meta property="og:image" content="https://i.loli.net/2021/01/07/kZuHzcObLqvSj9h.png">
+<meta property="og:image" content="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F9c299e0d-6391-4f97-b49b-a483f14441d4%2FUntitled.png?table=block&id=16487c1a-777e-4ad6-8f47-5796971c5669&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1440&userId=&cache=v2">
+<meta property="og:image" content="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F2b67041d-82e7-4592-9000-aa6f8dae8600%2FUntitled.png?table=block&id=6565d542-a1bd-4da3-b5e5-b940dc5ae943&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1260&userId=&cache=v2">
 <meta property="article:published_time" content="2019-12-23T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-03-10T05:08:34.146Z">
+<meta property="article:modified_time" content="2021-09-05T02:18:19.467Z">
 <meta property="article:author" content="Hurley">
 <meta property="article:tag" content="NP 问题">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.loli.net/2021/01/07/wkGF648EsRtgl3B.png">
+<meta name="twitter:image" content="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F9c299e0d-6391-4f97-b49b-a483f14441d4%2FUntitled.png?table=block&id=16487c1a-777e-4ad6-8f47-5796971c5669&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1440&userId=&cache=v2">
 
 <link rel="canonical" href="https://hurleywong.github.io/2019/12/24/NP%E5%AE%8C%E5%85%A8%E6%80%A7%E8%AF%81%E6%98%8E/">
 
@@ -235,7 +235,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-10 13:08:34" itemprop="dateModified" datetime="2021-03-10T13:08:34+08:00">2021-03-10</time>
+                <time title="修改时间：2021-09-05 10:18:19" itemprop="dateModified" datetime="2021-09-05T10:18:19+08:00">2021-09-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -260,7 +260,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.5k</span>
+              <span>3.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -280,28 +280,26 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="np-完全性的证明">NP 完全性的证明</h2>
-<p><strong>引理</strong>：如果语言 <span class="math inline">\(L\)</span> 是一种满足对任意 <span class="math inline">\(L&#39;\in NPC\)</span> 都有 <span class="math inline">\(L&#39;\le_{p}L\)</span> 的语言，则 <span class="math inline">\(L\)</span> 是 NP-hardness。此外，如果 <span class="math inline">\(L\in NP\)</span>，则 <span class="math inline">\(L\in NPC\)</span>。</p>
+        <h2 id="NP-完全性的证明"><a href="#NP-完全性的证明" class="headerlink" title="NP 完全性的证明"></a>NP 完全性的证明</h2><p><strong>引理</strong>：如果语言 $L$ 是一种满足对任意 $L’\in NPC$ 都有 $L’\le_{p}L$ 的语言，则 $L$ 是 NP-hardness。此外，如果 $L\in NP$，则 $L\in NPC$。</p>
 <span id="more"></span>
+
 <p><strong>证明</strong>：</p>
-<p><span class="math inline">\(\because L&#39;\in NPC\)</span></p>
-<p><span class="math inline">\(\therefore\)</span> 对于所有 <span class="math inline">\(L&#39;&#39;\in NP\)</span>，都有 <span class="math inline">\(L&#39;&#39;\le _{p}L&#39;\)</span></p>
-<p>根据假设，<span class="math inline">\(L&#39;\le _{p}L\)</span></p>
-<p><span class="math inline">\(\therefore\)</span> 根据传递性，<span class="math inline">\(L&#39;&#39;\in _{p}L\)</span></p>
-<p><span class="math inline">\(\therefore\)</span> <span class="math inline">\(L\)</span> 是 NP-hardness</p>
-<p>那么，如果 <span class="math inline">\(L\in NP\)</span>，且 <span class="math inline">\(L\)</span> 是 NP-hardness</p>
-<p><span class="math inline">\(\therefore L\in NPC\)</span></p>
-<h3 id="证明某种语言-l-是-np-完全问题的方法">证明某种语言 <span class="math inline">\(L\)</span> 是 NP 完全问题的方法</h3>
-<ol type="1">
-<li>证明 <span class="math inline">\(L\in NP\)</span></li>
-<li>选取一种已知的 NP 完全语言 <span class="math inline">\(L&#39;\)</span></li>
-<li>描述一种可计算函数 <span class="math inline">\(f(x)\)</span> 的算法，其中 <span class="math inline">\(f\)</span>可将 <span class="math inline">\(L&#39;\)</span> 中每一个实例 <span class="math inline">\(x\in \left\{0,1\right\}^*\)</span> 映射为 <span class="math inline">\(L\)</span> 中的实例 <span class="math inline">\(f(x)\)</span></li>
-<li>证明函数 <span class="math inline">\(f\)</span> 满足 <span class="math inline">\(x\in L&#39;\)</span> 当前仅当对于所有的 <span class="math inline">\(x\in \left\{0,1\right\}^*\)</span> 都有 <span class="math inline">\(f(x)\in L\)</span></li>
-<li>证明计算函数 <span class="math inline">\(f(x)\)</span> 的算法具有多项式运行时间</li>
+<p>$\because L’\in NPC$</p>
+<p>$\therefore$ 对于所有 $L’’\in NP$，都有 $L’’\le _{p}L’$</p>
+<p>根据假设，$L’\le _{p}L$</p>
+<p>$\therefore$ 根据传递性，$L’’\in _{p}L$</p>
+<p>$\therefore$ $L$ 是 NP-hardness</p>
+<p>那么，如果 $L\in NP$，且 $L$ 是 NP-hardness</p>
+<p>$\therefore L\in NPC$</p>
+<h3 id="证明某种语言-L-是-NP-完全问题的方法"><a href="#证明某种语言-L-是-NP-完全问题的方法" class="headerlink" title="证明某种语言 $L$ 是 NP 完全问题的方法"></a>证明某种语言 $L$ 是 NP 完全问题的方法</h3><ol>
+<li>证明 $L\in NP$</li>
+<li>选取一种已知的 NP 完全语言 $L’$</li>
+<li>描述一种可计算函数 $f(x)$ 的算法，其中 $f$可将 $L’$ 中每一个实例 $x\in \left{0,1\right}^*$ 映射为 $L$ 中的实例 $f(x)$</li>
+<li>证明函数 $f$ 满足 $x\in L’$ 当前仅当对于所有的 $x\in \left{0,1\right}^*$ 都有 $f(x)\in L$</li>
+<li>证明计算函数 $f(x)$ 的算法具有多项式运行时间</li>
 </ol>
-<p>第 2 步 ~ 第 5 步是为了证明 <span class="math inline">\(L\)</span> 是 NP-hardness，然后结合第一步的 <span class="math inline">\(L\)</span> 是 NP 问题，就可以得出 <span class="math inline">\(L\in NPC\)</span>。</p>
-<h2 id="典型-npc-问题">典型 NPC 问题</h2>
-<p><img data-src="https://i.loli.net/2021/01/07/wkGF648EsRtgl3B.png" alt="一些典型的 NPC 问题" /><span class="image-caption">一些典型的 NPC 问题</span></p>
+<p>第 2 步 ~ 第 5 步是为了证明 $L$ 是 NP-hardness，然后结合第一步的 $L$ 是 NP 问题，就可以得出 $L\in NPC$。</p>
+<h2 id="典型-NPC-问题"><a href="#典型-NPC-问题" class="headerlink" title="典型 NPC 问题"></a>典型 NPC 问题</h2><p><img data-src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F9c299e0d-6391-4f97-b49b-a483f14441d4%2FUntitled.png?table=block&id=16487c1a-777e-4ad6-8f47-5796971c5669&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1440&userId=&cache=v2" alt="一些典型的 NPC 问题"><span class="image-caption">一些典型的 NPC 问题</span></p>
 <ul>
 <li><strong>SAT</strong>：布尔公式的可满足性问题</li>
 <li><strong>3-CNF-SAT</strong>：3 合取范式的布尔公式的可满足性问题</li>
@@ -311,73 +309,59 @@
 <li><strong>旅行商问题 TSP</strong>：寻找通过无向图每个顶点一次的最小回路</li>
 <li><strong>子集和问题 SUBSET-SUM</strong>：给定正整数集合和正整数 t，判断是否存在一个子集的元素和为 t</li>
 </ul>
-<h2 id="布尔组合电路">布尔组合电路</h2>
-<p>布尔组合电路由一个或多个布尔组合元素通过线路连接而成，布尔组合电路是不包括回路的。</p>
+<h2 id="布尔组合电路"><a href="#布尔组合电路" class="headerlink" title="布尔组合电路"></a>布尔组合电路</h2><p>布尔组合电路由一个或多个布尔组合元素通过线路连接而成，布尔组合电路是不包括回路的。</p>
 <p>一个布尔组合电路的<strong>真值赋值</strong>是指一组布尔输入值。如果一个单输出布尔组合电路具有可满足性赋值，则称该布尔组合电路是可满足的。</p>
-<p>布尔值取自集合 <span class="math inline">\(\left\{0,1\right\}\)</span>，0 代表 false，1 代表 true。</p>
-<p>布尔组合元素称为逻辑门：<span class="math inline">\(\begin{cases}与门\quad AND\\或门\quad OR\\非门\quad NOT\end{cases}\)</span></p>
+<p>布尔值取自集合 $\left{0,1\right}$，0 代表 false，1 代表 true。</p>
+<p>布尔组合元素称为逻辑门：$\begin{cases}与门\quad AND\或门\quad OR\非门\quad NOT\end{cases}$</p>
 <p>For example：</p>
-<ol type="1">
-<li>对此电路的输入赋值 <span class="math inline">\(&lt;x_1=1, x_2=1, x_3=0&gt;\)</span>，使得电路的输出为 1，那么电路是可满足的。</li>
+<ol>
+<li>对此电路的输入赋值 $&lt;x_1=1, x_2=1, x_3=0&gt;$，使得电路的输出为 1，那么电路是可满足的。</li>
 <li>如果对此电路输入的任何一种赋值都不能使得输出为 1，则电路不满足。</li>
 </ol>
-<h3 id="np-完全性证明">NP 完全性证明</h3>
-<p>给定一个电路 C，通过检查输入的所有可能赋值来确定它是否来自可满足性电路。</p>
-<p>那么，如果有 <span class="math inline">\(k\)</span> 个输入，就有检查 <span class="math inline">\(2^k\)</span> 种可能，因为<span class="math inline">\(\begin{cases}1\\0\end{cases}\)</span></p>
-<p>所以当电路 C 的规模为 <span class="math inline">\(k\)</span> 的多项式时，对每个电路的检查要花费 <span class="math inline">\(\Omega(2^k)\)</span> 的时间，呈多项式关系。</p>
-<p><span class="math inline">\(\therefore\)</span> 该问题是 NP 完全的</p>
-<h2 id="布尔可满足性问题-sat">布尔可满足性问题 SAT</h2>
-<p><strong>定理</strong>：布尔公式的可满足性问题是 NP 完全的。</p>
+<h3 id="NP-完全性证明"><a href="#NP-完全性证明" class="headerlink" title="NP 完全性证明"></a>NP 完全性证明</h3><p>给定一个电路 C，通过检查输入的所有可能赋值来确定它是否来自可满足性电路。</p>
+<p>那么，如果有 $k$ 个输入，就有检查 $2^k$ 种可能，因为$\begin{cases}1\0\end{cases}$</p>
+<p>所以当电路 C 的规模为 $k$ 的多项式时，对每个电路的检查要花费 $\Omega(2^k)$ 的时间，呈多项式关系。</p>
+<p>$\therefore$ 该问题是 NP 完全的</p>
+<h2 id="布尔可满足性问题-SAT"><a href="#布尔可满足性问题-SAT" class="headerlink" title="布尔可满足性问题 SAT"></a>布尔可满足性问题 SAT</h2><p><strong>定理</strong>：布尔公式的可满足性问题是 NP 完全的。</p>
 <p><strong>证明</strong>：</p>
-<ol type="1">
-<li>证明 <span class="math inline">\(SAT\in NP\)</span>，即证明对于输入公式 <span class="math inline">\(\phi\)</span>，由它的一个可满足性赋值所组成的证书可以在多项式时间内得到验证</li>
-<li>证明 <span class="math inline">\(CIRCUIT-SAT\le _{p}SAT\)</span> 从而得出 SAT 是 NP-hard</li>
-<li>根据语言 <span class="math inline">\(L\in NP\)</span> 且 <span class="math inline">\(L\in NP-hard\)</span> 能推出 <span class="math inline">\(L\in NPC\)</span>，得证</li>
+<ol>
+<li>证明 $SAT\in NP$，即证明对于输入公式 $\phi$，由它的一个可满足性赋值所组成的证书可以在多项式时间内得到验证</li>
+<li>证明 $CIRCUIT-SAT\le _{p}SAT$ 从而得出 SAT 是 NP-hard</li>
+<li>根据语言 $L\in NP$ 且 $L\in NP-hard$ 能推出 $L\in NPC$，得证</li>
 </ol>
-<h2 id="cnf-可满足性">3-CNF 可满足性</h2>
-<p>即布尔公式中的一个文字（literal）是指一个变量或非 “<span class="math inline">\(\neg\)</span>”。</p>
-<h3 id="合取范式">合取范式</h3>
-<p>如果一个布尔公式可以表示为所有子句的“与”，并且每个字句都是一个或多个文字的“或”，则称该布尔公式为合取范式。</p>
+<h2 id="3-CNF-可满足性"><a href="#3-CNF-可满足性" class="headerlink" title="3-CNF 可满足性"></a>3-CNF 可满足性</h2><p>即布尔公式中的一个文字（literal）是指一个变量或非 “$\neg$”。</p>
+<h3 id="合取范式"><a href="#合取范式" class="headerlink" title="合取范式"></a>合取范式</h3><p>如果一个布尔公式可以表示为所有子句的“与”，并且每个字句都是一个或多个文字的“或”，则称该布尔公式为合取范式。</p>
 <p>如果每个字句恰好有三个不同的<strong>“文字”</strong>，则该布尔公式为 3 合取范式，即 3-CNF。</p>
 <p>For example：</p>
-<p><img data-src="https://i.loli.net/2021/01/07/kZuHzcObLqvSj9h.png" alt="合取范式" /><span class="image-caption">合取范式</span></p>
+<p><img data-src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F2b67041d-82e7-4592-9000-aa6f8dae8600%2FUntitled.png?table=block&id=6565d542-a1bd-4da3-b5e5-b940dc5ae943&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1260&userId=&cache=v2" alt="合取范式"><span class="image-caption">合取范式</span></p>
 <p><strong>定理</strong>：3 合取范式形式的布尔公式的可满足性是 NP 完全的。</p>
-<p><strong>证明</strong>：要证明 <span class="math inline">\(3-CNF-SAT\le NP\)</span>，仅需证明 <span class="math inline">\(SAT\le _{p}3-CNF-SAT\)</span>。</p>
-<h2 id="团问题-clique">团问题 CLIQUE</h2>
-<p>无向图 <span class="math inline">\(G=(V,E)\)</span> 的团 (clique) 是一个顶点子集 <span class="math inline">\(V&#39;\subseteq V\)</span>，其中每一对顶点之间都由 <span class="math inline">\(E\)</span> 中的一条边来连接。</p>
-<p>一个团是 <span class="math inline">\(G\)</span> 中的一个完全子图，<strong>图的规模是指它所包含的顶点数</strong>。</p>
+<p><strong>证明</strong>：要证明 $3-CNF-SAT\le NP$，仅需证明 $SAT\le _{p}3-CNF-SAT$。</p>
+<h2 id="团问题-CLIQUE"><a href="#团问题-CLIQUE" class="headerlink" title="团问题 CLIQUE"></a>团问题 CLIQUE</h2><p>无向图 $G=(V,E)$ 的团 (clique) 是一个顶点子集 $V’\subseteq V$，其中每一对顶点之间都由 $E$ 中的一条边来连接。</p>
+<p>一个团是 $G$ 中的一个完全子图，<strong>图的规模是指它所包含的顶点数</strong>。</p>
 <p>团问题就是关于寻找图中规模最大的团的优化问题。</p>
-<p>事实上，团问题的有效算法是不大可能存在的。因为要确定一个具有 <span class="math inline">\(|V|\)</span> 个顶点的无向图 <span class="math inline">\(G=(V,E)\)</span> 是否包含一个规模为 <span class="math inline">\(k\)</span> 的团，有一种朴素算法：</p>
-<p>列出V的所有规模为 <span class="math inline">\(k\)</span> 的子集，对其中的每一个进行检查，看它是否是一个团。这个算法的运行时间是与 <span class="math inline">\(k\)</span> 有关。如果 <span class="math inline">\(k\)</span> 是常数，那么该算法的运行时间是多项式时间的。然而，在一般情况下，<span class="math inline">\(k\)</span> 可能接近于 <span class="math inline">\(|V|/2\)</span>。这样的话，运行时间就是超多项式时间。所以，团问题的有效算法是不大可能存在的。</p>
-<h3 id="形式语言定义">形式语言定义</h3>
-<p><span class="math inline">\(CLIQUE=\left\{&lt;G,k&gt;:G是一个包含规模为k的团的图\right\}\)</span></p>
-<p><strong>定理</strong>：<span class="math inline">\(CLIQUE\subseteq NP-Complete\)</span></p>
-<p><strong>证明</strong>：首先，证明 <span class="math inline">\(CLIQUE\in NP\)</span>。然后，证明 <span class="math inline">\(CLIQUE\in NP-hard\)</span></p>
-<ol type="1">
-<li>对于一个给定的图 <span class="math inline">\(G=(V,E)\)</span>，用图中顶点集 <span class="math inline">\(V&#39;\subseteq V\)</span> 作为 <span class="math inline">\(G\)</span> 的一个证书。对于任意一对顶点 <span class="math inline">\(\mu,\nu\in V&#39;\)</span>，通过检查边 <span class="math inline">\((\mu,\nu)\)</span> 是否属于 <span class="math inline">\(E\)</span>，就可以在多项式时间内确定 <span class="math inline">\(V&#39;\)</span> 是否是团。</li>
-<li>通过证明 <span class="math inline">\(3-CNF-SAT\le _{p}CLIQUE\)</span> 来说明 <span class="math inline">\(CLIQUE\in NP-hard\)</span>。</li>
+<p>事实上，团问题的有效算法是不大可能存在的。因为要确定一个具有 $|V|$ 个顶点的无向图 $G=(V,E)$ 是否包含一个规模为 $k$ 的团，有一种朴素算法：</p>
+<p>列出V的所有规模为 $k$ 的子集，对其中的每一个进行检查，看它是否是一个团。这个算法的运行时间是与 $k$ 有关。如果 $k$ 是常数，那么该算法的运行时间是多项式时间的。然而，在一般情况下，$k$ 可能接近于 $|V|/2$。这样的话，运行时间就是超多项式时间。所以，团问题的有效算法是不大可能存在的。</p>
+<h3 id="形式语言定义"><a href="#形式语言定义" class="headerlink" title="形式语言定义"></a>形式语言定义</h3><p>$CLIQUE=\left{&lt;G,k&gt;:G是一个包含规模为k的团的图\right}$</p>
+<p><strong>定理</strong>：$CLIQUE\subseteq NP-Complete$</p>
+<p><strong>证明</strong>：首先，证明 $CLIQUE\in NP$。然后，证明 $CLIQUE\in NP-hard$</p>
+<ol>
+<li>对于一个给定的图 $G=(V,E)$，用图中顶点集 $V’\subseteq V$ 作为 $G$ 的一个证书。对于任意一对顶点 $\mu,\nu\in V’$，通过检查边 $(\mu,\nu)$ 是否属于 $E$，就可以在多项式时间内确定 $V’$ 是否是团。</li>
+<li>通过证明 $3-CNF-SAT\le _{p}CLIQUE$ 来说明 $CLIQUE\in NP-hard$。</li>
 </ol>
-<h2 id="顶点覆盖问题-vertex-cover">顶点覆盖问题 Vertex Cover</h2>
-<p>无向图 <span class="math inline">\(G=(V,E)\)</span> 的顶点覆盖是一个子集 <span class="math inline">\(V&#39;\subseteq V\)</span>，满足如果有 <span class="math inline">\((\mu,\nu)\in E\)</span>，则 <span class="math inline">\(\mu\in V&#39;\)</span> 或 <span class="math inline">\(\nu\in V&#39;\)</span>（或两者同时成立）。</p>
+<h2 id="顶点覆盖问题-Vertex-Cover"><a href="#顶点覆盖问题-Vertex-Cover" class="headerlink" title="顶点覆盖问题 Vertex Cover"></a>顶点覆盖问题 Vertex Cover</h2><p>无向图 $G=(V,E)$ 的顶点覆盖是一个子集 $V’\subseteq V$，满足如果有 $(\mu,\nu)\in E$，则 $\mu\in V’$ 或 $\nu\in V’$（或两者同时成立）。</p>
 <p>顶点覆盖的规模是指它所包含的顶点数。顶点覆盖问题就是在一个给定的图中，找出具有最小规模的顶点覆盖。</p>
-<h3 id="形式语言定义-1">形式语言定义</h3>
-<p><span class="math inline">\(VERTEX-COVER=\left\{&lt;G,k&gt;:图G有一个规模为k的顶点覆盖\right\}\)</span></p>
-<p><strong>定理</strong>：<span class="math inline">\(VC\subseteq NP-Complete\)</span></p>
-<p><strong>证明</strong>：首先，证明 <span class="math inline">\(VC\in NP\)</span>。然后证明 <span class="math inline">\(CLIQUE\le _{p}VC\)</span> 从而得到 <span class="math inline">\(VC\in NP-hard\)</span></p>
-<h2 id="哈密顿回路问题-ham-cycle">哈密顿回路问题 HAM-CYCLE</h2>
-<p><strong>定理</strong>：哈密顿回路问题是 NP-Complete</p>
-<p><strong>证明</strong>：首先，证明 <span class="math inline">\(HAM-CYCLE\in NP\)</span>。然后通过证明 <span class="math inline">\(VC\le _{p}HAM-CYCLE\)</span> 从而得到 <span class="math inline">\(HAM-CYCLE\in NP-hard\)</span></p>
-<h2 id="旅行商问题-tsp">旅行商问题 TSP</h2>
-<h3 id="形式语言定义-2">形式语言定义</h3>
-<p><span class="math display">\[TSP=\left\{&lt;G,c,k&gt;:G=(V,E)是一个完全图，c是V*V\rightarrow Z上的一个函数，k\in Z，G中包含一个最大花费为k的旅行回路。\right\}\]</span></p>
+<h3 id="形式语言定义-1"><a href="#形式语言定义-1" class="headerlink" title="形式语言定义"></a>形式语言定义</h3><p>$VERTEX-COVER=\left{&lt;G,k&gt;:图G有一个规模为k的顶点覆盖\right}$</p>
+<p><strong>定理</strong>：$VC\subseteq NP-Complete$</p>
+<p><strong>证明</strong>：首先，证明 $VC\in NP$。然后证明 $CLIQUE\le _{p}VC$ 从而得到 $VC\in NP-hard$</p>
+<h2 id="哈密顿回路问题-HAM-CYCLE"><a href="#哈密顿回路问题-HAM-CYCLE" class="headerlink" title="哈密顿回路问题 HAM-CYCLE"></a>哈密顿回路问题 HAM-CYCLE</h2><p><strong>定理</strong>：哈密顿回路问题是 NP-Complete</p>
+<p><strong>证明</strong>：首先，证明 $HAM-CYCLE\in NP$。然后通过证明 $VC\le _{p}HAM-CYCLE$ 从而得到 $HAM-CYCLE\in NP-hard$</p>
+<h2 id="旅行商问题-TSP"><a href="#旅行商问题-TSP" class="headerlink" title="旅行商问题 TSP"></a>旅行商问题 TSP</h2><h3 id="形式语言定义-2"><a href="#形式语言定义-2" class="headerlink" title="形式语言定义"></a>形式语言定义</h3><p>$$TSP=\left{&lt;G,c,k&gt;:G=(V,E)是一个完全图，c是V*V\rightarrow Z上的一个函数，k\in Z，G中包含一个最大花费为k的旅行回路。\right}$$</p>
 <p><strong>定理</strong>：旅行商问题是 NP-Complete</p>
-<p><strong>证明</strong>：首先，证明 <span class="math inline">\(TSP\in NP\)</span>。然后通过证明 <span class="math inline">\(HAM-CYCLE\le _{p}TSP\)</span> 从而得到 <span class="math inline">\(TSP\in NP-hard\)</span></p>
-<h2 id="子集和问题-subset-sum-problem">子集和问题 SUBSET-SUM problem</h2>
-<p>给定一个正整数有限集 <span class="math inline">\(S\)</span> 和一个整数目标 <span class="math inline">\(t&gt;0\)</span>，问是否存在一个子集 <span class="math inline">\(S&#39;\subseteq S\)</span>，其元素和为 <span class="math inline">\(t\)</span>。</p>
-<h3 id="形式语言定义-3">形式语言定义</h3>
-<p><span class="math inline">\(SUBSET-SUM=\left\{&lt;S,t&gt;:存在一个子集S&#39;\subseteq S，使得t= \sum\limits_{S\in S&#39;}S\right\}\)</span></p>
+<p><strong>证明</strong>：首先，证明 $TSP\in NP$。然后通过证明 $HAM-CYCLE\le _{p}TSP$ 从而得到 $TSP\in NP-hard$</p>
+<h2 id="子集和问题-SUBSET-SUM-problem"><a href="#子集和问题-SUBSET-SUM-problem" class="headerlink" title="子集和问题 SUBSET-SUM problem"></a>子集和问题 SUBSET-SUM problem</h2><p>给定一个正整数有限集 $S$ 和一个整数目标 $t&gt;0$，问是否存在一个子集 $S’\subseteq S$，其元素和为 $t$。</p>
+<h3 id="形式语言定义-3"><a href="#形式语言定义-3" class="headerlink" title="形式语言定义"></a>形式语言定义</h3><p>$SUBSET-SUM=\left{&lt;S,t&gt;:存在一个子集S’\subseteq S，使得t= \sum\limits_{S\in S’}S\right}$</p>
 <p><strong>定理</strong>：子集和问题是 NP-Complete</p>
-<p><strong>证明</strong>：首先，证明 <span class="math inline">\(SUBSET-SUM\in NP\)</span>。然后，通过证明 <span class="math inline">\(3-CNF-SAT\le _{p}SUBSET-SUM\)</span> 从而得到 <span class="math inline">\(SUBSET-SUM\in NP-hard\)</span></p>
+<p><strong>证明</strong>：首先，证明 $SUBSET-SUM\in NP$。然后，通过证明 $3-CNF-SAT\le _{p}SUBSET-SUM$ 从而得到 $SUBSET-SUM\in NP-hard$</p>
 
     </div>
 
@@ -478,7 +462,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#np-%E5%AE%8C%E5%85%A8%E6%80%A7%E7%9A%84%E8%AF%81%E6%98%8E"><span class="nav-number">1.</span> <span class="nav-text">NP 完全性的证明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%81%E6%98%8E%E6%9F%90%E7%A7%8D%E8%AF%AD%E8%A8%80-l-%E6%98%AF-np-%E5%AE%8C%E5%85%A8%E9%97%AE%E9%A2%98%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">1.1.</span> <span class="nav-text">证明某种语言 \(L\) 是 NP 完全问题的方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B8%E5%9E%8B-npc-%E9%97%AE%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">典型 NPC 问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%83%E5%B0%94%E7%BB%84%E5%90%88%E7%94%B5%E8%B7%AF"><span class="nav-number">3.</span> <span class="nav-text">布尔组合电路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#np-%E5%AE%8C%E5%85%A8%E6%80%A7%E8%AF%81%E6%98%8E"><span class="nav-number">3.1.</span> <span class="nav-text">NP 完全性证明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%83%E5%B0%94%E5%8F%AF%E6%BB%A1%E8%B6%B3%E6%80%A7%E9%97%AE%E9%A2%98-sat"><span class="nav-number">4.</span> <span class="nav-text">布尔可满足性问题 SAT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cnf-%E5%8F%AF%E6%BB%A1%E8%B6%B3%E6%80%A7"><span class="nav-number">5.</span> <span class="nav-text">3-CNF 可满足性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%88%E5%8F%96%E8%8C%83%E5%BC%8F"><span class="nav-number">5.1.</span> <span class="nav-text">合取范式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%A2%E9%97%AE%E9%A2%98-clique"><span class="nav-number">6.</span> <span class="nav-text">团问题 CLIQUE</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E5%AE%9A%E4%B9%89"><span class="nav-number">6.1.</span> <span class="nav-text">形式语言定义</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B6%E7%82%B9%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98-vertex-cover"><span class="nav-number">7.</span> <span class="nav-text">顶点覆盖问题 Vertex Cover</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E5%AE%9A%E4%B9%89-1"><span class="nav-number">7.1.</span> <span class="nav-text">形式语言定义</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%93%88%E5%AF%86%E9%A1%BF%E5%9B%9E%E8%B7%AF%E9%97%AE%E9%A2%98-ham-cycle"><span class="nav-number">8.</span> <span class="nav-text">哈密顿回路问题 HAM-CYCLE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%85%E8%A1%8C%E5%95%86%E9%97%AE%E9%A2%98-tsp"><span class="nav-number">9.</span> <span class="nav-text">旅行商问题 TSP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E5%AE%9A%E4%B9%89-2"><span class="nav-number">9.1.</span> <span class="nav-text">形式语言定义</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%90%E9%9B%86%E5%92%8C%E9%97%AE%E9%A2%98-subset-sum-problem"><span class="nav-number">10.</span> <span class="nav-text">子集和问题 SUBSET-SUM problem</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E5%AE%9A%E4%B9%89-3"><span class="nav-number">10.1.</span> <span class="nav-text">形式语言定义</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#NP-%E5%AE%8C%E5%85%A8%E6%80%A7%E7%9A%84%E8%AF%81%E6%98%8E"><span class="nav-number">1.</span> <span class="nav-text">NP 完全性的证明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%81%E6%98%8E%E6%9F%90%E7%A7%8D%E8%AF%AD%E8%A8%80-L-%E6%98%AF-NP-%E5%AE%8C%E5%85%A8%E9%97%AE%E9%A2%98%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">1.1.</span> <span class="nav-text">证明某种语言 $L$ 是 NP 完全问题的方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B8%E5%9E%8B-NPC-%E9%97%AE%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">典型 NPC 问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%83%E5%B0%94%E7%BB%84%E5%90%88%E7%94%B5%E8%B7%AF"><span class="nav-number">3.</span> <span class="nav-text">布尔组合电路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#NP-%E5%AE%8C%E5%85%A8%E6%80%A7%E8%AF%81%E6%98%8E"><span class="nav-number">3.1.</span> <span class="nav-text">NP 完全性证明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%83%E5%B0%94%E5%8F%AF%E6%BB%A1%E8%B6%B3%E6%80%A7%E9%97%AE%E9%A2%98-SAT"><span class="nav-number">4.</span> <span class="nav-text">布尔可满足性问题 SAT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-CNF-%E5%8F%AF%E6%BB%A1%E8%B6%B3%E6%80%A7"><span class="nav-number">5.</span> <span class="nav-text">3-CNF 可满足性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%88%E5%8F%96%E8%8C%83%E5%BC%8F"><span class="nav-number">5.1.</span> <span class="nav-text">合取范式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%A2%E9%97%AE%E9%A2%98-CLIQUE"><span class="nav-number">6.</span> <span class="nav-text">团问题 CLIQUE</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E5%AE%9A%E4%B9%89"><span class="nav-number">6.1.</span> <span class="nav-text">形式语言定义</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B6%E7%82%B9%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98-Vertex-Cover"><span class="nav-number">7.</span> <span class="nav-text">顶点覆盖问题 Vertex Cover</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E5%AE%9A%E4%B9%89-1"><span class="nav-number">7.1.</span> <span class="nav-text">形式语言定义</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%93%88%E5%AF%86%E9%A1%BF%E5%9B%9E%E8%B7%AF%E9%97%AE%E9%A2%98-HAM-CYCLE"><span class="nav-number">8.</span> <span class="nav-text">哈密顿回路问题 HAM-CYCLE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%85%E8%A1%8C%E5%95%86%E9%97%AE%E9%A2%98-TSP"><span class="nav-number">9.</span> <span class="nav-text">旅行商问题 TSP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E5%AE%9A%E4%B9%89-2"><span class="nav-number">9.1.</span> <span class="nav-text">形式语言定义</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%90%E9%9B%86%E5%92%8C%E9%97%AE%E9%A2%98-SUBSET-SUM-problem"><span class="nav-number">10.</span> <span class="nav-text">子集和问题 SUBSET-SUM problem</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E5%AE%9A%E4%B9%89-3"><span class="nav-number">10.1.</span> <span class="nav-text">形式语言定义</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -584,13 +568,13 @@
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">87k</span>
+    <span title="站点总字数">86k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1:19</span>
+    <span title="站点阅读时长">1:18</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
