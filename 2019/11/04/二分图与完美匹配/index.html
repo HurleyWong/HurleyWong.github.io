@@ -27,15 +27,15 @@
 <meta property="og:site_name" content="Hurley">
 <meta property="og:description" content="本文主要介绍二分图与完美匹配。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F28516a4d-ef70-4cad-b9dd-85d6106d8445%2FUntitled.png?table=block&id=394f123e-f5d3-48b8-9d8d-6282899d24aa&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1300&userId=&cache=v2">
-<meta property="og:image" content="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F1ea4428a-cbc5-4cf5-89b4-f47ede43afff%2FUntitled.png?table=block&id=fb4cf1c4-847a-4c30-81da-1fcad9878c05&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1300&userId=&cache=v2">
+<meta property="og:image" content="https://i.loli.net/2021/01/07/Xr2d6KgsbxOk8nP.png">
+<meta property="og:image" content="https://i.loli.net/2021/01/07/pLsJGEZud2i6Njh.png">
 <meta property="article:published_time" content="2019-11-03T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-09-05T02:13:50.300Z">
+<meta property="article:modified_time" content="2021-10-04T06:50:41.319Z">
 <meta property="article:author" content="Hurley">
 <meta property="article:tag" content="二分图">
 <meta property="article:tag" content="完美匹配">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F28516a4d-ef70-4cad-b9dd-85d6106d8445%2FUntitled.png?table=block&id=394f123e-f5d3-48b8-9d8d-6282899d24aa&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1300&userId=&cache=v2">
+<meta name="twitter:image" content="https://i.loli.net/2021/01/07/Xr2d6KgsbxOk8nP.png">
 
 <link rel="canonical" href="https://hurleywong.github.io/2019/11/04/%E4%BA%8C%E5%88%86%E5%9B%BE%E4%B8%8E%E5%AE%8C%E7%BE%8E%E5%8C%B9%E9%85%8D/">
 
@@ -236,7 +236,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-09-05 10:13:50" itemprop="dateModified" datetime="2021-09-05T10:13:50+08:00">2021-09-05</time>
+                <time title="修改时间：2021-10-04 14:50:41" itemprop="dateModified" datetime="2021-10-04T14:50:41+08:00">2021-10-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -292,9 +292,9 @@
 <p>图 $G$ 有完美匹配的充分必要条件是**对 $∀S ⊂ V (G) ， O (G \setminus S ) ≤| S |$**。</p>
 <p>即图 $G$ 有完美匹配等价于，对于图 $G$ 去掉任意一个点集之后，图的奇分支的个数小于等于点集的个数（奇分支：有奇数个点的分支）。</p>
 <p>例如，对于下图，证明其是否有完美匹配。</p>
-<p><img data-src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F28516a4d-ef70-4cad-b9dd-85d6106d8445%2FUntitled.png?table=block&id=394f123e-f5d3-48b8-9d8d-6282899d24aa&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1300&userId=&cache=v2"></p>
+<p><img data-src="https://i.loli.net/2021/01/07/Xr2d6KgsbxOk8nP.png"></p>
 <p>可以在图中挑出一些点，使得点与点之间分隔后的部分有<strong>奇数</strong>个顶点，然后比较挑出的点的数量，与分隔后的部分的数量的大小。如果分隔后部分的数量小于等于挑出点的数量，则有完美匹配。</p>
-<p><img data-src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F1ea4428a-cbc5-4cf5-89b4-f47ede43afff%2FUntitled.png?table=block&id=fb4cf1c4-847a-4c30-81da-1fcad9878c05&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1300&userId=&cache=v2"></p>
+<p><img data-src="https://i.loli.net/2021/01/07/pLsJGEZud2i6Njh.png"></p>
 <p>如上图所示，挑出 12 个红点，这 12 个红点将图分成了 14 个部分（每个部分必须含有奇数个顶点）。因为 12 &lt; 14，不满足 Tutte 定理，所以这个图没有完美匹配。</p>
 
     </div>

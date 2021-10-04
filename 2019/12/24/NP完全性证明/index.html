@@ -27,14 +27,14 @@
 <meta property="og:site_name" content="Hurley">
 <meta property="og:description" content="NP 完全问题（NP-C 问题），是世界上七大数学难题之一。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F9c299e0d-6391-4f97-b49b-a483f14441d4%2FUntitled.png?table=block&id=16487c1a-777e-4ad6-8f47-5796971c5669&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1440&userId=&cache=v2">
-<meta property="og:image" content="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F2b67041d-82e7-4592-9000-aa6f8dae8600%2FUntitled.png?table=block&id=6565d542-a1bd-4da3-b5e5-b940dc5ae943&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1260&userId=&cache=v2">
+<meta property="og:image" content="https://i.loli.net/2021/01/07/wkGF648EsRtgl3B.png">
+<meta property="og:image" content="https://i.loli.net/2021/01/07/kZuHzcObLqvSj9h.png">
 <meta property="article:published_time" content="2019-12-23T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-09-05T02:18:19.467Z">
+<meta property="article:modified_time" content="2021-10-04T06:46:55.359Z">
 <meta property="article:author" content="Hurley">
 <meta property="article:tag" content="NP 问题">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F9c299e0d-6391-4f97-b49b-a483f14441d4%2FUntitled.png?table=block&id=16487c1a-777e-4ad6-8f47-5796971c5669&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1440&userId=&cache=v2">
+<meta name="twitter:image" content="https://i.loli.net/2021/01/07/wkGF648EsRtgl3B.png">
 
 <link rel="canonical" href="https://hurleywong.github.io/2019/12/24/NP%E5%AE%8C%E5%85%A8%E6%80%A7%E8%AF%81%E6%98%8E/">
 
@@ -235,7 +235,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-09-05 10:18:19" itemprop="dateModified" datetime="2021-09-05T10:18:19+08:00">2021-09-05</time>
+                <time title="修改时间：2021-10-04 14:46:55" itemprop="dateModified" datetime="2021-10-04T14:46:55+08:00">2021-10-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -299,7 +299,7 @@
 <li>证明计算函数 $f(x)$ 的算法具有多项式运行时间</li>
 </ol>
 <p>第 2 步 ~ 第 5 步是为了证明 $L$ 是 NP-hardness，然后结合第一步的 $L$ 是 NP 问题，就可以得出 $L\in NPC$。</p>
-<h2 id="典型-NPC-问题"><a href="#典型-NPC-问题" class="headerlink" title="典型 NPC 问题"></a>典型 NPC 问题</h2><p><img data-src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F9c299e0d-6391-4f97-b49b-a483f14441d4%2FUntitled.png?table=block&id=16487c1a-777e-4ad6-8f47-5796971c5669&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1440&userId=&cache=v2" alt="一些典型的 NPC 问题"><span class="image-caption">一些典型的 NPC 问题</span></p>
+<h2 id="典型-NPC-问题"><a href="#典型-NPC-问题" class="headerlink" title="典型 NPC 问题"></a>典型 NPC 问题</h2><p><img data-src="https://i.loli.net/2021/01/07/wkGF648EsRtgl3B.png" alt="一些典型的 NPC 问题"><span class="image-caption">一些典型的 NPC 问题</span></p>
 <ul>
 <li><strong>SAT</strong>：布尔公式的可满足性问题</li>
 <li><strong>3-CNF-SAT</strong>：3 合取范式的布尔公式的可满足性问题</li>
@@ -333,7 +333,7 @@
 <h3 id="合取范式"><a href="#合取范式" class="headerlink" title="合取范式"></a>合取范式</h3><p>如果一个布尔公式可以表示为所有子句的“与”，并且每个字句都是一个或多个文字的“或”，则称该布尔公式为合取范式。</p>
 <p>如果每个字句恰好有三个不同的<strong>“文字”</strong>，则该布尔公式为 3 合取范式，即 3-CNF。</p>
 <p>For example：</p>
-<p><img data-src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F2b67041d-82e7-4592-9000-aa6f8dae8600%2FUntitled.png?table=block&id=6565d542-a1bd-4da3-b5e5-b940dc5ae943&spaceId=77b9deb7-cc8a-4bc2-82c7-73fdf2893565&width=1260&userId=&cache=v2" alt="合取范式"><span class="image-caption">合取范式</span></p>
+<p><img data-src="https://i.loli.net/2021/01/07/kZuHzcObLqvSj9h.png" alt="合取范式"><span class="image-caption">合取范式</span></p>
 <p><strong>定理</strong>：3 合取范式形式的布尔公式的可满足性是 NP 完全的。</p>
 <p><strong>证明</strong>：要证明 $3-CNF-SAT\le NP$，仅需证明 $SAT\le _{p}3-CNF-SAT$。</p>
 <h2 id="团问题-CLIQUE"><a href="#团问题-CLIQUE" class="headerlink" title="团问题 CLIQUE"></a>团问题 CLIQUE</h2><p>无向图 $G=(V,E)$ 的团 (clique) 是一个顶点子集 $V’\subseteq V$，其中每一对顶点之间都由 $E$ 中的一条边来连接。</p>
